@@ -7,6 +7,7 @@ public class AiFollow : SpaceshipController
     void Update()
     {
         float distance = GameplayManager.playerTransform.position.x - transform.position.x;
-        moveDirection = Mathf.Clamp(distance/10f, -1f, 1f);
+        moveDirectionX = Mathf.Clamp(distance, -1f, 1f);
+        shoot = true;
     }
 }

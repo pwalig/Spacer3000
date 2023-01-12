@@ -6,7 +6,9 @@ public class Player : SpaceshipController
 {
     void Update()
     {
-        moveDirection = Input.GetAxisRaw("Horizontal");
-        shoot = Input.GetKeyDown(KeyCode.Space);
+        moveDirectionX = Input.GetAxisRaw("Horizontal");
+        moveDirectionY = Input.GetAxisRaw("Vertical");
+
+        shoot = Input.GetKey(KeyCode.Space);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
-    public float moveDirection = 0f;
+    public float moveDirectionX = 0f;
+    public float moveDirectionY = 0f;
     public bool shoot = false;
 }
