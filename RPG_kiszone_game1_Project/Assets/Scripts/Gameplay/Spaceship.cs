@@ -27,12 +27,15 @@ public class Spaceship : MonoBehaviour
 
     public IEnumerator Shoot()
     {
-        UnityEngine.Debug.Log("Ship: " + name + " has shot");
-        Instantiate(ProjectilePrefab, transform.position + transform.up * shootSpawn, transform.rotation);
+        //UnityEngine.Debug.Log("Ship: " + name + " has shot");
+        GameObject clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.up * shootSpawn, transform.rotation);
+        if (gameObject.tag == "Player") clonedProjectile.gameObject.tag = "Player_Projectile";
+        if (gameObject.tag == "Enemy") clonedProjectile.gameObject.tag = "Enemy_Projectile";
         canShoot = false;
         yield return new WaitForSeconds(shootDelay);
         canShoot = true;
     }
+
 
     void Update()
     {

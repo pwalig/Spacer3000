@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 1026393749}
   m_Layer: 0
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   hp: 100
   speed: 20
   shootDelay: 1
-  ProjectilePrefab: {fileID: 3445385588388364457, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+  ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
   shootSpawn: 10
 --- !u!61 &1026393749
 BoxCollider2D:
@@ -506,7 +506,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1078,6 +1078,7 @@ GameObject:
   - component: {fileID: 1670739587}
   - component: {fileID: 1670739588}
   - component: {fileID: 1670739589}
+  - component: {fileID: 1670739590}
   m_Layer: 0
   m_Name: PlayerSpaceship
   m_TagString: Player
@@ -1117,7 +1118,7 @@ MonoBehaviour:
   hp: 100
   speed: 60
   shootDelay: 0.5
-  ProjectilePrefab: {fileID: 3445385588388364457, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+  ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
   shootSpawn: 10
 --- !u!114 &1670739588
 MonoBehaviour:
@@ -1160,6 +1161,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 10}
   m_EdgeRadius: 0
+--- !u!50 &1670739590
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670739585}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2126808455
 GameObject:
   m_ObjectHideFlags: 0

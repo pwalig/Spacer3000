@@ -18,6 +18,34 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (gameObject.tag == "Player_Projectile")
+        {
+            if (other.gameObject.tag == "Enemy")
+            {
+                other.gameObject.GetComponent<Spaceship>().hp -= damage;
+                if (other.gameObject.GetComponent<Spaceship>().hp <= 0)
+                {
+                    Destroy(other.gameObject);
+                }
+                Destroy(gameObject);
+            }
+        }
+        if (gameObject.tag == "Enemy_Projectile")
+        {
+            if (other.gameObject.tag == "Player")
+            {
+                other.gameObject.GetComponent<Spaceship>().hp -= damage;
+                if (other.gameObject.GetComponent<Spaceship>().hp <= 0)
+                {
+                    Destroy(other.gameObject);
+                }
+                Destroy(gameObject);
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
