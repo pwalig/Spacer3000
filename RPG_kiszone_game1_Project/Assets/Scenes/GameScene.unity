@@ -398,7 +398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   hp: 100
-  speed: 120
+  speed: 100
   shootDelay: 0.5
   ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
   shootSpawn: 10
@@ -853,7 +853,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
   m_PrefabInstance: {fileID: 1425540206}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1425540209
+--- !u!114 &1425540214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -862,24 +862,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1425540208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334debdebb08bb54283b112b93de8904, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fa1867268521ba4db5d92d383ecbf87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveDirectionX: 0
-  moveDirectionY: 0
-  shoot: 0
---- !u!114 &1425540210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425540208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f2f257e4a35eb547a58efff149eef57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  systems:
+  - f: 2
+    z: 0.6
+    r: -2
+    amplitude: 30
+    offset: 0
+  - f: 2
+    z: 0.6
+    r: -2
+    amplitude: 15
+    offset: 180
 --- !u!1 &1572347706
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 100
   hp: 100
-  speed: 40
+  speed: 0
   shootDelay: 1
   ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
   shootSpawn: 10
