@@ -29,6 +29,11 @@ public class Spaceship : MonoBehaviour
     {
         //UnityEngine.Debug.Log("Ship: " + name + " has shot");
         GameObject clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.up * shootSpawn, transform.rotation);
+
+        //Create smoke effect and camera shake
+        VFXManager.CreateEffect(clonedProjectile.transform.position, 0.5f, 2);
+        CameraShake.Shake(30f);
+
         if (gameObject.tag == "Player") clonedProjectile.gameObject.tag = "Player_Projectile";
         if (gameObject.tag == "Enemy") clonedProjectile.gameObject.tag = "Enemy_Projectile";
         canShoot = false;
@@ -42,4 +47,5 @@ public class Spaceship : MonoBehaviour
         transform.position += new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0).normalized * speed * Time.deltaTime; //spaceship movement
         if (controller.shoot && canShoot) StartCoroutine(Shoot());
     }
+
 }

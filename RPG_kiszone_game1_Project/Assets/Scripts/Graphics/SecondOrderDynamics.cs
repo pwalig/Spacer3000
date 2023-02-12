@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class SecondOrderDynamics
 {
-    [SerializeField] float f = 1f; //system speed
-    [SerializeField] float z = 0.5f; //damping
-    [SerializeField] float r = 0f; //initial response
+    [SerializeField] float f = 1f; //system speed: (0, oo) reasonable values
+    [SerializeField] float z = 0.5f; //damping: {0} undamped, (0;1) underdamped, {1} critical damping, (1; oo) overdamped
+    [SerializeField] float r = 0f; //initial response: (-oo, 0) anticipation, {0} rest, (0;1> response towards goal, (1, oo) overshoot
     [SerializeField] float amplitude = 1f; //output input ratio
     [SerializeField] float offset = 0f;
     float xp;

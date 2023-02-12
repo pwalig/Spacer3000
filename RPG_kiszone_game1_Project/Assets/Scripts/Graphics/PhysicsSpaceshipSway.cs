@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BetterSway : MonoBehaviour
+public class PhysicsSpaceshipSway : MonoBehaviour
 {
     SpaceshipController controller;
     [SerializeField] List<SecondOrderDynamics> systems = new List<SecondOrderDynamics>();

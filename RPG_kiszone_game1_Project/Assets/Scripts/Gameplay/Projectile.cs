@@ -24,10 +24,14 @@ public class Projectile : MonoBehaviour
         {
             if (other.gameObject.tag == "Enemy")
             {
+                VFXManager.CreateEffect(transform.position, 0.3f, 0);
+                CameraShake.Shake(30f);
                 other.gameObject.GetComponent<Spaceship>().hp -= damage;
                 if (other.gameObject.GetComponent<Spaceship>().hp <= 0)
                 {
                     Destroy(other.gameObject);
+                    VFXManager.CreateEffect(other.transform.position, 1f, 1);
+                    CameraShake.Shake(400f);
                 }
                 Destroy(gameObject);
             }
@@ -36,10 +40,14 @@ public class Projectile : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
+                VFXManager.CreateEffect(transform.position, 0.3f, 0);
+                CameraShake.Shake(30f);
                 other.gameObject.GetComponent<Spaceship>().hp -= damage;
                 if (other.gameObject.GetComponent<Spaceship>().hp <= 0)
                 {
                     Destroy(other.gameObject);
+                    VFXManager.CreateEffect(other.transform.position, 1f, 1);
+                    CameraShake.Shake(400f);
                 }
                 Destroy(gameObject);
             }
