@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -33,6 +34,11 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1f;
         PauseMenu.SetActive(false);
         paused = false;
+    }
+    public void QuitToMainMenu()
+    {
+        UnPause();
+        SceneManager.LoadScene("MainMenu");
     }
     private void Update()
     {
