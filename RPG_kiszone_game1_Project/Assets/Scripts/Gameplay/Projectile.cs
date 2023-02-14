@@ -45,6 +45,7 @@ public class Projectile : MonoBehaviour
                 other.gameObject.GetComponent<Spaceship>().hp -= damage;
                 if (other.gameObject.GetComponent<Spaceship>().hp <= 0)
                 {
+                    GameplayManager.GameOver();
                     Destroy(other.gameObject);
                     VFXManager.CreateEffect(other.transform.position, 1f, 1);
                     CameraShake.Shake(400f);

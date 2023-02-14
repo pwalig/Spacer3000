@@ -9,6 +9,7 @@ public class GameplayManager : MonoBehaviour
     public static Transform playerTransform;
     public static bool paused;
     static GameObject PauseMenu;
+    static GameObject GameOverMenu;
     void Awake()
     {
         //ensure only one manager exists
@@ -20,8 +21,14 @@ public class GameplayManager : MonoBehaviour
     private void Start()
     {
         PauseMenu = GameObject.Find("PauseMenu");
+        GameOverMenu = GameObject.Find("GameOverMenu");
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         UnPause();
+    }
+    public static Vector3 GetPlayerPosition(Vector3 requestPosition = default(Vector3))
+    {
+        if (playerTransform == null) return requestPosition;
+        return playerTransform.position;
     }
     void Pause()
     {
@@ -34,11 +41,21 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1f;
         PauseMenu.SetActive(false);
         paused = false;
+        GameOverMenu.SetActive(false);
+    }
+    public static void GameOver()
+    {
+        GameOverMenu.SetActive(true);
     }
     public void QuitToMainMenu()
     {
         UnPause();
         SceneManager.LoadScene("MainMenu");
+    }
+    public void Quit()
+    {
+        UnityEditor.EditorApplication.isPlaying = false;
+        //Application.Quit(); //change to this on build
     }
     private void Update()
     {
