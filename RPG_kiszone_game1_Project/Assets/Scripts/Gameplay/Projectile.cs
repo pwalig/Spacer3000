@@ -18,40 +18,19 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
+    bool IsHit(string targetTag)
+    {
+        return ((CompareTag("Player_Projectile") && targetTag == "Enemy") || (CompareTag("Enemy_Projectile") && targetTag == "Player"));
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (gameObject.tag == "Player_Projectile")
+        if (IsHit(other.tag))
         {
-            if (other.gameObject.tag == "Enemy")
-            {
-                VFXManager.CreateEffect(transform.position, 0.3f, 0);
-                CameraShake.Shake(30f);
-                other.gameObject.GetComponent<Spaceship>().hp -= damage;
-                if (other.gameObject.GetComponent<Spaceship>().hp <= 0)
-                {
-                    Destroy(other.gameObject);
-                    VFXManager.CreateEffect(other.transform.position, 1f, 1);
-                    CameraShake.Shake(400f);
-                }
-                Destroy(gameObject);
-            }
-        }
-        if (gameObject.tag == "Enemy_Projectile")
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                VFXManager.CreateEffect(transform.position, 0.3f, 0);
-                CameraShake.Shake(30f);
-                other.gameObject.GetComponent<Spaceship>().hp -= damage;
-                if (other.gameObject.GetComponent<Spaceship>().hp <= 0)
-                {
-                    GameplayManager.GameOver();
-                    Destroy(other.gameObject);
-                    VFXManager.CreateEffect(other.transform.position, 1f, 1);
-                    CameraShake.Shake(400f);
-                }
-                Destroy(gameObject);
-            }
+            VFXManager.CreateEffect(transform.position, 0, 0.3f);
+            CameraShake.Shake(30f);
+            other.gameObject.GetComponent<Spaceship>().DealDamage(damage);
+            Destroy(gameObject);
         }
     }
 

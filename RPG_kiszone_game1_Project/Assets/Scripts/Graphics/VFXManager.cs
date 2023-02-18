@@ -17,7 +17,7 @@ public class VFXManager : MonoBehaviour
         effects = effectsInspector;
     }
 
-    public static void CreateEffect(Vector3 position, float scale = 1, int effectId = -1)
+    public static void CreateEffect(Vector3 position, int effectId = -1, float scale = 1)
     {
         if (effectId == -1)
         {
