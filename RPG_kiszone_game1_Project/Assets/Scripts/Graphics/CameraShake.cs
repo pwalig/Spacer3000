@@ -9,7 +9,7 @@ public class CameraShake : MonoBehaviour
     [SerializeField] static List<SecondOrderDynamics> systems = new List<SecondOrderDynamics>();
     void Awake()
     {
-        startPosition = transform.position;
+        startPosition = transform.localPosition;
 
         systems = systemsInspector;
         foreach (SecondOrderDynamics system in systems)
@@ -28,6 +28,6 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        transform.position = startPosition + new Vector3(systems[0].Update(0f), systems[1].Update(0f), systems[2].Update(0f));
+        transform.localPosition = startPosition + new Vector3(systems[0].Update(0f), systems[1].Update(0f), systems[2].Update(0f));
     }
 }
