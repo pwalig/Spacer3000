@@ -22,7 +22,9 @@ public class GameplayManager : MonoBehaviour
     {
         PauseMenu = GameObject.Find("PauseMenu");
         GameOverMenu = GameObject.Find("GameOverMenu");
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
+        if (GameData.availableMaterials != null) playerGameObject.GetComponentInChildren<MeshRenderer>().material = GameData.availableMaterials[GameData.selectedMaterialId];
+        playerTransform = playerGameObject.transform;
         UnPause();
     }
     public static Vector3 GetPlayerPosition(Vector3 requestPosition = default(Vector3))
