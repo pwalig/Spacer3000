@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    public float intensity = 1f;
     static Vector3 startPosition;
     [SerializeField] List<SecondOrderDynamics> systemsInspector = new List<SecondOrderDynamics>();
     [SerializeField] static List<SecondOrderDynamics> systems = new List<SecondOrderDynamics>();
@@ -28,6 +29,6 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition = startPosition + new Vector3(systems[0].Update(0f), systems[1].Update(0f), systems[2].Update(0f));
+        transform.localPosition = startPosition + (new Vector3(systems[0].Update(0f), systems[1].Update(0f), systems[2].Update(0f)) * intensity);
     }
 }

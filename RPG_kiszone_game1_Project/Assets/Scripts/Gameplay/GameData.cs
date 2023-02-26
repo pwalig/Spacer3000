@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData
+public static class GameData
 {
-    
     public enum Difficulty {VeryEasy, Easy, Normal, Hard, VeryHard, UltraHard }
     public static Difficulty difficultyLevel = Difficulty.Normal;
     public static float volume = 1f;
     public static List<Material> availableMaterials = null;
+    public static List<PlanetData> availablePlanets = null;
     public static int selectedMaterialId = 0;
+    public static int selectedPlanetId = 0;
 
 
     /*static GameData gameData;

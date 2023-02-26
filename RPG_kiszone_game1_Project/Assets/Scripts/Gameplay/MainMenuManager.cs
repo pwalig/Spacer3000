@@ -25,6 +25,7 @@ public class MainMenuManager : MonoBehaviour
         menus.Add(GameObject.Find("CustomizeGroup"));
         menus.Add(GameObject.Find("SettingsGroup"));
         menus.Add(GameObject.Find("CreditsGroup"));
+        menus.Add(GameObject.Find("PlanetGroup"));
         GameObject.Find("DifficultyDropdown").GetComponent<TMP_Dropdown>().value = (int)GameData.difficultyLevel;
         GameObject.Find("VolumeSlider").GetComponent<Slider>().value = GameData.volume;
     }
@@ -43,6 +44,12 @@ public class MainMenuManager : MonoBehaviour
     }
     public void ChangeMenu(int menuId)
     {
+        // reduce camera shake when in different settings
+        if (menuId != 0)
+            GameObject.Find("Main Camera").GetComponent<CameraShake>().intensity = 0.1f;
+        else
+            GameObject.Find("Main Camera").GetComponent<CameraShake>().intensity = 1f;
+
         for (int i = 0; i < menus.Count; i++)
         {
             if (i == menuId) menus[i].SetActive(true);

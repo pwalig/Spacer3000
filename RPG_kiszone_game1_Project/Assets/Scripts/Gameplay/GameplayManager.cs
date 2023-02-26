@@ -17,6 +17,9 @@ public class GameplayManager : MonoBehaviour
             Manager = this;
         else
             Destroy(this);
+
+        if (GameData.availablePlanets == null)
+            SceneManager.LoadScene("MainMenu");
     }
     private void Start()
     {
@@ -24,6 +27,8 @@ public class GameplayManager : MonoBehaviour
         GameOverMenu = GameObject.Find("GameOverMenu");
         GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
         if (GameData.availableMaterials != null) playerGameObject.GetComponentInChildren<MeshRenderer>().material = GameData.availableMaterials[GameData.selectedMaterialId];
+        if (GameData.availablePlanets[GameData.selectedPlanetId].terrainAsset != null)
+            Instantiate(GameData.availablePlanets[GameData.selectedPlanetId].terrainAsset).transform.position = new Vector3(0f, -200f, 300f);
         playerTransform = playerGameObject.transform;
         UnPause();
     }
