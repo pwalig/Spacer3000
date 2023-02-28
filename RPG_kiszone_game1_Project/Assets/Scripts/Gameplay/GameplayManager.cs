@@ -8,6 +8,7 @@ public class GameplayManager : MonoBehaviour
     static GameplayManager Manager;
     public static Transform playerTransform;
     public static bool paused;
+    public static bool projectile_destroy = true;
     static GameObject PauseMenu;
     static GameObject GameOverMenu;
     void Awake()
