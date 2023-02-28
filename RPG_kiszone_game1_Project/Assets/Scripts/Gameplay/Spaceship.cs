@@ -51,10 +51,10 @@ public class Spaceship : MonoBehaviour
         }
         if (projectiles == 2)
         {
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.right * 20, transform.rotation);
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.right * 5, transform.rotation);
             VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
             clonedProjectile.gameObject.tag = tag;
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position - transform.right * 20, transform.rotation);
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position - transform.right * 5, transform.rotation);
             VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
             clonedProjectile.gameObject.tag = tag;
         }
