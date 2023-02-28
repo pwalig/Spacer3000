@@ -1610,8 +1610,8 @@ MonoBehaviour:
   hp: 100
   speed: 20
   shootDelay: 1
+  projectiles: 2
   ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
-  shootSpawn: 10
 --- !u!61 &1026393749
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2409,8 +2409,8 @@ MonoBehaviour:
   hp: 100
   speed: 60
   shootDelay: 0.5
+  projectiles: 2
   ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
-  shootSpawn: 10
 --- !u!114 &1670739588
 MonoBehaviour:
   m_ObjectHideFlags: 0

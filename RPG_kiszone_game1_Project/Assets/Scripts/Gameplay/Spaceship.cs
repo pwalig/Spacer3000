@@ -13,12 +13,13 @@ public class Spaceship : MonoBehaviour
     public float hp = 100f;
     public float speed = 1f;
     public float shootDelay = 1f;
+    public int projectiles = 1;
 
     private bool canShoot = true;
     [SerializeField]
     private GameObject ProjectilePrefab;
-    [SerializeField]
-    private float shootSpawn = 10f;
+    //[SerializeField]
+    //private float shootSpawn = 10f;
 
     ParticleSystem smoke = null;
 
@@ -31,15 +32,46 @@ public class Spaceship : MonoBehaviour
     public IEnumerator Shoot()
     {
         //UnityEngine.Debug.Log("Ship: " + name + " has shot");
-        GameObject clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.up * shootSpawn, transform.rotation);
+        //GameObject clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.up * shootSpawn, transform.rotation);
 
         //Create smoke effect and camera shake
-        VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+        //VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
         CameraShake.Shake(30f);
 
-        if (gameObject.tag == "Player") clonedProjectile.gameObject.tag = "Player_Projectile";
-        if (gameObject.tag == "Enemy") clonedProjectile.gameObject.tag = "Enemy_Projectile";
+        string tag="";
+        if (gameObject.tag == "Player") tag = "Player_Projectile";//clonedProjectile.gameObject.tag = "Player_Projectile";
+        if (gameObject.tag == "Enemy") tag = "Enemy_Projectile"; //clonedProjectile.gameObject.tag = "Enemy_Projectile";
         canShoot = false;
+        GameObject clonedProjectile;
+        if (projectiles==1)
+        {
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+            clonedProjectile.gameObject.tag = tag;
+        }
+        if (projectiles == 2)
+        {
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.right * 20, transform.rotation);
+            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+            clonedProjectile.gameObject.tag = tag;
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position - transform.right * 20, transform.rotation);
+            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+            clonedProjectile.gameObject.tag = tag;
+        }
+        if (projectiles == 3)
+        {
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+            clonedProjectile.gameObject.tag = tag;
+            clonedProjectile.gameObject.transform.Rotate(0, 0, 10);
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+            clonedProjectile.gameObject.tag = tag;
+            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
+            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+            clonedProjectile.gameObject.tag = tag;
+            clonedProjectile.gameObject.transform.Rotate(0, 0, -10);
+        }
         yield return new WaitForSeconds(shootDelay);
         canShoot = true;
     }
