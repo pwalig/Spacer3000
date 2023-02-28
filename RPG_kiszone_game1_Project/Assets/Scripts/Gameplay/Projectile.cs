@@ -18,16 +18,6 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    bool IsHit(string targetTag)
-    {
-        return ((CompareTag("Player_Projectile") && targetTag == "Enemy") || (CompareTag("Enemy_Projectile") && targetTag == "Player"));
-    }
-
-    bool IsCollided(string targetTag)
-    {
-        return (CompareTag("Player_Projectile") && targetTag == "Enemy_Projectile" && GameplayManager.projectile_destroy == true);
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if ((CompareTag("Player_Projectile") && other.tag == "Enemy") || (CompareTag("Enemy_Projectile") && other.tag == "Player"))

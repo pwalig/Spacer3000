@@ -561,7 +561,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -608,8 +608,10 @@ MonoBehaviour:
   hp: 100
   speed: 100
   shootDelay: 0.5
+  projectiles: 1
+  powerupChance: 0
   ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
-  shootSpawn: 10
+  powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
 --- !u!4 &552348067
 Transform:
   m_ObjectHideFlags: 0
@@ -7096,7 +7098,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7143,8 +7145,10 @@ MonoBehaviour:
   hp: 100
   speed: 50
   shootDelay: 1
+  projectiles: 1
+  powerupChance: 100
   ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
-  shootSpawn: 10
+  powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
 --- !u!4 &1700113255
 Transform:
   m_ObjectHideFlags: 0

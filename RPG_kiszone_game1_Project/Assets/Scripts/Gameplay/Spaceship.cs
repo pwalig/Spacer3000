@@ -14,10 +14,13 @@ public class Spaceship : MonoBehaviour
     public float speed = 1f;
     public float shootDelay = 1f;
     public int projectiles = 1;
+    public int powerupChance = 0; //0-100;
 
     private bool canShoot = true;
     [SerializeField]
     private GameObject ProjectilePrefab;
+    [SerializeField]
+    private GameObject powerupPrefab;
     //[SerializeField]
     //private float shootSpawn = 10f;
 
@@ -90,11 +93,22 @@ public class Spaceship : MonoBehaviour
         if (hp <= 0)
         {
             if (CompareTag("Player")) GameplayManager.GameOver();
+            System.Random rnd = new System.Random();
+            if (rnd.Next(1, 100) <= powerupChance)
+            {
+                UnityEngine.Debug.Log("powerup dropped");
+                GameObject clonedPowerup= Instantiate(powerupPrefab, transform.position, Quaternion.Euler(0f, 0f, 0f)) ;
+            }
             VFXManager.CreateEffect(transform.position, 1);
             VFXManager.CreateEffect(transform.position, 3);
             Destroy(gameObject);
             CameraShake.Shake(400f);
         }
+    }
+
+    public void Powerup()
+    {
+        projectiles += 1;
     }
 
     void Update()
