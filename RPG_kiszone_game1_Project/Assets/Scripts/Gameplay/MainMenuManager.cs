@@ -28,6 +28,7 @@ public class MainMenuManager : MonoBehaviour
         menus.Add(GameObject.Find("PlanetGroup"));
         GameObject.Find("DifficultyDropdown").GetComponent<TMP_Dropdown>().value = (int)GameData.difficultyLevel;
         GameObject.Find("VolumeSlider").GetComponent<Slider>().value = GameData.volume;
+        GameObject.Find("ShakeSlider").GetComponent<Slider>().value = CameraShake.globalIntensity;
     }
     private void Start()
     {
@@ -46,9 +47,9 @@ public class MainMenuManager : MonoBehaviour
     {
         // reduce camera shake when in different settings
         if (menuId != 0)
-            GameObject.Find("Main Camera").GetComponent<CameraShake>().intensity = 0.1f;
+            CameraShake.SetMuffle(true);
         else
-            GameObject.Find("Main Camera").GetComponent<CameraShake>().intensity = 1f;
+            CameraShake.SetMuffle(false);
 
         for (int i = 0; i < menus.Count; i++)
         {
@@ -63,5 +64,9 @@ public class MainMenuManager : MonoBehaviour
     public void ChangeVolume (float volume)
     {
         GameData.volume = volume;
+    }
+    public void ChangeCameraShakeIntensity(float intensity)
+    {
+        CameraShake.globalIntensity = intensity;
     }
 }
