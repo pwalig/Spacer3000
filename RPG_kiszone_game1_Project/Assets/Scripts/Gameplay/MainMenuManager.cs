@@ -27,6 +27,7 @@ public class MainMenuManager : MonoBehaviour
         menus.Add(GameObject.Find("CreditsGroup"));
         menus.Add(GameObject.Find("PlanetGroup"));
         GameObject.Find("DifficultyDropdown").GetComponent<TMP_Dropdown>().value = (int)GameData.difficultyLevel;
+        GameObject.Find("QualityDropdown").GetComponent<TMP_Dropdown>().value = (int)QualitySettings.GetQualityLevel();
         GameObject.Find("VolumeSlider").GetComponent<Slider>().value = GameData.volume;
         GameObject.Find("ShakeSlider").GetComponent<Slider>().value = CameraShake.globalIntensity;
     }
@@ -40,8 +41,12 @@ public class MainMenuManager : MonoBehaviour
     }
     public void Quit()
     {
+#if (UNITY_EDITOR)
         UnityEditor.EditorApplication.isPlaying = false;
-        //Application.Quit(); change to this on build
+#endif
+#if(UNITY_STANDALONE)
+        Application.Quit();
+#endif
     }
     public void ChangeMenu(int menuId)
     {
@@ -60,6 +65,10 @@ public class MainMenuManager : MonoBehaviour
     public void ChangeDifficultyLevel(int difficulty)
     {
         GameData.difficultyLevel = (GameData.Difficulty)difficulty;
+    }
+    public void ChangeQualityLevel(int qualityLevel)
+    {
+        QualitySettings.SetQualityLevel(qualityLevel);
     }
     public void ChangeVolume (float volume)
     {
