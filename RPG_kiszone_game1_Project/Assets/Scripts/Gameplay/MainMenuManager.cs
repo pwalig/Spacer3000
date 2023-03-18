@@ -26,6 +26,7 @@ public class MainMenuManager : MonoBehaviour
         menus.Add(GameObject.Find("SettingsGroup"));
         menus.Add(GameObject.Find("CreditsGroup"));
         menus.Add(GameObject.Find("PlanetGroup"));
+        menus.Add(GameObject.Find("GalleryGroup"));
         GameObject.Find("DifficultyDropdown").GetComponent<TMP_Dropdown>().value = (int)GameData.difficultyLevel;
         GameObject.Find("QualityDropdown").GetComponent<TMP_Dropdown>().value = (int)QualitySettings.GetQualityLevel();
         GameObject.Find("VolumeSlider").GetComponent<Slider>().value = GameData.volume;
