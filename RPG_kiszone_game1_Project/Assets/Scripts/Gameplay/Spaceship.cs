@@ -12,6 +12,7 @@ public class Spaceship : MonoBehaviour
     public float maxHp = 100f;
     public float hp = 100f;
     public float speed = 1f;
+    public float responsiveness = 1000f; //works only if GameplayManager.movement_mode == true;
     public float shootDelay = 1f;
     public int projectiles = 1;
     public int powerupChance = 0; //0-100;
@@ -25,6 +26,8 @@ public class Spaceship : MonoBehaviour
     //private float shootSpawn = 10f;
 
     ParticleSystem smoke = null;
+
+    Vector3 currentSpeed = Vector3.zero; 
 
     void Awake()
     {
@@ -113,7 +116,25 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
-        transform.position += new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0).normalized * speed * Time.deltaTime; //spaceship movement
+        Vector3 moveDirection = new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0);
+        if (GameplayManager.movementDirectionNormalize || moveDirection.magnitude > 1f) moveDirection.Normalize();
+
+        if (GameplayManager.movementMode)
+        {
+            if (moveDirection.magnitude > 0.05f)
+            {
+                currentSpeed += moveDirection * responsiveness * Time.deltaTime;
+            }
+            else
+            {
+                if (responsiveness * Time.deltaTime <= (currentSpeed - Vector3.zero).magnitude) currentSpeed -= currentSpeed.normalized * responsiveness * Time.deltaTime;
+                else currentSpeed = Vector3.zero;
+            }
+            if (currentSpeed.magnitude > speed) currentSpeed = currentSpeed.normalized * speed;
+            transform.position += currentSpeed * Time.deltaTime;
+        }
+        else transform.position += moveDirection * speed * Time.deltaTime; //spaceship movement
+
         if (controller.shoot && canShoot) StartCoroutine(Shoot());
     }
 

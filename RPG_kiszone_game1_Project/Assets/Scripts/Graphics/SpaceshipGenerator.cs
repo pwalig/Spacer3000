@@ -24,6 +24,7 @@ public struct Pass
 [System.Serializable]
 public struct MeshGroup
 {
+    public string name;
     public List<Mesh> meshes;
 }
 

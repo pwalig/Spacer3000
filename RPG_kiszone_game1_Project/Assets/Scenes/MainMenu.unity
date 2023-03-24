@@ -2410,18 +2410,22 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
   - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
   meshes:
-  - meshes:
+  - name: Cores
+    meshes:
     - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - meshes:
+  - name: Wings
+    meshes:
     - {fileID: -424755751035905546, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 973543403404581923, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - meshes:
+  - name: Weapons
+    meshes:
     - {fileID: 2165579551946672802, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 2941274158721294118, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 7197068143331612903, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - meshes:
+  - name: Greebles
+    meshes:
     - {fileID: -2010744640243958960, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: -7332548585985969769, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: -4894330547861294975, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
@@ -6114,7 +6118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000038146973}
+  m_AnchoredPosition: {x: 0, y: 0.000019073486}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &869340511
@@ -8089,8 +8093,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2009257111}
   m_HandleRect: {fileID: 2009257110}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.8799999
+  m_Value: 1
+  m_Size: 0.88
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9900,7 +9904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00005340576}
+  m_AnchoredPosition: {x: 0, y: 0.0000038146973}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1464050678

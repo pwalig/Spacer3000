@@ -607,6 +607,7 @@ MonoBehaviour:
   maxHp: 100
   hp: 100
   speed: 100
+  responsiveness: 2000
   shootDelay: 0.5
   projectiles: 1
   powerupChance: 0
@@ -5479,7 +5480,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 232.6, y: 122.5}
+  m_SizeDelta: {x: 348.7, y: 284.6}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &674685143
 MonoBehaviour:
@@ -5783,7 +5784,17 @@ MonoBehaviour:
 
     Space - shoot
 
-    Esc - pause'
+    Esc - pause
+
+
+    Dev Commands:
+
+    M
+    - movement mode
+
+    N - normalize input
+
+    P - projectile_destroy'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7260,18 +7271,22 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
   - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
   meshes:
-  - meshes:
+  - name: Cores
+    meshes:
     - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - meshes:
+  - name: Wings
+    meshes:
     - {fileID: -424755751035905546, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 973543403404581923, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - meshes:
+  - name: Weapons
+    meshes:
     - {fileID: 2165579551946672802, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 2941274158721294118, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: 7197068143331612903, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - meshes:
+  - name: Greebles
+    meshes:
     - {fileID: -2010744640243958960, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: -7332548585985969769, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - {fileID: -4894330547861294975, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
@@ -7511,6 +7526,7 @@ MonoBehaviour:
   maxHp: 100
   hp: 100
   speed: 50
+  responsiveness: 2000
   shootDelay: 1
   projectiles: 1
   powerupChance: 100

@@ -8,6 +8,8 @@ public class GameplayManager : MonoBehaviour
     static GameplayManager Manager;
     public static Transform playerTransform;
     public static bool paused;
+    public static bool movementMode = false;
+    public static bool movementDirectionNormalize = false;
     public static bool projectile_destroy = true;
     static GameObject PauseMenu;
     static GameObject GameOverMenu;
@@ -75,5 +77,11 @@ public class GameplayManager : MonoBehaviour
             if (paused) UnPause();
             else Pause();
         }
+
+#if (UNITY_EDITOR)
+        if (Input.GetKeyDown(KeyCode.M)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
+        if (Input.GetKeyDown(KeyCode.N)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
+        if (Input.GetKeyDown(KeyCode.P)) { projectile_destroy = !projectile_destroy; Debug.Log("projectile_destroy: " + projectile_destroy); }
+#endif
     }
 }
