@@ -2,42 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public struct Pass
-{
-    public string passName;
-    public enum PartPlacementMethod { Loose, Interpolate, Scatter };
-    public PartPlacementMethod placementMethod;
-    public enum PartRotationMethod { Set, Outward, Normal };
-    public PartRotationMethod rotationMethod;
-    public int partsGroup;
-    public bool mirror;
-    public int seed;
-    public bool randomizeSeed;
-    public int amount;
-    public AnimationCurve scaleDistribution;
-    public Vector3 randomPostRotation;
-    public List<int> assignToLayers;
-    public List<float> parameters;
-}
-
-[System.Serializable]
-public struct MeshGroup
-{
-    public string name;
-    public List<Mesh> meshes;
-}
-
 public class SpaceshipGenerator : MonoBehaviour
 {
-    [SerializeField] List<string> notes;
-    [SerializeField] bool randomizeSeeds;
+    [SerializeField] SpaceshipGeneratorPreset preset;
     GameObject partTempalte;
-    [SerializeField] List<Pass> passes;
-    [SerializeField] List<Material> materials;
-    [SerializeField] List<MeshGroup> meshes;
     List<List<GameObject>> customLayers = new();
     List<GameObject> parts = new();
+    List<MeshRenderer> meshRenderers = new();
 
     void Start()
     {
@@ -46,7 +17,7 @@ public class SpaceshipGenerator : MonoBehaviour
 
     void RunPass(Pass pass)
     {
-        if (!pass.randomizeSeed && !randomizeSeeds)
+        if (!pass.randomizeSeed && !preset.randomizeSeeds)
             Random.InitState(pass.seed);
 
         for (int i = 0; i < pass.amount; i++)
@@ -138,8 +109,15 @@ public class SpaceshipGenerator : MonoBehaviour
             }
 
             // add mesh and material
-            part.AddComponent<MeshFilter>().mesh = meshes[pass.partsGroup].meshes[Random.Range(0, meshes[pass.partsGroup].meshes.Count)];
-            part.AddComponent<MeshRenderer>().material = materials[Random.Range(0, materials.Count)];
+            part.AddComponent<MeshFilter>().mesh = preset.meshes[pass.partsGroup].meshes[Random.Range(0, preset.meshes[pass.partsGroup].meshes.Count)];
+
+            if (pass.addToRenderers)
+            {
+                MeshRenderer partMeshRenderer = part.AddComponent<MeshRenderer>();
+                partMeshRenderer.material = GameData.availableMaterials[GameData.selectedMaterialId];
+                meshRenderers.Add(partMeshRenderer);
+            }
+            else part.AddComponent<MeshRenderer>().material = preset.materials[Random.Range(0, preset.materials.Count)];
 
             // set random rotation and scale
             part.transform.Rotate(new Vector3(Random.Range(-pass.randomPostRotation.x, pass.randomPostRotation.x), Random.Range(-pass.randomPostRotation.y, pass.randomPostRotation.y), Random.Range(-pass.randomPostRotation.z, pass.randomPostRotation.z)));
@@ -166,6 +144,7 @@ public class SpaceshipGenerator : MonoBehaviour
                 if (pass.assignToLayers.Count > -1)
                     foreach (int layer in pass.assignToLayers)
                         customLayers[layer].Add(part2);
+                if (pass.addToRenderers) meshRenderers.Add(part2.GetComponent<MeshRenderer>());
             }
         }
     }
@@ -183,13 +162,13 @@ public class SpaceshipGenerator : MonoBehaviour
         transform.position = Vector3.zero;
 
         // initialise custom layers
-        foreach (Pass pass in passes)
+        foreach (Pass pass in preset.passes)
             foreach (int count in pass.assignToLayers)
                 while (customLayers.Count <= count)
                     customLayers.Add(new List<GameObject>());
 
         // run passes
-        foreach (Pass p in passes)
+        foreach (Pass p in preset.passes)
         {
             RunPass(p);
         }
@@ -205,11 +184,25 @@ public class SpaceshipGenerator : MonoBehaviour
         foreach (List<GameObject> _parts in customLayers)
             _parts.Clear();
         customLayers.Clear();
+        meshRenderers.Clear();
 
         foreach (GameObject part in parts)
         {
             Destroy(part);
         }
         parts.Clear();
+    }
+    public List<MeshRenderer> GetMeshRenderers()
+    {
+        return meshRenderers;
+    }
+    public void SetPreset(SpaceshipGeneratorPreset _preset)
+    {
+        preset = _preset;
+        Generate();
+    }
+    public SpaceshipGeneratorPreset GetPreset()
+    {
+        return preset;
     }
 }

@@ -21,18 +21,30 @@ public class GameplayManager : MonoBehaviour
         else
             Destroy(this);
 
-        if (GameData.availablePlanets == null)
+        if (GameData.availablePlanets == null || GameData.availableSpaceships == null)
             SceneManager.LoadScene("MainMenu");
     }
+
     private void Start()
     {
         PauseMenu = GameObject.Find("PauseMenu");
         GameOverMenu = GameObject.Find("GameOverMenu");
         GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
-        if (GameData.availableMaterials != null) playerGameObject.GetComponentInChildren<MeshRenderer>().material = GameData.availableMaterials[GameData.selectedMaterialId];
+        //if (GameData.availableMaterials != null) playerGameObject.GetComponentInChildren<MeshRenderer>().material = GameData.availableMaterials[GameData.selectedMaterialId];
+
+        // make terrain
         if (GameData.availablePlanets[GameData.selectedPlanetId].terrainAsset != null)
             Instantiate(GameData.availablePlanets[GameData.selectedPlanetId].terrainAsset).transform.position = new Vector3(0f, -200f, 300f);
         playerTransform = playerGameObject.transform;
+
+        // generate same spaceship as in main menu
+        GameObject psv = GameObject.Find("PlayerSpaceshipVisuals");
+        if (psv != null)
+        {
+            Debug.Log("generator found!");
+            psv.AddComponent<SpaceshipGenerator>().SetPreset(GameData.availableSpaceships[GameData.selectedSpaceshipId]);
+        }
+
         UnPause();
     }
     public static Vector3 GetPlayerPosition(Vector3 requestPosition = default(Vector3))

@@ -625,9 +625,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1425540207}
   - {fileID: 1994077055}
   - {fileID: 581746049}
+  - {fileID: 1325413029}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -662,7 +662,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 552348067}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!199 &581746050
 ParticleSystemRenderer:
@@ -6381,6 +6381,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283956208}
   m_CullTransparentMesh: 1
+--- !u!1 &1325413028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325413029}
+  - component: {fileID: 1325413030}
+  m_Layer: 0
+  m_Name: PlayerSpaceshipVisuals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325413029
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325413028}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1381114481}
+  m_Father: {fileID: 552348067}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325413030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325413028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa1867268521ba4db5d92d383ecbf87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  systems:
+  - f: 2
+    z: 0.5
+    r: -2
+    amplitude: 30
+    offset: 0
+  - f: 2
+    z: 0.5
+    r: -2
+    amplitude: 15
+    offset: 180
 --- !u!1 &1378767615
 GameObject:
   m_ObjectHideFlags: 0
@@ -6484,116 +6540,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1001 &1425540206
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 552348067}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
-    - target: {fileID: 919132149155446097, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-      propertyPath: m_Name
-      value: TestSpaceship1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
---- !u!4 &1425540207 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-  m_PrefabInstance: {fileID: 1425540206}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1425540208 stripped
+--- !u!1 &1381114480
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5b0bb63cf5cda0c4182f6d7f72e490bd, type: 3}
-  m_PrefabInstance: {fileID: 1425540206}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1425540214
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425540208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fa1867268521ba4db5d92d383ecbf87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  systems:
-  - f: 2
-    z: 0.5
-    r: -2
-    amplitude: 30
-    offset: 0
-  - f: 2
-    z: 0.5
-    r: -2
-    amplitude: 15
-    offset: 180
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1381114481}
+  m_Layer: 0
+  m_Name: partTemplate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1381114481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381114480}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1325413029}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1491486058
 GameObject:
   m_ObjectHideFlags: 0
@@ -7023,277 +7000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929bad331474014780dc7e071344676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notes:
-  - layer 0 - interpolate between these
-  - layer 1 - put wings on
-  - layer 2 - put greebles and guns on top
-  randomizeSeeds: 1
-  passes:
-  - passName: body inline
-    placementMethod: 0
-    rotationMethod: 0
-    partsGroup: 0
-    mirror: 0
-    seed: 500
-    randomizeSeed: 0
-    amount: 7
-    scaleDistribution:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    randomPostRotation: {x: 15, y: 0, z: 0}
-    assignToLayers: 02000000
-    parameters:
-    - 0
-    - 25
-    - 7
-  - passName: body random wide
-    placementMethod: 0
-    rotationMethod: 0
-    partsGroup: 0
-    mirror: 1
-    seed: 160
-    randomizeSeed: 0
-    amount: 10
-    scaleDistribution:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.5005335
-        value: 1
-        inSlope: 2.8655937
-        outSlope: 2.8655937
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.07410183
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    randomPostRotation: {x: 0, y: 0, z: 0}
-    assignToLayers: 000000000100000002000000
-    parameters:
-    - 15
-    - 20
-    - 4
-  - passName: body fill
-    placementMethod: 1
-    rotationMethod: 0
-    partsGroup: 0
-    mirror: 1
-    seed: -1310
-    randomizeSeed: 0
-    amount: 10
-    scaleDistribution:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.69019556
-        inSlope: 0.079780936
-        outSlope: 0.079780936
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0.7699765
-        inSlope: 0.079780936
-        outSlope: 0.079780936
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    randomPostRotation: {x: 0, y: 15, z: 0}
-    assignToLayers: 02000000
-    parameters:
-    - 0
-  - passName: wings
-    placementMethod: 2
-    rotationMethod: 1
-    partsGroup: 1
-    mirror: 1
-    seed: 500
-    randomizeSeed: 0
-    amount: 16
-    scaleDistribution:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    randomPostRotation: {x: 0, y: 0, z: 0}
-    assignToLayers: 02000000
-    parameters:
-    - 1
-    - 0
-    - 0
-    - 0.5
-    - 1.1
-  - passName: guns
-    placementMethod: 2
-    rotationMethod: 1
-    partsGroup: 2
-    mirror: 1
-    seed: 0
-    randomizeSeed: 0
-    amount: 12
-    scaleDistribution:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0.8940693
-        inSlope: 0.09347534
-        outSlope: 0.09347534
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0.98754466
-        inSlope: 0.09347534
-        outSlope: 0.09347534
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    randomPostRotation: {x: 15, y: 0, z: 0}
-    assignToLayers: 
-    parameters:
-    - 2
-    - 0
-    - 0
-    - 1
-    - 1
-  - passName: greebles
-    placementMethod: 2
-    rotationMethod: 2
-    partsGroup: 3
-    mirror: 1
-    seed: 500
-    randomizeSeed: 0
-    amount: 1000
-    scaleDistribution:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: -0.008784854
-        value: 0.3875011
-        inSlope: 0.0351967
-        outSlope: 0.0351967
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.0114654
-        value: 0.42341053
-        inSlope: 0.0351967
-        outSlope: 0.0351967
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    randomPostRotation: {x: 0, y: 0, z: 0}
-    assignToLayers: 
-    parameters:
-    - 2
-  materials:
-  - {fileID: 2100000, guid: 1700a5e1f75dae64d9e3951417803359, type: 2}
-  - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
-  - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
-  meshes:
-  - name: Cores
-    meshes:
-    - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - name: Wings
-    meshes:
-    - {fileID: -424755751035905546, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: 973543403404581923, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - name: Weapons
-    meshes:
-    - {fileID: 2165579551946672802, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: 2941274158721294118, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: 7197068143331612903, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-  - name: Greebles
-    meshes:
-    - {fileID: -2010744640243958960, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: -7332548585985969769, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: -4894330547861294975, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: 1156859308178620914, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: -2302468678975828958, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: -2467390685343385556, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
-    - {fileID: 8382293008533190388, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+  preset: {fileID: 11400000, guid: 84ef0a1cb62055a409710f4cea54b808, type: 2}
 --- !u!114 &1614532486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7714,7 +7421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 552348067}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!199 &1994077056
 ParticleSystemRenderer:

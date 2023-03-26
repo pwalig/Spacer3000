@@ -14,15 +14,19 @@ PrefabInstance:
     - target: {fileID: 6273680937973701658, guid: 8c3bfc3836ebf9445aedf8afb64c177a, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: -7332548585985969769, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - target: {fileID: 6273680937973701658, guid: 8c3bfc3836ebf9445aedf8afb64c177a, type: 3}
       propertyPath: m_Mesh1
       value: 
-      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: -2467390685343385556, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - target: {fileID: 6273680937973701658, guid: 8c3bfc3836ebf9445aedf8afb64c177a, type: 3}
       propertyPath: m_Mesh2
       value: 
-      objectReference: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: -2302468678975828958, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - target: {fileID: 6273680937973701658, guid: 8c3bfc3836ebf9445aedf8afb64c177a, type: 3}
+      propertyPath: m_Mesh3
+      value: 
+      objectReference: {fileID: 1156859308178620914, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
     - target: {fileID: 6273680937973701658, guid: 8c3bfc3836ebf9445aedf8afb64c177a, type: 3}
       propertyPath: m_RenderMode
       value: 4

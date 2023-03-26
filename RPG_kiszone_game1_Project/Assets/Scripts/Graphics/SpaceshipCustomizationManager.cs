@@ -7,17 +7,45 @@ using TMPro;
 public class SpaceshipCustomizationManager : MonoBehaviour
 {
     public List<Material> startMaterials;
-    [SerializeField] MeshRenderer spaceshipMeshRenderer;
+    public List<SpaceshipGeneratorPreset> startSpaceships;
+    //[SerializeField] MeshRenderer spaceshipMeshRenderer;
+    [SerializeField] SpaceshipGenerator playerSpaceshipGenerator;
+    Transform platform;
     float hue = 0f;
     float saturation = 0f;
     float value = 1f;
     private void Awake()
     {
+        platform = GameObject.Find("SpaceShipPlatform").transform;
+        if (GameData.availableSpaceships == null)
+        {
+            for (int j = 0; j < 10; j++)
+            {
+                SpaceshipGeneratorPreset sgp = ScriptableObject.CreateInstance<SpaceshipGeneratorPreset>();
+                sgp.CopyPreset(startSpaceships[0]);
+                sgp.name = sgp.name.Substring(0, 7) + j + ": ";
+                for (int i = 0; i < sgp.passes.Count; i++)
+                {
+                    Pass tmp_pass = sgp.passes[i];
+                    int seedincr =  Random.Range(0, 100);
+                    tmp_pass.seed = seedincr;
+                    sgp.name += seedincr + " ";
+                    sgp.passes[i] = tmp_pass;
+                }
+                startSpaceships.Add(sgp);
+            }
+            startSpaceships.RemoveAt(0);
+            GameData.availableSpaceships = startSpaceships;
+        }
+            
         if (GameData.availableMaterials == null)
             GameData.availableMaterials = startMaterials;
         SetMaterial(GameData.selectedMaterialId);
-        SetDropdown(GameData.selectedMaterialId);
+        SetMaterialDropdown(GameData.selectedMaterialId);
         SetSliders();
+
+        
+        SetShapePicker();
     }
 
     void SetSliders()
@@ -28,7 +56,7 @@ public class SpaceshipCustomizationManager : MonoBehaviour
         GameObject.Find("ValueSlider").GetComponent<Slider>().value = value;
     }
 
-    void SetDropdown(int matId = 0)
+    void SetMaterialDropdown(int matId = 0)
     {
         TMP_Dropdown materialDropdown = GameObject.Find("MaterialDropdown").GetComponent<TMP_Dropdown>();
         materialDropdown.options.Clear();
@@ -37,10 +65,20 @@ public class SpaceshipCustomizationManager : MonoBehaviour
         materialDropdown.value = matId;
     }
 
+    void SetShapePicker()
+    {
+        TMP_Text spaceshipName = GameObject.Find("SpaceshipModelName").GetComponent<TMP_Text>();
+        spaceshipName.text = GameData.availableSpaceships[GameData.selectedSpaceshipId].name;
+        playerSpaceshipGenerator.SetPreset(GameData.availableSpaceships[GameData.selectedSpaceshipId]);
+    }
+
     public void SetMaterial(int matId = 0)
     {
         GameData.selectedMaterialId = matId;
-        spaceshipMeshRenderer.material = GameData.availableMaterials[matId];
+        foreach (MeshRenderer mr in playerSpaceshipGenerator.GetMeshRenderers())
+        {
+            mr.material = GameData.availableMaterials[GameData.selectedMaterialId];
+        }
     }
 
     void ChangeColor()
@@ -65,5 +103,27 @@ public class SpaceshipCustomizationManager : MonoBehaviour
     {
         value = val;
         ChangeColor();
+    }
+
+    public void ChangeShape(int increment)
+    {
+        GameData.selectedSpaceshipId += increment;
+        while (GameData.selectedSpaceshipId < 0) GameData.selectedSpaceshipId += GameData.availableSpaceships.Count;
+        if (GameData.selectedSpaceshipId >= GameData.availableSpaceships.Count) GameData.selectedSpaceshipId -= GameData.availableSpaceships.Count;
+
+        SetShapePicker();
+    }
+
+    [SerializeField] SecondOrderDynamics spaceshipRotation;
+    private void Start()
+    {
+        spaceshipRotation.Initialise();
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.E)) platform.Rotate(Vector3.up * Time.deltaTime * spaceshipRotation.Update(0f));
+        else if (Input.GetKey(KeyCode.Q)) platform.Rotate(Vector3.up * Time.deltaTime * spaceshipRotation.Update(50f));
+        else if (Input.GetKey(KeyCode.E)) platform.Rotate(Vector3.up * Time.deltaTime * spaceshipRotation.Update(-50f));
+        else platform.Rotate(Vector3.up * Time.deltaTime * spaceshipRotation.Update(0f));
     }
 }
