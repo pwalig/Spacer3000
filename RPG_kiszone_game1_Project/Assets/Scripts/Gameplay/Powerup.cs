@@ -20,7 +20,7 @@ public class Powerup : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            other.gameObject.GetComponent<Spaceship>().Powerup();
+            other.gameObject.GetComponent<PlayerSpaceship>().Powerup();
             Destroy(gameObject);
         }
     }

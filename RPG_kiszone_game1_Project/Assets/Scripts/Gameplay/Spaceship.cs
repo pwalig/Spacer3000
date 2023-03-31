@@ -6,22 +6,50 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
+
+[System.Serializable]
+public struct OneShoot
+{
+    public Vector3 position;
+    public float rotation;
+    //public float speed;
+    public float time;
+}
+
+[System.Serializable]
+public class AttackPattern //class describing one attack
+{
+    public string name;
+    public int iterations; //how may times to repeat the attack pattern
+    public List<OneShoot> projectiles;
+    public IEnumerator Perform(Transform host, GameObject ProjectilePrefab)
+    {
+        for (int i = 0; i < iterations; i++)
+        {
+            foreach (OneShoot shoot in projectiles)
+            {
+                CameraShake.Shake(30f);
+                GameObject clonedProjectile = GameObject.Instantiate(ProjectilePrefab, host.position + shoot.position, host.rotation);
+                VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+                clonedProjectile.transform.Rotate(Vector3.forward * shoot.rotation);
+                clonedProjectile.gameObject.tag = host.tag + "_Projectile";
+                yield return new WaitForSeconds(shoot.time);
+            }
+        }
+    }
+}
 public class Spaceship : MonoBehaviour
 {
     SpaceshipController controller; //determines what controls the shpaceship: player or ai
     public float maxHp = 100f;
     public float hp = 100f;
-    public float speed = 1f;
-    public float responsiveness = 1000f; //works only if GameplayManager.movement_mode == true;
+    public float speed = 20f;
+    public float responsiveness = 1000f; //Spaceship's acceleration and deacceleration. Works only if GameplayManager.movement_mode == true;
     public float shootDelay = 1f;
-    public int projectiles = 1;
-    public int powerupChance = 0; //0-100;
+    public List<AttackPattern> attacks;
 
-    private bool canShoot = true;
-    [SerializeField]
-    private GameObject ProjectilePrefab;
-    [SerializeField]
-    private GameObject powerupPrefab;
+    bool canShoot = true;
+    public GameObject ProjectilePrefab;
     //[SerializeField]
     //private float shootSpawn = 10f;
 
@@ -35,54 +63,14 @@ public class Spaceship : MonoBehaviour
         if (controller == null) controller = gameObject.AddComponent<SpaceshipController>(); //if controller is missing create empty one
     }
 
-    public IEnumerator Shoot()
+    public virtual IEnumerator Shoot()
     {
-        //UnityEngine.Debug.Log("Ship: " + name + " has shot");
-        //GameObject clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.up * shootSpawn, transform.rotation);
-
-        //Create smoke effect and camera shake
-        //VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-        CameraShake.Shake(30f);
-
-        string tag="";
-        if (gameObject.tag == "Player") tag = "Player_Projectile";//clonedProjectile.gameObject.tag = "Player_Projectile";
-        if (gameObject.tag == "Enemy") tag = "Enemy_Projectile"; //clonedProjectile.gameObject.tag = "Enemy_Projectile";
-        canShoot = false;
-        GameObject clonedProjectile;
-        if (projectiles==1)
-        {
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
-            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-            clonedProjectile.gameObject.tag = tag;
-        }
-        if (projectiles == 2)
-        {
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position + transform.right * 5, transform.rotation);
-            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-            clonedProjectile.gameObject.tag = tag;
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position - transform.right * 5, transform.rotation);
-            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-            clonedProjectile.gameObject.tag = tag;
-        }
-        if (projectiles == 3)
-        {
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
-            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-            clonedProjectile.gameObject.tag = tag;
-            clonedProjectile.gameObject.transform.Rotate(0, 0, 10);
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
-            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-            clonedProjectile.gameObject.tag = tag;
-            clonedProjectile = Instantiate(ProjectilePrefab, transform.position, transform.rotation);
-            VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-            clonedProjectile.gameObject.tag = tag;
-            clonedProjectile.gameObject.transform.Rotate(0, 0, -10);
-        }
+        // in child class override this member and implement shooting logic before return base.Shoot();
         yield return new WaitForSeconds(shootDelay);
         canShoot = true;
     }
 
-    public void DealDamage(float damage)
+    public virtual void DealDamage(float damage)
     {
         hp -= damage;
 
@@ -92,34 +80,26 @@ public class Spaceship : MonoBehaviour
         var emm = smoke.emission;
         emm.rateOverTime = (maxHp - hp) / maxHp * 10f; //z jakiegos glupiego powodu nie mozna po prostu zrobic: smoke.emission.rateOverTime = (maxHp - hp) / maxHp * 10f; - bo unity wyrzuca blad
 
-        //destroy ship with fancy effects
-        if (hp <= 0)
-        {
-            if (CompareTag("Player")) GameplayManager.GameOver();
-            System.Random rnd = new System.Random();
-            if (rnd.Next(1, 100) <= powerupChance)
-            {
-                UnityEngine.Debug.Log("powerup dropped");
-                GameObject clonedPowerup= Instantiate(powerupPrefab, transform.position, Quaternion.Euler(0f, 0f, 0f)) ;
-            }
-            VFXManager.CreateEffect(transform.position, 1);
-            VFXManager.CreateEffect(transform.position, 3);
-            Destroy(gameObject);
-            CameraShake.Shake(400f);
-        }
+        if (hp <= 0) Die();
     }
 
-    public void Powerup()
+    public virtual void Die()
     {
-        projectiles += 1;
+        //destroy ship with fancy effects
+        if (CompareTag("Player")) GameplayManager.GameOver();
+        VFXManager.CreateEffect(transform.position, 1);
+        VFXManager.CreateEffect(transform.position, 3);
+        Destroy(gameObject);
+        CameraShake.Shake(400f);
     }
+
 
     void Update()
     {
         Vector3 moveDirection = new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0);
-        if (GameplayManager.movementDirectionNormalize || moveDirection.magnitude > 1f) moveDirection.Normalize();
+        if (GameplayManager.movementDirectionNormalize || moveDirection.magnitude > 1f) moveDirection.Normalize(); //disable ability to move slowly granted by gamepads and joysticks. To activate press N while GameplayManager is present.
 
-        if (GameplayManager.movementMode)
+        if (GameplayManager.movementMode) //Alternative way to move ship involving acceleration and deacceleration. To activate press M while GameplayManager is present.
         {
             if (moveDirection.magnitude > 0.05f)
             {
@@ -135,7 +115,11 @@ public class Spaceship : MonoBehaviour
         }
         else transform.position += moveDirection * speed * Time.deltaTime; //spaceship movement
 
-        if (controller.shoot && canShoot) StartCoroutine(Shoot());
+        if (controller.shoot && canShoot)
+        {
+            canShoot = false;
+            StartCoroutine(Shoot());
+        }
     }
 
 }
