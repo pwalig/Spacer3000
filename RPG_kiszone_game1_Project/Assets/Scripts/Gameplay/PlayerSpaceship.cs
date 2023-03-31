@@ -14,7 +14,7 @@ public class PlayerSpaceship : Spaceship
 
     public override IEnumerator Shoot()
     {
-        StartCoroutine(attacks[projectiles-1].Perform(transform, ProjectilePrefab));
+        StartCoroutine(attacks[Mathf.Clamp(projectiles-1, 0, attacks.Count-1)].Perform(transform, ProjectilePrefab));
         return base.Shoot();
     }
 
