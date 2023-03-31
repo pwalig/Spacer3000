@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &276900103074044728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4532626985499844411}
+  - component: {fileID: 2260118305756286432}
+  m_Layer: 0
+  m_Name: Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4532626985499844411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276900103074044728}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 260, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 7889011954273417465}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &2260118305756286432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276900103074044728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b654ffda7c46a6f4c964143a39e5a755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  passes:
+  - function: 1
+    overlayMode: 0
+    direction: {x: 0, y: 0, z: 1}
+    amplitude: 120
+    frequency: 0.02
+  - function: 1
+    overlayMode: 0
+    direction: {x: 0, y: 0, z: 1}
+    amplitude: 5
+    frequency: 0.5
+  - function: 1
+    overlayMode: 0
+    direction: {x: 0, y: 0, z: 1}
+    amplitude: 5
+    frequency: 0.1
+  - function: 0
+    overlayMode: 0
+    direction: {x: 1, y: 0, z: 0}
+    amplitude: 0.5
+    frequency: 0.3
+  - function: 0
+    overlayMode: 0
+    direction: {x: 0, y: 1, z: 0}
+    amplitude: 0.5
+    frequency: 0.3
+  - function: 0
+    overlayMode: 0
+    direction: {x: 0, y: 0, z: 1}
+    amplitude: 0.5
+    frequency: 0.3
+  - function: 6
+    overlayMode: 4
+    direction: {x: 0, y: 0, z: 1}
+    amplitude: 10
+    frequency: 1
+  - function: 6
+    overlayMode: 5
+    direction: {x: 0, y: 0, z: 1}
+    amplitude: -40
+    frequency: 1
+  distance: {x: 2, y: 2}
+  resolution: {x: 130, y: 500}
+  material: {fileID: 2100000, guid: 8d0b05941276b1945b90c87977c7bb6e, type: 2}
+--- !u!1 &7889011954273417470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7889011954273417465}
+  - component: {fileID: 7889011954273417467}
+  m_Layer: 0
+  m_Name: generatedTerrain1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7889011954273417465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889011954273417470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4532626985499844411}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7889011954273417467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7889011954273417470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28483b35d7fab2146a936679e83a791f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  next: {fileID: 0}
+  objectSize: 2000
+  speed: {x: -0, y: -100, z: -0}

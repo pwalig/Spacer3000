@@ -2034,7 +2034,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 275}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 275, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &368917359
 MonoBehaviour:
@@ -4778,6 +4778,11 @@ MonoBehaviour:
     planetAsset: {fileID: 3513158203323191046, guid: dd7815d3bbf4d4b408074284200ee916, type: 3}
     terrainAsset: {fileID: 283132172404661725, guid: 45fb3cdce5c94e14c8121c0ef9ca66cb, type: 3}
     note: brrr...
+  - name: Generated
+    material: {fileID: 2100000, guid: 8dbd5c684cb4578439b4ee6ba7a47287, type: 2}
+    planetAsset: {fileID: 4296682070649052132, guid: cfde7117a7b484c4f9209f5b4ff9d9d3, type: 3}
+    terrainAsset: {fileID: 7889011954273417470, guid: e0700b7aa7dacfe499c76edfdd4ecedf, type: 3}
+    note: random and colorfull
   - name: void
     material: {fileID: 2100000, guid: df7e126a0f6f14a4c8e3a71459217869, type: 2}
     planetAsset: {fileID: 2486726641104733451, guid: c44d403b4cfa57846bf307b1eb0c24c5, type: 3}
@@ -5855,7 +5860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000038146973}
+  m_AnchoredPosition: {x: 0, y: 0.0000076293945}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &869340511
@@ -9930,7 +9935,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000011444092}
+  m_AnchoredPosition: {x: 0, y: -0.000049591064}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1464050678

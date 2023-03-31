@@ -39,11 +39,7 @@ public class GameplayManager : MonoBehaviour
 
         // generate same spaceship as in main menu
         GameObject psv = GameObject.Find("PlayerSpaceshipVisuals");
-        if (psv != null)
-        {
-            Debug.Log("generator found!");
-            psv.AddComponent<SpaceshipGenerator>().SetPreset(GameData.availableSpaceships[GameData.selectedSpaceshipId]);
-        }
+        if (psv != null) psv.AddComponent<SpaceshipGenerator>().SetPreset(GameData.availableSpaceships[GameData.selectedSpaceshipId]);
 
         UnPause();
     }
