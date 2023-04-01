@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public static class PerliNoise
 {
@@ -79,20 +80,86 @@ public static class PerliNoise
         return value; // Will return in range -1 to 1. To make it in range 0 to 1, multiply by 0.5 and add 0.5
     }
 }
+[System.Serializable]
+public class Operation
+{
+    public enum Operator { Constant_0, X_0, Y_0, Z_0, Add_2, Subtract_2, Multiply_2, Divide_2, Power_2, Min_inf, Max_inf, Sin_1, Cos_1, Tan_1, Ctg_1, Perlin_2, Random_0 }
+    public Operator _operator;
+    public List<Operation> operands;
+    public float value = 1f; // works only if Constant_0 is selected
+    public float Evaluate(Vector3 vertexPosition)
+    {
+        switch (_operator)
+        {
+            case Operator.Constant_0:
+                return value;
+            case Operator.X_0:
+                return vertexPosition.x;
+            case Operator.Y_0:
+                return vertexPosition.y;
+            case Operator.Z_0:
+                return vertexPosition.z;
+            case Operator.Add_2:
+                return operands[0].Evaluate(vertexPosition) + operands[1].Evaluate(vertexPosition);
+            case Operator.Subtract_2:
+                return operands[0].Evaluate(vertexPosition) - operands[1].Evaluate(vertexPosition);
+            case Operator.Multiply_2:
+                return operands[0].Evaluate(vertexPosition) * operands[1].Evaluate(vertexPosition);
+            case Operator.Divide_2:
+                return operands[0].Evaluate(vertexPosition) / operands[1].Evaluate(vertexPosition);
+            case Operator.Power_2:
+                return Mathf.Pow(operands[0].Evaluate(vertexPosition), operands[1].Evaluate(vertexPosition));
+            case Operator.Min_inf:
+                float min_res = operands[0].Evaluate(vertexPosition);
+                for (int i = 1; i<operands.Count; i++)
+                {
+                    float n = operands[i].Evaluate(vertexPosition);
+                    if (n < min_res) min_res = n;
+                }
+                return min_res;
+            case Operator.Max_inf:
+                float max_res = operands[0].Evaluate(vertexPosition);
+                for (int i = 1; i < operands.Count; i++)
+                {
+                    float n = operands[i].Evaluate(vertexPosition);
+                    if (n > max_res) max_res = n;
+                }
+                return max_res;
+            case Operator.Sin_1:
+                return Mathf.Sin(operands[0].Evaluate(vertexPosition));
+            case Operator.Cos_1:
+                return Mathf.Cos(operands[0].Evaluate(vertexPosition));
+            case Operator.Tan_1:
+                return Mathf.Tan(operands[0].Evaluate(vertexPosition));
+            case Operator.Ctg_1:
+                return 1f / Mathf.Tan(operands[0].Evaluate(vertexPosition));
+            case Operator.Perlin_2:
+                return PerliNoise.Perlin(operands[0].Evaluate(vertexPosition), operands[1].Evaluate(vertexPosition));
+            case Operator.Random_0:
+                return Random.Range(0f, 1f);
+        }
+        return 0f;
+    }
+}
+
+[System.Serializable]
+public class Transformation
+{
+    public Operation operation;
+    public Vector3 direction;
+    public bool active = true;
+    public void Translate(ref Vector3 vert, Vector3 offset, Vector3 normal)
+    {
+        if (active)
+        {
+            if (direction.magnitude == 0f) vert += normal * operation.Evaluate(vert + offset);
+            else vert += direction * operation.Evaluate(vert + offset);
+        }
+    }
+}
 public class TerrainGenerator : MonoBehaviour
 {
-    [System.Serializable] public struct GeneratorPass
-    {
-        public enum Function { Random, Perlin, SineX, TangentX, SineY, TangentY, Constatnt };
-        public enum Mode { Add, Multiply, Subtract, Divide, Min, Max, Average };
-        public Function function;
-        public Mode overlayMode;
-        public Vector3 direction;
-        public float amplitude;
-        public float frequency;
-    }
-
-    [SerializeField] List<GeneratorPass> passes;
+    [SerializeField] List<Transformation> transformations;
 
     [SerializeField] Vector2 distance;
     [SerializeField] Vector2 resolution;
@@ -102,7 +169,7 @@ public class TerrainGenerator : MonoBehaviour
     {
         if(GetComponent<MeshFilter>() == null)
         {
-            gameObject.AddComponent<MeshFilter>().mesh = Distort(MakeBasePlane(distance, resolution), passes, resolution);
+            gameObject.AddComponent<MeshFilter>().mesh = Distort(MakeBasePlane(distance, resolution), transformations, resolution);
             gameObject.AddComponent<MeshRenderer>().material = material;
             GetComponent<Renderer>().material.mainTexture = GenerateTexture(new Vector2Int(256, 256));
         }
@@ -147,80 +214,32 @@ public class TerrainGenerator : MonoBehaviour
         mesh.uv = newUV;
         mesh.triangles = newTriangles;
         mesh.name = "terrainMesh";
-        return mesh;
-    }
-
-    Vector3 EvaluatePass(Vector3 _base, GeneratorPass pass, Vector3 position)
-    {
-        Vector3 functionResult = pass.direction;
-        switch (pass.function)
-        {
-            case GeneratorPass.Function.Random:
-                functionResult *= Random.Range(-1f, 1f);
-                break;
-            case GeneratorPass.Function.Perlin:
-                functionResult *= PerliNoise.Perlin(position.x * pass.frequency, position.y * pass.frequency);
-                break;
-            case GeneratorPass.Function.SineX:
-                functionResult *= Mathf.Sin(position.x * pass.frequency);
-                break;
-            case GeneratorPass.Function.SineY:
-                functionResult *= Mathf.Sin(position.y * pass.frequency);
-                break;
-            case GeneratorPass.Function.TangentX:
-                functionResult *= Mathf.Tan(position.x * pass.frequency);
-                break;
-            case GeneratorPass.Function.TangentY:
-                functionResult *= Mathf.Tan(position.y * pass.frequency);
-                break;
-        }
-        functionResult *= pass.amplitude;
-        switch (pass.overlayMode)
-        {
-            case GeneratorPass.Mode.Add:
-                _base += functionResult;
-                break;
-            case GeneratorPass.Mode.Multiply:
-                _base = new Vector3(_base.x * functionResult.x, _base.y * functionResult.y, _base.z * functionResult.z);
-                break;
-            case GeneratorPass.Mode.Subtract:
-                _base -= functionResult;
-                break;
-            case GeneratorPass.Mode.Divide:
-                _base = new Vector3(_base.x / functionResult.x, _base.y / functionResult.y, _base.z / functionResult.z);
-                break;
-            case GeneratorPass.Mode.Min:
-                _base = new Vector3(Mathf.Min(_base.x, functionResult.x), Mathf.Min(_base.y, functionResult.y), Mathf.Min(_base.z, functionResult.z));
-                break;
-            case GeneratorPass.Mode.Max:
-                _base = new Vector3(Mathf.Max(_base.x, functionResult.x), Mathf.Max(_base.y, functionResult.y), Mathf.Max(_base.z, functionResult.z));
-                break;
-            case GeneratorPass.Mode.Average:
-                _base = new Vector3((_base.x + functionResult.x)/2f, (_base.y + functionResult.y) / 2f, (_base.z + functionResult.z) / 2f);
-                break;
-        }
-        return _base;
-    }
-
-    Mesh Distort (Mesh mesh, List<GeneratorPass> passes, Vector2 resolution)
-    {
-        Vector3[] newVertices = mesh.vertices;
-        for (int x = 0; x < resolution.x; x++)
-        {
-            for (int y = 0; y < resolution.y; y++)
-            {
-                int vertId = y + (int)(x * resolution.y);
-                Vector3 transformation = Vector3.zero;
-                foreach (GeneratorPass pass in passes)
-                    transformation = EvaluatePass(transformation, pass, newVertices[vertId] + transform.position);
-
-                newVertices[vertId] += transformation;
-            }
-        }
-        mesh.vertices = newVertices;
         mesh.RecalculateNormals();
         mesh.RecalculateTangents();
         mesh.RecalculateBounds();
+        return mesh;
+    }
+
+    Mesh Distort (Mesh mesh, List<Transformation> transformations, Vector2 resolution)
+    {
+        foreach (Transformation transformation in transformations)
+        {
+            Vector3[] newVertices = mesh.vertices;
+            Vector3[] normals = mesh.normals;
+            for (int x = 0; x < resolution.x; x++)
+            {
+                for (int y = 0; y < resolution.y; y++)
+                {
+                    int vertId = y + (int)(x * resolution.y);
+                    transformation.Translate(ref newVertices[vertId], transform.position, normals[vertId]);
+                }
+            }
+            mesh.vertices = newVertices;
+            mesh.RecalculateNormals();
+            mesh.RecalculateTangents();
+            mesh.RecalculateBounds();
+        }
+        
         return mesh;
     }
 

@@ -44,47 +44,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b654ffda7c46a6f4c964143a39e5a755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passes:
-  - function: 1
-    overlayMode: 0
+  transformations:
+  - operation:
+      _operator: 6
+      operands:
+      - _operator: 15
+        operands:
+        - _operator: 6
+          operands:
+          - _operator: 1
+            operands: []
+            value: 0
+          - _operator: 0
+            operands: []
+            value: 0.04
+          value: 0
+        - _operator: 6
+          operands:
+          - _operator: 2
+            operands: []
+            value: 0
+          - _operator: 0
+            operands: []
+            value: 0.04
+          value: 0
+        value: 0
+      - _operator: 0
+        operands: []
+        value: 50
+      value: 0
     direction: {x: 0, y: 0, z: 1}
-    amplitude: 120
-    frequency: 0.02
-  - function: 1
-    overlayMode: 0
-    direction: {x: 0, y: 0, z: 1}
-    amplitude: 5
-    frequency: 0.5
-  - function: 1
-    overlayMode: 0
-    direction: {x: 0, y: 0, z: 1}
-    amplitude: 5
-    frequency: 0.1
-  - function: 0
-    overlayMode: 0
-    direction: {x: 1, y: 0, z: 0}
-    amplitude: 0.5
-    frequency: 0.3
-  - function: 0
-    overlayMode: 0
-    direction: {x: 0, y: 1, z: 0}
-    amplitude: 0.5
-    frequency: 0.3
-  - function: 0
-    overlayMode: 0
-    direction: {x: 0, y: 0, z: 1}
-    amplitude: 0.5
-    frequency: 0.3
-  - function: 6
-    overlayMode: 4
-    direction: {x: 0, y: 0, z: 1}
-    amplitude: 10
-    frequency: 1
-  - function: 6
-    overlayMode: 5
-    direction: {x: 0, y: 0, z: 1}
-    amplitude: -40
-    frequency: 1
+    active: 1
+  - operation:
+      _operator: 6
+      operands:
+      - _operator: 10
+        operands:
+        - _operator: 0
+          operands: []
+          value: 0
+        - _operator: 3
+          operands: []
+          value: 0
+        value: 0
+      - _operator: 0
+        operands: []
+        value: 0.9
+      value: 0
+    direction: {x: 0, y: 0, z: 0}
+    active: 1
+  - operation:
+      _operator: 10
+      operands:
+      - _operator: 0
+        operands: []
+        value: 0
+      - _operator: 9
+        operands:
+        - _operator: 0
+          operands: []
+          value: 10
+        - _operator: 3
+          operands: []
+          value: 0
+        value: 0
+      value: 0
+    direction: {x: 0, y: 0, z: 2}
+    active: 1
+  - operation:
+      _operator: 16
+      operands: []
+      value: 0
+    direction: {x: 0, y: 0, z: 0}
+    active: 1
   distance: {x: 2, y: 2}
   resolution: {x: 130, y: 500}
   material: {fileID: 2100000, guid: 8d0b05941276b1945b90c87977c7bb6e, type: 2}
