@@ -12,6 +12,7 @@ public class GameplayManager : MonoBehaviour
     public static bool movementMode = false;
     public static bool movementDirectionNormalize = false;
     public static bool projectile_destroy = true;
+    public static Vector2 gameAreaSize = new Vector2(140f, 80f);
     static GameObject PauseMenu;
     static GameObject GameOverMenu;
     static GameObject BossHpBarGroup;
@@ -96,6 +97,11 @@ public class GameplayManager : MonoBehaviour
         Application.Quit();
 #endif
     }
+    void ChangeBounds(float delta)
+    {
+        gameAreaSize -= new Vector2(7f, 4f) * delta;
+        CameraShake.startPosition -= new Vector3(0f, -22f, -33f) * delta;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
@@ -107,7 +113,9 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
         if (Input.GetKeyDown(KeyCode.N)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
         if (Input.GetKeyDown(KeyCode.P)) { projectile_destroy = !projectile_destroy; Debug.Log("projectile_destroy: " + projectile_destroy); }
-        if (Input.GetKeyDown(KeyCode.B)) { PrepareBossFight(bossPrefab); }
+        if (Input.GetKey(KeyCode.H)) { ChangeBounds(Input.mouseScrollDelta.y); Debug.Log("game Bounds: " + gameAreaSize); }
+        if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
 #endif
+        if (Input.GetKeyDown(KeyCode.B)) { PrepareBossFight(bossPrefab); }
     }
 }

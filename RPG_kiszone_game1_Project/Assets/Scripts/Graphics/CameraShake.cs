@@ -6,7 +6,7 @@ public class CameraShake : MonoBehaviour
 {
     static float temporaryIntensity = 1f;
     public static float globalIntensity = 0f; //<--- tutaj mozesz sobie domyslna intensywnosc wstrzasow ustawic
-    static Vector3 startPosition;
+    public static Vector3 startPosition;
     [SerializeField] List<SecondOrderDynamics> systemsInspector = new List<SecondOrderDynamics>();
     [SerializeField] static List<SecondOrderDynamics> systems = new List<SecondOrderDynamics>();
     void Awake()
