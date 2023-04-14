@@ -21,15 +21,15 @@ MonoBehaviour:
     deltaPosition: {x: 0, y: 0, z: 0}
     screenTime: 0
     addToMustKillList: 1
-    waitMode: 0
-    delayAfterSpawn: 8
+    waitMode: 1
+    delayAfterSpawn: 1
   - name: basic1
     enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
     position: {x: 140, y: 150, z: 0}
     iterations: 2
     delayAfterIteration: 2
     deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
+    screenTime: 10
     addToMustKillList: 1
     waitMode: 2
     delayAfterSpawn: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     iterations: 2
     delayAfterIteration: 2
     deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
+    screenTime: 10
     addToMustKillList: 1
     waitMode: 1
     delayAfterSpawn: 5
