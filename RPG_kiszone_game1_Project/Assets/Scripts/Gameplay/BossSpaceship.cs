@@ -18,7 +18,8 @@ public class BossSpaceship : Spaceship
     }
     public override void Die()
     {
-        hpBar.parent.gameObject.SetActive(false);
+        LevelManager.RemoveBossHpBar(hpBar.parent.gameObject);
+        LevelManager.enemies.Remove(gameObject);
         base.Die();
     }
 }

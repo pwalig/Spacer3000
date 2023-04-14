@@ -21,6 +21,7 @@ public class EnemySpaceship : Spaceship
             UnityEngine.Debug.Log("powerup dropped");
             GameObject clonedPowerup = Instantiate(powerupPrefab, transform.position, Quaternion.Euler(0f, 0f, 0f));
         }
+        LevelManager.enemies.Remove(gameObject);
         base.Die();
     }
 }

@@ -15,8 +15,7 @@ public class GameplayManager : MonoBehaviour
     public static Vector2 gameAreaSize = new Vector2(140f, 80f);
     static GameObject PauseMenu;
     static GameObject GameOverMenu;
-    static GameObject BossHpBarGroup;
-    public GameObject bossPrefab;
+    static GameObject YouWonMenu;
     void Awake()
     {
         //ensure only one manager exists
@@ -27,15 +26,13 @@ public class GameplayManager : MonoBehaviour
 
         if (GameData.availablePlanets == null || GameData.availableSpaceships == null)
             SceneManager.LoadScene("MainMenu");
-
-        BossHpBarGroup = GameObject.Find("BossHPBarGroup");
-        BossHpBarGroup.SetActive(false);
     }
 
     private void Start()
     {
         PauseMenu = GameObject.Find("PauseMenu");
         GameOverMenu = GameObject.Find("GameOverMenu");
+        YouWonMenu = GameObject.Find("YouWonMenu");
         GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
         //if (GameData.availableMaterials != null) playerGameObject.GetComponentInChildren<MeshRenderer>().material = GameData.availableMaterials[GameData.selectedMaterialId];
 
@@ -55,17 +52,6 @@ public class GameplayManager : MonoBehaviour
         if (playerTransform == null) return requestPosition;
         return playerTransform.position;
     }
-    public static void PrepareBossFight(GameObject bossPrefab)
-    {
-        if (BossHpBarGroup.activeInHierarchy == false)
-        {
-            BossHpBarGroup.SetActive(true);
-            BossSpaceship boss = Instantiate(bossPrefab, new Vector3(0f, 150f, 0f), Quaternion.Euler(0f, 0f, 180f)).GetComponent<BossSpaceship>();
-            GameObject.Find("BossName").GetComponent<TMP_Text>().text = bossPrefab.name;
-            boss.hpBar = GameObject.Find("BossHpBar").GetComponent<RectTransform>();
-            boss.DealDamage(0f);
-        }
-    }
     void Pause()
     {
         Time.timeScale = 0f;
@@ -78,10 +64,15 @@ public class GameplayManager : MonoBehaviour
         PauseMenu.SetActive(false);
         paused = false;
         GameOverMenu.SetActive(false);
+        YouWonMenu.SetActive(false);
     }
     public static void GameOver()
     {
         GameOverMenu.SetActive(true);
+    }
+    public static void GameWon()
+    {
+        YouWonMenu.SetActive(true);
     }
     public void QuitToMainMenu()
     {
@@ -99,12 +90,18 @@ public class GameplayManager : MonoBehaviour
     }
     void ChangeBounds(float delta)
     {
-        gameAreaSize -= new Vector2(7f, 4f) * delta;
-        CameraShake.startPosition -= new Vector3(0f, -22f, -33f) * delta;
+        gameAreaSize += new Vector2(7f, 4f) * delta;
+        CameraShake.startPosition += new Vector3(0f, -22f, -33f) * delta;
+    }
+    
+    void SetBounds(float val)
+    {
+        gameAreaSize = new Vector2(7f, 4f) * val;
+        CameraShake.startPosition = new Vector3(0f, -22f, -33f) * val;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !YouWonMenu.activeInHierarchy && !GameOverMenu.activeInHierarchy) {
             if (paused) UnPause();
             else Pause();
         }
@@ -113,9 +110,8 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
         if (Input.GetKeyDown(KeyCode.N)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
         if (Input.GetKeyDown(KeyCode.P)) { projectile_destroy = !projectile_destroy; Debug.Log("projectile_destroy: " + projectile_destroy); }
-        if (Input.GetKey(KeyCode.H)) { ChangeBounds(Input.mouseScrollDelta.y); Debug.Log("game Bounds: " + gameAreaSize); }
+        if (Input.GetKey(KeyCode.H)) { ChangeBounds(-Input.mouseScrollDelta.y); Debug.Log("game Bounds: " + gameAreaSize); }
         if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
 #endif
-        if (Input.GetKeyDown(KeyCode.B)) { PrepareBossFight(bossPrefab); }
     }
 }
