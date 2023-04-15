@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfab4a16fe5631e47bd42d420c0bacba, type: 3}
+  m_Name: Generated
+  m_EditorClassIdentifier: 
+  planetAsset: {fileID: 4296682070649052132, guid: cfde7117a7b484c4f9209f5b4ff9d9d3, type: 3}
+  terrainAsset: {fileID: 7889011954273417470, guid: e0700b7aa7dacfe499c76edfdd4ecedf, type: 3}
+  note: random and colorfull
+  levels:
+  - {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}
+  - {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}
+  - {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}
+  unlockedLevels: 1

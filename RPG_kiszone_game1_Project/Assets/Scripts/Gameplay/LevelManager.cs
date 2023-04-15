@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
-    public LevelLayout level;
+    LevelLayout level;
     public static List<GameObject> enemies = new();
     public GameObject BossHpBar;
     static List<GameObject> bossBars = new();
+
+    private void Awake()
+    {
+        if (GameData.GetLevel() != null) level = GameData.GetLevel();
+    }
 
     public static void RemoveBossHpBar(GameObject bar)
     {
@@ -16,7 +21,7 @@ public class LevelManager : MonoBehaviour
         Destroy(bar);
         for (int i = 0; i < bossBars.Count; i++)
         {
-            bossBars[i].transform.localPosition = Vector3.up * 75f * i;
+            bossBars[i].transform.localPosition = Vector3.up * 40f * i;
         }
     }
 
@@ -25,13 +30,14 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < wave.iterations; i++)
         {
             GameObject enemy = Instantiate(wave.enemyPrefab, wave.position + (wave.deltaPosition * i), Quaternion.Euler(0f, 0f, 180f));
-            BossSpaceship boss;
-            if (enemy.TryGetComponent(out boss))
+            if (enemy.TryGetComponent(out BossSpaceship boss))
             {
                 GameObject bossBar = Instantiate(BossHpBar, GameObject.Find("BossBarsAnchor").transform);
-                bossBar.transform.localPosition += Vector3.up * 75f * bossBars.Count;
+                bossBar.transform.localPosition += Vector3.up * 40f * bossBars.Count;
                 bossBars.Add(bossBar);
-                bossBar.transform.Find("BossHpBar").Find("BossName").gameObject.GetComponent<TMP_Text>().text = enemy.name;
+                TMP_Text barText = bossBar.transform.Find("BossHpBar").Find("BossName").gameObject.GetComponent<TMP_Text>();
+                barText.text = enemy.name;
+                if (barText.text.EndsWith("(Clone)")) barText.text = barText.text.Remove(barText.text.Length - 7);
                 boss.hpBar = bossBar.transform.Find("BossHpBar").gameObject.GetComponent<RectTransform>();
                 boss.DealDamage(0f);
             }
@@ -47,7 +53,11 @@ public class LevelManager : MonoBehaviour
         {
             StartCoroutine(Spawn(wave));
             if (wave.waitMode != LevelLayout.Wave.WaitMode.runNextInParallel) yield return new WaitForSeconds(wave.delayAfterIteration * wave.iterations);
-            while (wave.waitMode == LevelLayout.Wave.WaitMode.untilAllKilled && enemies.Count > 0) yield return 0;
+            while (wave.waitMode == LevelLayout.Wave.WaitMode.untilAllKilled && enemies.Count > 0)
+            {
+                CheckEnemyList();
+                yield return 0;
+            }
             yield return new WaitForSeconds(wave.delayAfterSpawn);
         }
         GameplayManager.GameWon();
@@ -55,5 +65,12 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(PlayLevel());
+    }
+
+    void CheckEnemyList()
+    {
+        foreach (GameObject go in enemies)
+            if (go == null)
+                enemies.Remove(go);
     }
 }

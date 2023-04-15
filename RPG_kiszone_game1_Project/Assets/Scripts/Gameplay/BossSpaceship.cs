@@ -13,7 +13,7 @@ public class BossSpaceship : Spaceship
     }
     public override void DealDamage(float damage)
     {
-        hpBar.sizeDelta = new Vector2(1500f * (hp - damage) / maxHp, 75f);
+        hpBar.sizeDelta = new Vector2(1500f * (hp - damage) / maxHp, 40f);
         base.DealDamage(damage);
     }
     public override void Die()

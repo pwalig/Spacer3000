@@ -199,7 +199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b065418463f3584d8d943bff8005223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}
   BossHpBar: {fileID: 4064791898187164471, guid: 7cf68b6e940ba984eb322ce018dce688, type: 3}
 --- !u!1 &28502921
 GameObject:
@@ -932,7 +931,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -130}
-  m_SizeDelta: {x: 348.7, y: 216.57}
+  m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &600069222
 MonoBehaviour:
@@ -1605,7 +1604,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 400, y: 200}
+  m_SizeDelta: {x: 400, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &942792741
 MonoBehaviour:
@@ -1636,7 +1635,12 @@ MonoBehaviour:
     P -
     projectile_destroy
 
-    H+scroll - game area
+    O - more projectiles
+
+    H - heal
+
+    B+scroll - game
+    area
 
     J+scroll - game speed'
   m_isRightToLeft: 0

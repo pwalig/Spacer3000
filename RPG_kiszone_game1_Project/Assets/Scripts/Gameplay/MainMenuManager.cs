@@ -79,4 +79,15 @@ public class MainMenuManager : MonoBehaviour
     {
         CameraShake.globalIntensity = intensity;
     }
+
+#if (UNITY_EDITOR)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)) // my favourite settings -Pawel
+        {
+            CameraShake.globalIntensity = 1f;
+            GameplayManager.movementMode = true;
+        }
+    }
+#endif
 }

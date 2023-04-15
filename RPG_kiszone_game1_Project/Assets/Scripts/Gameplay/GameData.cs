@@ -13,8 +13,29 @@ public static class GameData
     public static int selectedMaterialId = 0;
     public static int selectedSpaceshipId = 0;
     public static int selectedPlanetId = 0;
+    public static int selectedLevelId = 0;
 
+    public static Material GetMaterial()
+    {
+        return availableMaterials[selectedMaterialId];
+    }
 
+    public static SpaceshipGeneratorPreset GetSpaceshipPreset()
+    {
+        return availableSpaceships[selectedSpaceshipId];
+    }
+    public static PlanetData GetPlanet()
+    {
+        if (availablePlanets != null)
+            return availablePlanets[selectedPlanetId];
+        return null;
+    }
+    public static LevelLayout GetLevel()
+    {
+        if (GetPlanet() != null && GetPlanet().levels != null)
+            return GetPlanet().levels[Mathf.Clamp(selectedLevelId, 0, GetPlanet().levels.Count-1)];
+        return null;
+    }
     /*static GameData gameData;
     void Awake()
     {

@@ -110,7 +110,9 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.M)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
         if (Input.GetKeyDown(KeyCode.N)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
         if (Input.GetKeyDown(KeyCode.P)) { projectile_destroy = !projectile_destroy; Debug.Log("projectile_destroy: " + projectile_destroy); }
-        if (Input.GetKey(KeyCode.H)) { ChangeBounds(-Input.mouseScrollDelta.y); Debug.Log("game Bounds: " + gameAreaSize); }
+        if (Input.GetKeyDown(KeyCode.O)) { playerTransform.gameObject.GetComponent<PlayerSpaceship>().projectiles += 1; }
+        if (Input.GetKeyDown(KeyCode.H)) { playerTransform.gameObject.GetComponent<Spaceship>().DealDamage(-100f); }
+        if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y); Debug.Log("game Bounds: " + gameAreaSize); }
         if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
 #endif
     }
