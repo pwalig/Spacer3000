@@ -21,4 +21,35 @@ public class LevelLayout : ScriptableObject
         public float delayAfterSpawn; // Time to next wave in seconds.
     }
     public List<Wave> waves;
+
+    [SerializeField] string[] notes;
+
+    [Header("Rewards")]
+    //public List<dynamic> rewards;
+    public List<Material> materialRewards;
+    public List<SpaceshipGeneratorPreset> spaceshipRewards;
+    public List<PlanetData> planetRewards;
+
+    public List<string> GetRewardList()
+    {
+        List<string> rewList = new();
+        foreach (Material mat in materialRewards)
+            rewList.Add(mat.name + " [material]");
+        foreach (SpaceshipGeneratorPreset spaceship in spaceshipRewards)
+            rewList.Add(spaceship.name + " [ship]");
+        foreach (PlanetData planet in planetRewards)
+            rewList.Add(planet.name + " [planet]");
+        return rewList;
+    }
+
+    public string GetNote()
+    {
+        string text = "Mission Details:";
+        foreach(string note in notes)
+            text += "\n- " + note;
+        text += "\n\nRewards:";
+        foreach (string reward in GetRewardList())
+            text += "\n- " + reward;
+        return text;
+    }
 }

@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929bad331474014780dc7e071344676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: 84ef0a1cb62055a409710f4cea54b808, type: 2}
+  preset: {fileID: 11400000, guid: 530548312f25d2644afd69522256a312, type: 2}
 --- !u!114 &3838212405357307098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,5 +204,6 @@ MonoBehaviour:
   moveDirectionX: 0
   moveDirectionY: 0
   shoot: 0
+  escape: 0
   waypoints: {fileID: 5089909908618541515, guid: 193e125b1f0c00a49a5ff87843f0f5b1, type: 3}
   counter: 0

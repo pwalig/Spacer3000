@@ -46,6 +46,8 @@ public class GameplayManager : MonoBehaviour
         if (psv != null) psv.AddComponent<SpaceshipGenerator>().SetPreset(GameData.availableSpaceships[GameData.selectedSpaceshipId]);
 
         UnPause();
+        GameOverMenu.SetActive(false);
+        YouWonMenu.SetActive(false);
     }
     public static Vector3 GetPlayerPosition(Vector3 requestPosition = default(Vector3))
     {
@@ -63,8 +65,6 @@ public class GameplayManager : MonoBehaviour
         Time.timeScale = 1f;
         PauseMenu.SetActive(false);
         paused = false;
-        GameOverMenu.SetActive(false);
-        YouWonMenu.SetActive(false);
     }
     public static void GameOver()
     {

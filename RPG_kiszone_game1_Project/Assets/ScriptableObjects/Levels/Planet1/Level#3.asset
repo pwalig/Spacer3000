@@ -43,3 +43,10 @@ MonoBehaviour:
     addToMustKillList: 1
     waitMode: 1
     delayAfterSpawn: 1
+  notes:
+  - long one
+  - but interesting
+  materialRewards: []
+  spaceshipRewards: []
+  planetRewards:
+  - {fileID: 11400000, guid: cdfc046779c5eb9448032a7e5b617700, type: 2}

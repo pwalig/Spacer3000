@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c929bad331474014780dc7e071344676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  preset: {fileID: 11400000, guid: 84ef0a1cb62055a409710f4cea54b808, type: 2}
+  preset: {fileID: 11400000, guid: 530548312f25d2644afd69522256a312, type: 2}
 --- !u!114 &1255606292287566550
 MonoBehaviour:
   m_ObjectHideFlags: 0

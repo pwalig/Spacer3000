@@ -43,3 +43,10 @@ MonoBehaviour:
     addToMustKillList: 1
     waitMode: 1
     delayAfterSpawn: 1
+  notes:
+  - slightly hardah
+  materialRewards: []
+  spaceshipRewards:
+  - {fileID: 11400000, guid: 84ef0a1cb62055a409710f4cea54b808, type: 2}
+  planetRewards:
+  - {fileID: 11400000, guid: cdfc046779c5eb9448032a7e5b617700, type: 2}

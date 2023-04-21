@@ -43,8 +43,9 @@ public class SpaceshipCustomizationManager : MonoBehaviour
         SetMaterial(GameData.selectedMaterialId);
         SetMaterialDropdown(GameData.selectedMaterialId);
         SetSliders();
+        ChangeColor();
 
-        
+
         SetShapePicker();
     }
 

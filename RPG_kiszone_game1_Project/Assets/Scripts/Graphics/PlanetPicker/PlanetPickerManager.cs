@@ -8,6 +8,7 @@ public class PlanetPickerManager : MonoBehaviour
     [SerializeField] List<PlanetData> avalilablePlanetsInspector;
     TMP_Text planetNameText;
     TMP_Text planetNoteText;
+    TMP_Text levelNoteText;
 
     static PlanetPickerManager Manager;
     private void Awake()
@@ -20,10 +21,12 @@ public class PlanetPickerManager : MonoBehaviour
 
         planetNameText = GameObject.Find("PlanetName").GetComponent<TMP_Text>();
         planetNoteText = GameObject.Find("PlanetNote").GetComponent<TMP_Text>();
+        levelNoteText = GameObject.Find("LevelNote").GetComponent<TMP_Text>();
         if (GameData.availablePlanets == null)
             GameData.availablePlanets = avalilablePlanetsInspector;
         planetNameText.text = GameData.GetPlanet().name;
         planetNoteText.text = GameData.GetPlanet().note;
+        levelNoteText.text = GameData.GetLevel().GetNote();
         SetLevelDropdown(GameData.GetPlanet().unlockedLevels - 1);
     }
 
@@ -45,6 +48,7 @@ public class PlanetPickerManager : MonoBehaviour
     public void SelectLevel(int levelId)
     {
         GameData.selectedLevelId = levelId;
+        levelNoteText.text = GameData.GetLevel().GetNote();
     }
 
     public void IteratePlanet(int increment)
@@ -59,6 +63,7 @@ public class PlanetPickerManager : MonoBehaviour
         }
         planetNameText.text = GameData.GetPlanet().name;
         planetNoteText.text = GameData.GetPlanet().note;
+        levelNoteText.text = GameData.GetLevel().GetNote();
         SetLevelDropdown(GameData.GetPlanet().unlockedLevels - 1);
     }
 

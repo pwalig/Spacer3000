@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,10 +10,13 @@ public class LevelManager : MonoBehaviour
     public static List<GameObject> enemies = new();
     public GameObject BossHpBar;
     static List<GameObject> bossBars = new();
+    static GameObject RewardMenu;
 
     private void Awake()
     {
         if (GameData.GetLevel() != null) level = GameData.GetLevel();
+        RewardMenu = GameObject.Find("RewardMenu");
+        RewardMenu.SetActive(false);
     }
 
     public static void RemoveBossHpBar(GameObject bar)
@@ -61,6 +65,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(wave.delayAfterSpawn);
         }
         GameplayManager.GameWon();
+        Rewards();
     }
     void Start()
     {
@@ -72,5 +77,38 @@ public class LevelManager : MonoBehaviour
         foreach (GameObject go in enemies)
             if (go == null)
                 enemies.Remove(go);
+    }
+
+    void Rewards()
+    {
+        GameData.GetPlanet().UnlockNextLevel();
+
+        string text = "rewards:";
+        RectTransform tr = RewardMenu.transform.GetChild(0).GetComponent<RectTransform>();
+
+        foreach (Material mat in level.materialRewards)
+            if (!GameData.availableMaterials.Contains(mat))
+            {
+                GameData.availableMaterials.Add(mat);
+                text += "\nnew material: " + mat.name;
+                tr.sizeDelta = new Vector2(100f, tr.sizeDelta.y + 20f);
+            }
+        foreach (SpaceshipGeneratorPreset spaceship in level.spaceshipRewards)
+            if (!GameData.availableSpaceships.Contains(spaceship))
+            {
+                GameData.availableSpaceships.Add(spaceship);
+                text += "\nnew ship: " + spaceship.name;
+                tr.sizeDelta = new Vector2(100f, tr.sizeDelta.y + 20f);
+            }
+        foreach (PlanetData planet in level.planetRewards)
+            if (!GameData.availablePlanets.Contains(planet))
+            {
+                GameData.availablePlanets.Add(planet);
+                text += "\nnew planet: " + planet.name;
+                tr.sizeDelta = new Vector2(100f, tr.sizeDelta.y + 20f);
+            }
+
+        RewardMenu.SetActive(true);
+        RewardMenu.transform.GetChild(0).GetChild(0).GetComponent<TMP_Text>().text = text;
     }
 }

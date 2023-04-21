@@ -43,3 +43,11 @@ MonoBehaviour:
     addToMustKillList: 1
     waitMode: 1
     delayAfterSpawn: 1
+  notes:
+  - easy level
+  - contains introduction
+  materialRewards:
+  - {fileID: 2100000, guid: 1bf88809e2f2c084c92083c1ec97c18f, type: 2}
+  spaceshipRewards: []
+  planetRewards:
+  - {fileID: 11400000, guid: ec777c8f9bbc55243b8d46b7d2c29248, type: 2}
