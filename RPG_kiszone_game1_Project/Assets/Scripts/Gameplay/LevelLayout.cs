@@ -9,6 +9,9 @@ public class LevelLayout : ScriptableObject
     public class Wave
     {
         public string name; // Name of the wave. Does nothing practically. Only helps not to get lost while creating a level.
+        public float gameBoundsScale = 1f;
+        public float camFOV = 13f;
+        public float camAngle = 35f;
         public GameObject enemyPrefab;
         public Vector3 position = new Vector3(0f, 150f, 0f);
         public int iterations = 1;

@@ -55,6 +55,9 @@ public class LevelManager : MonoBehaviour
     {
         foreach (LevelLayout.Wave wave in level.waves)
         {
+            GameCameraContoller.SetAngle(180f - wave.camAngle);
+            GameCameraContoller.SetFieldOfView(wave.camFOV == 0 ? 13f : wave.camFOV);
+            GameplayManager.SetBounds(wave.gameBoundsScale);
             StartCoroutine(Spawn(wave));
             if (wave.waitMode != LevelLayout.Wave.WaitMode.runNextInParallel) yield return new WaitForSeconds(wave.delayAfterIteration * wave.iterations);
             while (wave.waitMode == LevelLayout.Wave.WaitMode.untilAllKilled && enemies.Count > 0)
@@ -81,7 +84,7 @@ public class LevelManager : MonoBehaviour
 
     void Rewards()
     {
-        GameData.GetPlanet().UnlockNextLevel();
+        GameData.GetPlanet().UnlockNextLevel(level);
 
         string text = "rewards:";
         RectTransform tr = RewardMenu.transform.GetChild(0).GetComponent<RectTransform>();

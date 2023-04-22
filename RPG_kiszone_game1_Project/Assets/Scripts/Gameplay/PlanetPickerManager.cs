@@ -25,7 +25,7 @@ public class PlanetPickerManager : MonoBehaviour
         if (GameData.availablePlanets == null)
             GameData.availablePlanets = avalilablePlanetsInspector;
         planetNameText.text = GameData.GetPlanet().name;
-        planetNoteText.text = GameData.GetPlanet().note;
+        planetNoteText.text = GameData.GetPlanet().GetNote();
         levelNoteText.text = GameData.GetLevel().GetNote();
         SetLevelDropdown(GameData.GetPlanet().unlockedLevels - 1);
     }
@@ -62,7 +62,7 @@ public class PlanetPickerManager : MonoBehaviour
                 GameData.selectedPlanetId = GameData.availablePlanets.Count - 1;
         }
         planetNameText.text = GameData.GetPlanet().name;
-        planetNoteText.text = GameData.GetPlanet().note;
+        planetNoteText.text = GameData.GetPlanet().GetNote();
         levelNoteText.text = GameData.GetLevel().GetNote();
         SetLevelDropdown(GameData.GetPlanet().unlockedLevels - 1);
     }

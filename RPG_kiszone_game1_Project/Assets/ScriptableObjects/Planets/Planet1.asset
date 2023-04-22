@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetAsset: {fileID: 4296682070649052132, guid: 833fe60f4cecab545b28b344873fb0ae, type: 3}
   terrainAsset: {fileID: 7408411089792263121, guid: 1f1f089bd3979b74dbf9d9f5dd305338, type: 3}
-  note: 'Terrain: Rocks           further information: none'
+  notes:
+  - 'Terrain: Rocks'
+  - 'further information: none'
   levels:
   - {fileID: 11400000, guid: 92a5adc680f18f24a96dba3fec4cb289, type: 2}
   - {fileID: 11400000, guid: b234bebcaed9ba74d997db9444269a11, type: 2}

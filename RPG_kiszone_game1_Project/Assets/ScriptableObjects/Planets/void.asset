@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetAsset: {fileID: 2486726641104733451, guid: c44d403b4cfa57846bf307b1eb0c24c5, type: 3}
   terrainAsset: {fileID: 0}
-  note: ...
+  notes:
+  - ...
   levels:
   - {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}
   unlockedLevels: 1

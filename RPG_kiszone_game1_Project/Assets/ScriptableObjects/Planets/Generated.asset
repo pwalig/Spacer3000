@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetAsset: {fileID: 4296682070649052132, guid: cfde7117a7b484c4f9209f5b4ff9d9d3, type: 3}
   terrainAsset: {fileID: 7889011954273417470, guid: e0700b7aa7dacfe499c76edfdd4ecedf, type: 3}
-  note: random and colorfull
+  notes:
+  - random and colorfull
   levels:
   - {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}
   - {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}

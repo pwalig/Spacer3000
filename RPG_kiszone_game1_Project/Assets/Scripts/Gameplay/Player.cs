@@ -19,6 +19,11 @@ public class Player : SpaceshipController
             moveDirectionX = 0;
         }
 
+        // comes back automatically if game area shrinks
+        if (transform.position.y <= -GameplayManager.gameAreaSize.y - 10f) moveDirectionY = 1f;
+        if (transform.position.x >= GameplayManager.gameAreaSize.x + 10f) moveDirectionX = -1;
+        if (transform.position.x <= -GameplayManager.gameAreaSize.x - 10f) moveDirectionX = 1f;
+
         shoot = Input.GetKey(KeyCode.Space);
     }
 }

@@ -12,7 +12,7 @@ public class GameplayManager : MonoBehaviour
     public static bool movementMode = false;
     public static bool movementDirectionNormalize = false;
     public static bool projectile_destroy = true;
-    public static Vector2 gameAreaSize = new Vector2(140f, 80f);
+    public static Vector2 gameAreaSize = new Vector2(160f, 90f);
     static GameObject PauseMenu;
     static GameObject GameOverMenu;
     static GameObject YouWonMenu;
@@ -90,15 +90,16 @@ public class GameplayManager : MonoBehaviour
     }
     void ChangeBounds(float delta)
     {
-        gameAreaSize += new Vector2(7f, 4f) * delta;
-        CameraShake.startPosition += new Vector3(0f, -22f, -33f) * delta;
+        gameAreaSize += new Vector2(1.6f, 0.9f) * delta;
+        GameCameraContoller.ChangeFieldOfView(0f);
     }
     
-    void SetBounds(float val)
+    public static void SetBounds(float val=1f)
     {
-        gameAreaSize = new Vector2(7f, 4f) * val;
-        CameraShake.startPosition = new Vector3(0f, -22f, -33f) * val;
+        gameAreaSize = new Vector2(1.6f, 0.9f) * val * 100f;
+        GameCameraContoller.ChangeFieldOfView(0f);
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !YouWonMenu.activeInHierarchy && !GameOverMenu.activeInHierarchy) {
@@ -112,8 +113,8 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) { projectile_destroy = !projectile_destroy; Debug.Log("projectile_destroy: " + projectile_destroy); }
         if (Input.GetKeyDown(KeyCode.O)) { playerTransform.gameObject.GetComponent<PlayerSpaceship>().projectiles += 1; }
         if (Input.GetKeyDown(KeyCode.H)) { playerTransform.gameObject.GetComponent<Spaceship>().DealDamage(-100f); }
-        if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y); Debug.Log("game Bounds: " + gameAreaSize); }
-        if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
+        if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y * 5f); Debug.Log("game Bounds: " + gameAreaSize); }
+        if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f && Time.timeScale + Input.mouseScrollDelta.y * 0.1f >= 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
 #endif
     }
 }

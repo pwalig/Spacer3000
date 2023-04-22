@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: "kr\u0105\u017Cowniki"
+    gameBoundsScale: 1
+    camFOV: 10
+    camAngle: 35
     enemyPrefab: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
     position: {x: 0, y: 150, z: 0}
     iterations: 5
@@ -24,6 +27,9 @@ MonoBehaviour:
     waitMode: 1
     delayAfterSpawn: 1
   - name: basic1
+    gameBoundsScale: 1
+    camFOV: 10
+    camAngle: 35
     enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
     position: {x: 140, y: 150, z: 0}
     iterations: 2
@@ -34,6 +40,9 @@ MonoBehaviour:
     waitMode: 2
     delayAfterSpawn: 0
   - name: basic2
+    gameBoundsScale: 1
+    camFOV: 10
+    camAngle: 35
     enemyPrefab: {fileID: 3838212405406433343, guid: 6a73a6e044790ca4291ab94fa3d99204, type: 3}
     position: {x: -140, y: 150, z: 0}
     iterations: 2
@@ -44,6 +53,9 @@ MonoBehaviour:
     waitMode: 1
     delayAfterSpawn: 5
   - name: boss
+    gameBoundsScale: 1
+    camFOV: 10
+    camAngle: 35
     enemyPrefab: {fileID: 1933663113404844293, guid: 1bbe6a2a91f5fa1429a17e6ac3518347, type: 3}
     position: {x: 0, y: 150, z: 0}
     iterations: 1
