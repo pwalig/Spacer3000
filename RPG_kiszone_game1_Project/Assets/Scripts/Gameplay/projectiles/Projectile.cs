@@ -18,6 +18,10 @@ public class Projectile : MonoBehaviour
         yield return new WaitForSeconds(lifespan);
         Destroy(gameObject);
     }
+    void Start()
+    {
+        StartCoroutine(Expire());
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,11 +41,4 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (start) StartCoroutine(Expire());
-        //transform.position + transform.up * speed * Time.deltaTime;
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
-    }
 }
