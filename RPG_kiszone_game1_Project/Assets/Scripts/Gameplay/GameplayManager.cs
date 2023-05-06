@@ -11,7 +11,6 @@ public class GameplayManager : MonoBehaviour
     public static bool paused;
     public static bool movementMode = false;
     public static bool movementDirectionNormalize = false;
-    public static bool projectile_destroy = true;
     public static Vector2 gameAreaSize = new Vector2(160f, 90f);
     static GameObject PauseMenu;
     static GameObject GameOverMenu;
@@ -110,7 +109,6 @@ public class GameplayManager : MonoBehaviour
 #if (UNITY_EDITOR)
         if (Input.GetKeyDown(KeyCode.M)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
         if (Input.GetKeyDown(KeyCode.N)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
-        if (Input.GetKeyDown(KeyCode.P)) { projectile_destroy = !projectile_destroy; Debug.Log("projectile_destroy: " + projectile_destroy); }
         if (Input.GetKeyDown(KeyCode.O)) { playerTransform.gameObject.GetComponent<PlayerSpaceship>().projectiles += 1; }
         if (Input.GetKeyDown(KeyCode.H)) { playerTransform.gameObject.GetComponent<Spaceship>().DealDamage(-100f); }
         if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y * 5f); Debug.Log("game Bounds: " + gameAreaSize); }

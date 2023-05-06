@@ -4863,6 +4863,7 @@ MonoBehaviour:
   speed: 100
   damage: 10
   lifespan: 4
+  projectile_destroy: 0
 --- !u!50 &5150035373389710991
 Rigidbody2D:
   serializedVersion: 4
