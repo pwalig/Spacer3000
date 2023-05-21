@@ -8,15 +8,18 @@ public class LevelManager : MonoBehaviour
 {
     LevelLayout level;
     public static List<GameObject> enemies = new();
+    public static int score = 0;
     public GameObject BossHpBar;
     static List<GameObject> bossBars = new();
     static GameObject RewardMenu;
+    static TMP_Text scoreText;
 
     private void Awake()
     {
         if (GameData.GetLevel() != null) level = GameData.GetLevel();
         RewardMenu = GameObject.Find("RewardMenu");
         RewardMenu.SetActive(false);
+        scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
     }
 
     public static void RemoveBossHpBar(GameObject bar)
@@ -62,16 +65,30 @@ public class LevelManager : MonoBehaviour
             if (wave.waitMode != LevelLayout.Wave.WaitMode.runNextInParallel) yield return new WaitForSeconds(wave.delayAfterIteration * wave.iterations);
             while (wave.waitMode == LevelLayout.Wave.WaitMode.untilAllKilled && enemies.Count > 0)
             {
-                CheckEnemyList();
-                yield return 0;
+                bool err = false;
+                try
+                {
+                    CheckEnemyList();
+                }
+                catch
+                {
+                    Debug.LogError("Wave: " + wave + ". Failed to check the list at count: " + enemies.Count);
+                    err = true;
+                    enemies.Clear();
+                }
+                if (err) yield return new WaitForSeconds(enemies.Count * 3f * GameData.GetDifficultyMulitplier(1f));
+                else yield return 0;
             }
             yield return new WaitForSeconds(wave.delayAfterSpawn);
         }
         GameplayManager.GameWon();
         Rewards();
+        AddToScore((int)(100f * GameData.GetDifficultyMulitplier(2f)));
+        level.highScore = Mathf.Max(level.highScore, score);
     }
     void Start()
     {
+        score = 0;
         StartCoroutine(PlayLevel());
     }
 
@@ -82,9 +99,18 @@ public class LevelManager : MonoBehaviour
                 enemies.Remove(go);
     }
 
+    public static void AddToScore(int _score)
+    {
+        score += _score;
+        if (score < 0) score = 0;
+        scoreText.text = "Score: " + score;
+    }
+
     void Rewards()
     {
         GameData.GetPlanet().UnlockNextLevel(level);
+
+        if (level.highScore < 0f) return; //don't reward if level was finished before
 
         string text = "rewards:";
         RectTransform tr = RewardMenu.transform.GetChild(0).GetComponent<RectTransform>();

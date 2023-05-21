@@ -65,7 +65,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void ChangeDifficultyLevel(int difficulty)
     {
-        GameData.difficultyLevel = (GameData.Difficulty)difficulty;
+        GameData.SetDifficultyLevel((GameData.Difficulty)difficulty);
     }
     public void ChangeQualityLevel(int qualityLevel)
     {
@@ -88,6 +88,10 @@ public class MainMenuManager : MonoBehaviour
             CameraShake.globalIntensity = 1f;
             GameplayManager.movementMode = true;
         }
+    }
+    private void OnApplicationQuit()
+    {
+        GameData.PurgeScores();
     }
 #endif
 }

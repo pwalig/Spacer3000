@@ -1392,7 +1392,7 @@ GameObject:
   - component: {fileID: 229612899}
   m_Layer: 5
   m_Name: RandomSpaceships
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1971,7 +1971,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: -0.000015258789}
   m_SizeDelta: {x: 0, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &318686603
@@ -2575,7 +2575,7 @@ GameObject:
   - component: {fileID: 380163301}
   m_Layer: 0
   m_Name: SpaceshipGeneratorTest
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3233,7 +3233,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1190906890}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.88000005
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4809,7 +4809,7 @@ GameObject:
   - component: {fileID: 687362079}
   m_Layer: 0
   m_Name: partTempalte
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5854,7 +5854,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1208274343}
   m_HandleRect: {fileID: 1208274342}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5994,7 +5994,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Normal
+  m_text: Very Easy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6406,7 +6406,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000019073486}
+  m_AnchoredPosition: {x: 0, y: -0.000022888184}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &869340511
@@ -9712,7 +9712,7 @@ GameObject:
   - component: {fileID: 1286374114}
   m_Layer: 5
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10506,7 +10506,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 36758621}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.8000001
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11877,7 +11877,7 @@ GameObject:
   - component: {fileID: 1572603116}
   m_Layer: 0
   m_Name: SpaceShipPlatform2
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18676,6 +18676,10 @@ MonoBehaviour:
   m_Value: 2
   m_Options:
     m_Options:
+    - m_Text: Peacefull
+      m_Image: {fileID: 0}
+    - m_Text: UltraEasy
+      m_Image: {fileID: 0}
     - m_Text: Very Easy
       m_Image: {fileID: 0}
     - m_Text: Easy
@@ -18687,6 +18691,8 @@ MonoBehaviour:
     - m_Text: Very Hard
       m_Image: {fileID: 0}
     - m_Text: Ultra Hard
+      m_Image: {fileID: 0}
+    - m_Text: Impossible
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

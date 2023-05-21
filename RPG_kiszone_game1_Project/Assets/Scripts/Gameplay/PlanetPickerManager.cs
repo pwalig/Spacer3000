@@ -67,7 +67,8 @@ public class PlanetPickerManager : MonoBehaviour
         SetLevelDropdown(GameData.GetPlanet().unlockedLevels - 1);
     }
 
-    void UnlockLevels(int increment, bool all=false, bool set=false)
+#if (UNITY_EDITOR) // cheat codes for unlocking levels
+    void UnlockLevels(int increment, bool all=false, bool set=false, bool setDropdown=true)
     {
         if (all)
         {
@@ -85,17 +86,20 @@ public class PlanetPickerManager : MonoBehaviour
             else planet.unlockedLevels += increment;
             if (planet.unlockedLevels <= 0) planet.unlockedLevels = 1;
         }
-        SetLevelDropdown();
+        if (setDropdown) SetLevelDropdown();
     }
 
     private void Update()
     {
-#if (UNITY_EDITOR) // cheat codes for unlocking levels
         if (GameObject.Find("LevelDropdown") != null)
         {
             if (Input.GetKeyDown(KeyCode.U)) { UnlockLevels(1, Input.GetKey(KeyCode.A), Input.GetKey(KeyCode.S)); }
             if (Input.GetKeyDown(KeyCode.L)) { UnlockLevels(-1, Input.GetKey(KeyCode.A), Input.GetKey(KeyCode.S)); }
         }
-#endif
     }
+    private void OnApplicationQuit()
+    {
+        UnlockLevels(-1, true, true, false); // lock all levels after session in editor
+    }
+#endif
 }

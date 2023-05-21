@@ -20,6 +20,7 @@ public class BossSpaceship : Spaceship
     {
         LevelManager.RemoveBossHpBar(hpBar.parent.gameObject);
         LevelManager.enemies.Remove(gameObject);
+        LevelManager.AddToScore((int)(maxHp * GameData.GetDifficultyMulitplier(0.5f)));
         base.Die();
     }
 }

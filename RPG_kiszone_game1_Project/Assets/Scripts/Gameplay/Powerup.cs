@@ -12,14 +12,15 @@ public class Powerup : MonoBehaviour
     public IEnumerator Expire()
     {
         start = false;
-        yield return new WaitForSeconds(lifespan);
+        yield return new WaitForSeconds(lifespan * GameData.GetDifficultyMulitplier(1f, true));
         Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
+            LevelManager.AddToScore((int)(10f * GameData.GetDifficultyMulitplier(0.2f)));
             other.gameObject.GetComponent<PlayerSpaceship>().Powerup();
             Destroy(gameObject);
         }
@@ -29,6 +30,6 @@ public class Powerup : MonoBehaviour
     {
         if (start) StartCoroutine(Expire());
         //transform.position + transform.up * speed * Time.deltaTime;
-        transform.Translate(Vector3.up * speed * Time.deltaTime * -1);
+        transform.Translate(Vector3.up * speed * Time.deltaTime * -1 * GameData.GetDifficultyMulitplier(1f));
     }
 }

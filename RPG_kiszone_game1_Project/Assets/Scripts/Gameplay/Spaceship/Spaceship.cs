@@ -61,6 +61,7 @@ public class Spaceship : MonoBehaviour
     {
         controller = GetComponent<SpaceshipController>(); //get controller
         if (controller == null) controller = gameObject.AddComponent<SpaceshipController>(); //if controller is missing create empty one
+        shootDelay *= GameData.GetDifficultyMulitplier(0.2f, !CompareTag("Player"));
     }
 
     public virtual IEnumerator Shoot()
@@ -79,6 +80,7 @@ public class Spaceship : MonoBehaviour
             smoke = Instantiate(VFXManager.effects[4], transform).GetComponentInChildren<ParticleSystem>();
         var emm = smoke.emission;
         emm.rateOverTime = (maxHp - hp) / maxHp * 10f; //z jakiegos glupiego powodu nie mozna po prostu zrobic: smoke.emission.rateOverTime = (maxHp - hp) / maxHp * 10f; - bo unity wyrzuca blad
+        LevelManager.AddToScore((int)(damage * GameData.GetDifficultyMulitplier(0.1f) * (CompareTag("Player") ? -0.5f : 1f)));
 
         if (hp <= 0) Die();
     }

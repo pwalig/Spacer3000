@@ -95,13 +95,14 @@ public class GameplayManager : MonoBehaviour
     
     public static void SetBounds(float val=1f)
     {
-        gameAreaSize = new Vector2(1.6f, 0.9f) * val * 100f;
+        gameAreaSize = 100f * val * new Vector2(1.6f, 0.9f);
         GameCameraContoller.ChangeFieldOfView(0f);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !YouWonMenu.activeInHierarchy && !GameOverMenu.activeInHierarchy) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !YouWonMenu.activeInHierarchy && !GameOverMenu.activeInHierarchy)
+        {
             if (paused) UnPause();
             else Pause();
         }
@@ -113,6 +114,10 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.H)) { playerTransform.gameObject.GetComponent<Spaceship>().DealDamage(-100f); }
         if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y * 5f); Debug.Log("game Bounds: " + gameAreaSize); }
         if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f && Time.timeScale + Input.mouseScrollDelta.y * 0.1f >= 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
+    }
+    private void OnApplicationQuit()
+    {
+        GameData.PurgeScores();
 #endif
     }
 }

@@ -25,6 +25,8 @@ public class LevelLayout : ScriptableObject
     }
     public List<Wave> waves;
 
+    public float highScore = 0f;
+
     [SerializeField] string[] notes;
 
     [Header("Rewards")]
@@ -53,6 +55,7 @@ public class LevelLayout : ScriptableObject
         text += "\n\nRewards:";
         foreach (string reward in GetRewardList())
             text += "\n- " + reward;
+        text += "\n\nHigh Score: " + highScore;
         return text;
     }
 }

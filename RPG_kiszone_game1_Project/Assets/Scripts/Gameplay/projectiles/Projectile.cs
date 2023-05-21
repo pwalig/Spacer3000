@@ -20,6 +20,8 @@ public class Projectile : MonoBehaviour
     }
     void Start()
     {
+        speed *= GameData.GetDifficultyMulitplier(0.2f, CompareTag("Player_Projectile"));
+        lifespan *= GameData.GetDifficultyMulitplier(0.2f, !CompareTag("Player_Projectile"));
         StartCoroutine(Expire());
     }
 
@@ -29,7 +31,8 @@ public class Projectile : MonoBehaviour
         {
             VFXManager.CreateEffect(transform.position, 0, 0.3f);
             CameraShake.Shake(30f);
-            other.gameObject.GetComponent<Spaceship>().DealDamage(damage);
+            if (other.CompareTag("Player")) other.gameObject.GetComponent<Spaceship>().DealDamage(damage * GameData.GetDifficultyMulitplier(2f));
+            else other.gameObject.GetComponent<Spaceship>().DealDamage(damage * GameData.GetDifficultyMulitplier(2f, true));
             Destroy(gameObject);
         }else if (CompareTag("Player_Projectile") && other.tag == "Enemy_Projectile" && (projectile_destroy == true || other.gameObject.GetComponent<Projectile>().projectile_destroy == true))
         {
