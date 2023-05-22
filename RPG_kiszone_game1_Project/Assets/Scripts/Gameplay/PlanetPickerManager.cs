@@ -76,7 +76,7 @@ public class PlanetPickerManager : MonoBehaviour
             {
                 if (set) planet.unlockedLevels = increment;
                 else planet.unlockedLevels += increment;
-                if (planet.unlockedLevels <= 0) planet.unlockedLevels = 1;
+                planet.unlockedLevels = Mathf.Clamp(planet.unlockedLevels, 1, planet.levels.Count);
             }
         }
         else
@@ -84,7 +84,7 @@ public class PlanetPickerManager : MonoBehaviour
             PlanetData planet = GameData.GetPlanet();
             if (set) planet.unlockedLevels = increment;
             else planet.unlockedLevels += increment;
-            if (planet.unlockedLevels <= 0) planet.unlockedLevels = 1;
+            planet.unlockedLevels = Mathf.Clamp(planet.unlockedLevels, 1, planet.levels.Count);
         }
         if (setDropdown) SetLevelDropdown();
     }

@@ -20,7 +20,7 @@ public class SpaceshipGenerator : MonoBehaviour
         if (!pass.randomizeSeed && !preset.randomizeSeeds)
             Random.InitState(pass.seed);
 
-        for (int i = 0; i < pass.amount; i++)
+        for (int i = 0; i < pass.amount * GameData.GetQualityMultiplier(pass.qualityInfluence, true); i++)
         {
             // instatiate new part
             GameObject part = Instantiate(partTempalte, transform);

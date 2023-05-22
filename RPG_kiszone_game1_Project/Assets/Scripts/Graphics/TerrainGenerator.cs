@@ -167,11 +167,14 @@ public class TerrainGenerator : MonoBehaviour
 
     void Awake()
     {
-        if(GetComponent<MeshFilter>() == null)
+        if (GetComponent<MeshFilter>() == null)
         {
-            gameObject.AddComponent<MeshFilter>().mesh = Distort(MakeBasePlane(distance, resolution), transformations, resolution);
+            Vector2 _resolution = new Vector2(Mathf.Round(resolution.x * GameData.GetQualityMultiplier()), Mathf.Round(resolution.y * GameData.GetQualityMultiplier()));
+            Vector2Int textureResolution = Vector2Int.one * (int)Mathf.Pow(2f, QualitySettings.GetQualityLevel() + 4);
+
+            gameObject.AddComponent<MeshFilter>().mesh = Distort(MakeBasePlane(distance / GameData.GetQualityMultiplier(), _resolution), transformations, _resolution);
             gameObject.AddComponent<MeshRenderer>().material = material;
-            GetComponent<Renderer>().material.mainTexture = GenerateTexture(new Vector2Int(256, 256));
+            GetComponent<Renderer>().material.mainTexture = GenerateTexture(textureResolution);
         }
     }
 
@@ -251,7 +254,7 @@ public class TerrainGenerator : MonoBehaviour
         // set the pixel values
         for (int i = 0; i<resolution.x; i++)
             for (int j = 0; j<resolution.y; j++)
-                texture.SetPixel(i, j, new Color((float)i/resolution.x, (float)j/resolution.y, PerliNoise.Perlin(i*0.02f, j*0.02f)*2f, 1f));
+                texture.SetPixel(i, j, new Color((float)i/resolution.x, (float)j/resolution.y, PerliNoise.Perlin((float)i / resolution.x * 0.02f, (float)j / resolution.y * 0.02f)*2f, 1f));
 
         // Apply all SetPixel calls
         texture.Apply();

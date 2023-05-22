@@ -19,6 +19,7 @@ public struct Pass
     public Vector3 randomPostRotation;
     public List<int> assignToLayers;
     public List<float> parameters;
+    public float qualityInfluence;
 }
 
 [System.Serializable]

@@ -60,6 +60,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+    qualityInfluence: 0
   - passName: body random wide
     placementMethod: 0
     rotationMethod: 0
@@ -111,6 +112,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+    qualityInfluence: 0
   - passName: body fill
     placementMethod: 1
     rotationMethod: 0
@@ -153,6 +155,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+    qualityInfluence: 0
   - passName: wings
     placementMethod: 2
     rotationMethod: 1
@@ -194,6 +197,7 @@ MonoBehaviour:
     - 0
     - 0.5
     - 1.1
+    qualityInfluence: 0.2
   - passName: guns
     placementMethod: 2
     rotationMethod: 1
@@ -235,6 +239,7 @@ MonoBehaviour:
     - 0
     - 1
     - 1
+    qualityInfluence: 0.5
   - passName: greebles
     placementMethod: 2
     rotationMethod: 2
@@ -272,6 +277,7 @@ MonoBehaviour:
     assignToLayers: 
     parameters:
     - 2
+    qualityInfluence: 1
   materials:
   - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
   - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}

@@ -81,6 +81,15 @@ public static class GameData
         else return newValue;
     }
 
+    public static float GetQualityMultiplier(float influence = 1f, bool accept0 = false, bool inverse = false, bool roundToInt = false)
+    {
+        float qualityLevels = accept0 ? 5f : 6f;
+        float res = ((QualitySettings.GetQualityLevel() + (accept0 ? 0f : 1f)) / qualityLevels * influence) + (1f * (1f - influence));
+        if (inverse) res = 1f / res;
+        if (roundToInt) res = Mathf.Round(res);
+        return res;
+    }
+
     public static void PurgeScores()
     {
         foreach (PlanetData planet in availablePlanets)
