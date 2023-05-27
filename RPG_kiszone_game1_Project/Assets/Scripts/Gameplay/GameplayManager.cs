@@ -80,10 +80,10 @@ public class GameplayManager : MonoBehaviour
     }
     public void Quit()
     {
-#if (UNITY_EDITOR)
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
-#endif
-#if(UNITY_STANDALONE)
+#else
+        SaveSystem.SaveGame();
         Application.Quit();
 #endif
     }
@@ -107,7 +107,7 @@ public class GameplayManager : MonoBehaviour
             else Pause();
         }
 
-#if (UNITY_EDITOR)
+#if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.M)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
         if (Input.GetKeyDown(KeyCode.N)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
         if (Input.GetKeyDown(KeyCode.O)) { playerTransform.gameObject.GetComponent<PlayerSpaceship>().projectiles += 1; }
@@ -118,6 +118,7 @@ public class GameplayManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         GameData.PurgeScores();
+        foreach (Material material in GameData.availableMaterials) material.color = Color.white;
 #endif
     }
 }

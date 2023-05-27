@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class PlanetSaveableData
+{
+    public int unlockedLevels;
+    public float[] highScores;
+}
+
 [CreateAssetMenu(fileName ="planet", menuName ="Planet")]
 public class PlanetData : ScriptableObject
 {
@@ -21,5 +28,25 @@ public class PlanetData : ScriptableObject
         foreach (string note in notes)
             text += "\n- " + note;
         return text;
+    }
+
+    public PlanetSaveableData GetSaveableData()
+    {
+        PlanetSaveableData dat = new();
+        dat.unlockedLevels = unlockedLevels;
+        dat.highScores = new float[levels.Count];
+        for(int i = 0; i<levels.Count; i++)
+        {
+            dat.highScores[i] = levels[i].highScore;
+        }
+        return dat;
+    }
+    public void ReadSaveableData(PlanetSaveableData dat)
+    {
+        unlockedLevels = dat.unlockedLevels;
+        for (int i = 0; i < levels.Count && i < dat.highScores.Length; i++)
+        {
+             levels[i].highScore = dat.highScores[i];
+        }
     }
 }

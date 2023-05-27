@@ -51,7 +51,7 @@ public class SpaceshipCustomizationManager : MonoBehaviour
 
     void SetSliders()
     {
-        Color.RGBToHSV(GameData.availableMaterials[0].color, out hue, out saturation, out value);
+        Color.RGBToHSV(GameData.GetMaterial().color, out hue, out saturation, out value);
         GameObject.Find("HueSlider").GetComponent<Slider>().value = hue;
         GameObject.Find("SaturationSlider").GetComponent<Slider>().value = saturation;
         GameObject.Find("ValueSlider").GetComponent<Slider>().value = value;
@@ -69,8 +69,8 @@ public class SpaceshipCustomizationManager : MonoBehaviour
     void SetShapePicker()
     {
         TMP_Text spaceshipName = GameObject.Find("SpaceshipModelName").GetComponent<TMP_Text>();
-        spaceshipName.text = GameData.availableSpaceships[GameData.selectedSpaceshipId].name;
-        playerSpaceshipGenerator.SetPreset(GameData.availableSpaceships[GameData.selectedSpaceshipId]);
+        spaceshipName.text = GameData.GetSpaceshipPreset().name;
+        playerSpaceshipGenerator.SetPreset(GameData.GetSpaceshipPreset());
     }
 
     public void SetMaterial(int matId = 0)
@@ -78,7 +78,7 @@ public class SpaceshipCustomizationManager : MonoBehaviour
         GameData.selectedMaterialId = matId;
         foreach (MeshRenderer mr in playerSpaceshipGenerator.GetMeshRenderers())
         {
-            mr.material = GameData.availableMaterials[GameData.selectedMaterialId];
+            mr.material = GameData.GetMaterial();
         }
     }
 
