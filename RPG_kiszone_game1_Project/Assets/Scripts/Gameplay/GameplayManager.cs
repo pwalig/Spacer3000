@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class GameplayManager : MonoBehaviour
     static GameObject PauseMenu;
     static GameObject GameOverMenu;
     static GameObject YouWonMenu;
+
+    Vector3 lastMouseCoordinate = Vector3.zero;
     void Awake()
     {
         //ensure only one manager exists
@@ -72,6 +76,8 @@ public class GameplayManager : MonoBehaviour
     public static void GameWon()
     {
         YouWonMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(FindObjectOfType<Button>().gameObject);
+        EventSystem.current.SetSelectedGameObject(null);
     }
     public void QuitToMainMenu()
     {
@@ -101,19 +107,27 @@ public class GameplayManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !YouWonMenu.activeInHierarchy && !GameOverMenu.activeInHierarchy)
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7)) && !YouWonMenu.activeInHierarchy && !GameOverMenu.activeInHierarchy)
         {
             if (paused) UnPause();
             else Pause();
         }
 
+        // unhighlight menu buttons if mouse moved
+        Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
+        if (mouseDelta.magnitude > 0f) EventSystem.current.SetSelectedGameObject(null);
+        if (FindObjectOfType<Button>() != null && EventSystem.current.currentSelectedGameObject == null && (Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f)) EventSystem.current.SetSelectedGameObject(FindObjectOfType<Button>().gameObject);
+        lastMouseCoordinate = Input.mousePosition;
+
 #if UNITY_EDITOR
-        if (Input.GetKeyDown(KeyCode.M)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
-        if (Input.GetKeyDown(KeyCode.N)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
-        if (Input.GetKeyDown(KeyCode.O)) { playerTransform.gameObject.GetComponent<PlayerSpaceship>().projectiles += 1; }
-        if (Input.GetKeyDown(KeyCode.H)) { playerTransform.gameObject.GetComponent<Spaceship>().DealDamage(-100f); }
+        if (Input.GetKeyDown(KeyCode.M) || Input.GetKeyDown(KeyCode.Joystick1Button8)) { movementMode = !movementMode; Debug.Log("movementMode: " + movementMode); }
+        if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.Joystick1Button9)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
+        if (Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.Joystick1Button4)) { playerTransform.gameObject.GetComponent<PlayerSpaceship>().projectiles += 1; }
+        if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.Joystick1Button5)) { playerTransform.gameObject.GetComponent<Spaceship>().DealDamage(-100f); }
         if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y * 5f); Debug.Log("game Bounds: " + gameAreaSize); }
+        if (Input.GetKey(KeyCode.Joystick1Button2)) { ChangeBounds(-(Input.GetAxis("JoystickScroll") * Time.deltaTime) * 50f); Debug.Log("game Bounds: " + gameAreaSize); }
         if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f && Time.timeScale + Input.mouseScrollDelta.y * 0.1f >= 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
+        if (Input.GetKey(KeyCode.Joystick1Button3) && Input.GetAxis("JoystickScroll") != 0f && Time.timeScale + (Input.GetAxis("JoystickScroll") * Time.deltaTime) >= 0f) { Time.timeScale += Input.GetAxis("JoystickScroll") * Time.deltaTime; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
     }
     private void OnApplicationQuit()
     {

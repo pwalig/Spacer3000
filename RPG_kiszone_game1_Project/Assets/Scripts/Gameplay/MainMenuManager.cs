@@ -94,7 +94,7 @@ public class MainMenuManager : MonoBehaviour
     {
         // unhighlight menu buttons if mouse moved
         Vector3 mouseDelta = Input.mousePosition - lastMouseCoordinate;
-        if (mouseDelta.x < 0) EventSystem.current.SetSelectedGameObject(null);
+        if (mouseDelta.magnitude > 0) EventSystem.current.SetSelectedGameObject(null);
         if (EventSystem.current.currentSelectedGameObject == null && (Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f)) EventSystem.current.SetSelectedGameObject(FindObjectOfType<Button>().gameObject);
         lastMouseCoordinate = Input.mousePosition;
 

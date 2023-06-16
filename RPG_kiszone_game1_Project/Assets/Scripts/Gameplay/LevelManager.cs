@@ -72,7 +72,9 @@ public class LevelManager : MonoBehaviour
                 }
                 catch
                 {
+#if UNITY_EDITOR
                     Debug.LogError("Wave: " + wave + ". Failed to check the list at count: " + enemies.Count);
+#endif
                     err = true;
                     enemies.Clear();
                 }
