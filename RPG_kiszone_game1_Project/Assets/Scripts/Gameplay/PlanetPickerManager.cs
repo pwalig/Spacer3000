@@ -22,7 +22,7 @@ public class PlanetPickerManager : MonoBehaviour
         planetNameText = GameObject.Find("PlanetName").GetComponent<TMP_Text>();
         planetNoteText = GameObject.Find("PlanetNote").GetComponent<TMP_Text>();
         levelNoteText = GameObject.Find("LevelNote").GetComponent<TMP_Text>();
-        if (GameData.availablePlanets == null)
+        if (GameData.availablePlanets == null || GameData.availablePlanets.Count == 0)
             GameData.availablePlanets = avalilablePlanetsInspector;
         planetNameText.text = GameData.GetPlanet().name;
         planetNoteText.text = GameData.GetPlanet().GetNote();

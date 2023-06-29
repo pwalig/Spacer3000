@@ -17,7 +17,8 @@ public class SpaceshipCustomizationManager : MonoBehaviour
     private void Awake()
     {
         platform = GameObject.Find("SpaceShipPlatform").transform;
-        if (GameData.availableSpaceships == null)
+
+        if (GameData.availableSpaceships == null || GameData.availableSpaceships.Count == 0)
         {
             for (int j = 0; j < 10; j++)
             {
@@ -38,8 +39,10 @@ public class SpaceshipCustomizationManager : MonoBehaviour
             GameData.availableSpaceships = startSpaceships;
         }
             
-        if (GameData.availableMaterials == null)
+        if (GameData.availableMaterials == null || GameData.availableMaterials.Count == 0)
             GameData.availableMaterials = startMaterials;
+
+
         SetMaterial(GameData.selectedMaterialId);
         SetMaterialDropdown(GameData.selectedMaterialId);
         SetSliders();

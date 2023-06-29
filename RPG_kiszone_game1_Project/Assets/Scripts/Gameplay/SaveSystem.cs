@@ -7,24 +7,25 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    static string pathEnd = "/mainSave.spacer";
-    static string SlotToName(int saveSlot = 0)
+    static string saveFileName = "/mainSave.spacer";
+    public static string SlotToPath(int saveSlot = 0)
     {
-        if (saveSlot == 0) return "";
-        else return "/save" + saveSlot;
+        return Application.persistentDataPath + "/save" + saveSlot;
     }
-    public static void SaveGame(int saveSlot = 0)
+    public static void SaveGame(int saveSlot = -404)
     {
-        string saveName = SlotToName(saveSlot);
+        if (saveSlot == -404) saveSlot = GameData.currentSave;
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + saveName + pathEnd;
+        string path = SlotToPath(saveSlot);
+        if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+        path += saveFileName;
         FileStream stream = new FileStream(path, FileMode.Create);
         formatter.Serialize(stream, GameData.GetSaveableData());
         stream.Close();
 
         foreach (PlanetData planet in GameData.availablePlanets)
         {
-            path = Application.persistentDataPath + saveName + "/" + planet.name + ".planet";
+            path = SlotToPath(saveSlot) + "/" + planet.name + ".planet";
             stream = new FileStream(path, FileMode.Create);
             formatter.Serialize(stream, planet.GetSaveableData());
             stream.Close();
@@ -36,8 +37,7 @@ public static class SaveSystem
 
     public static void LoadGame(int saveSlot = 0)
     {
-        string saveName = SlotToName(saveSlot);
-        string path = Application.persistentDataPath + saveName + pathEnd;
+        string path = SlotToPath(saveSlot) + saveFileName;
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
@@ -48,7 +48,7 @@ public static class SaveSystem
 
             foreach (PlanetData planet in GameData.availablePlanets)
             {
-                path = Application.persistentDataPath + saveName + "/" + planet.name + ".planet";
+                path = SlotToPath(saveSlot) + "/" + planet.name + ".planet";
                 if (File.Exists(path))
                 {
                     stream = new FileStream(path, FileMode.Open);
@@ -72,23 +72,14 @@ public static class SaveSystem
 
     public static void DeleteSave(int saveSlot = 0)
     {
-        string saveName = SlotToName(saveSlot);
-        string path = Application.persistentDataPath + saveName + pathEnd;
-        if (File.Exists(path)) File.Delete(path);
-#if (UNITY_EDITOR)
-        else Debug.LogError("Save file: " + path + " not existant!");
-#endif
-
-        foreach (PlanetData planet in GameData.availablePlanets)
+        string path = SlotToPath(saveSlot);
+        if (Directory.Exists(path))
         {
-            path = Application.persistentDataPath + saveName + "/" + planet.name + ".planet";
-            if (File.Exists(path)) File.Delete(path);
+            Directory.Delete(path, true);
 #if (UNITY_EDITOR)
-            else Debug.LogError("Save file: " + path + " not existant!");
+            Debug.Log("Save deleted");
 #endif
         }
-#if (UNITY_EDITOR)
-        Debug.Log("Save deleted");
-#endif
+        else Debug.LogError("Save file: " + path + " not existant!");
     }
 }

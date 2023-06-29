@@ -16,10 +16,15 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        if (GameData.GetLevel() != null) level = GameData.GetLevel();
         RewardMenu = GameObject.Find("RewardMenu");
         RewardMenu.SetActive(false);
         scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
+    }
+    void Start()
+    {
+        if (GameData.GetLevel() != null) level = GameData.GetLevel();
+        score = 0;
+        StartCoroutine(PlayLevel());
     }
 
     public static void RemoveBossHpBar(GameObject bar)
@@ -83,15 +88,10 @@ public class LevelManager : MonoBehaviour
             }
             yield return new WaitForSeconds(wave.delayAfterSpawn);
         }
-        GameplayManager.GameWon();
         Rewards();
         AddToScore((int)(100f * GameData.GetDifficultyMulitplier(2f)));
         level.highScore = Mathf.Max(level.highScore, score);
-    }
-    void Start()
-    {
-        score = 0;
-        StartCoroutine(PlayLevel());
+        GameplayManager.GameWon();
     }
 
     void CheckEnemyList()

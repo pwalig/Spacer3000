@@ -114,7 +114,7 @@ public class SpaceshipGenerator : MonoBehaviour
             if (pass.addToRenderers)
             {
                 MeshRenderer partMeshRenderer = part.AddComponent<MeshRenderer>();
-                partMeshRenderer.material = GameData.availableMaterials[GameData.selectedMaterialId];
+                partMeshRenderer.material = GameData.GetMaterial();
                 meshRenderers.Add(partMeshRenderer);
             }
             else part.AddComponent<MeshRenderer>().material = preset.materials[Random.Range(0, preset.materials.Count)];

@@ -25,18 +25,20 @@ public static class GameData
     static float difficultyFloat = 1f;
     public static float volume = 1f;
 
-    public static List<Material> availableMaterials = null;
-    public static List<SpaceshipGeneratorPreset> availableSpaceships = null;
-    public static List<PlanetData> availablePlanets = null;
+    public static List<Material> availableMaterials = new();
+    public static List<SpaceshipGeneratorPreset> availableSpaceships = new();
+    public static List<PlanetData> availablePlanets = new();
 
-    static List<Material> allMaterials = new();
-    static List<SpaceshipGeneratorPreset> allSpaceships = new();
-    static List<PlanetData> allPlanets = new();
+    public static List<Material> allMaterials;
+    public static List<SpaceshipGeneratorPreset> allSpaceships;
+    public static List<PlanetData> allPlanets;
 
     public static int selectedMaterialId = 0;
     public static int selectedSpaceshipId = 0;
     public static int selectedPlanetId = 0;
     public static int selectedLevelId = 0;
+
+    public static int currentSave = -1;
 
     public static GameSaveableData GetSaveableData()
     {
@@ -45,7 +47,7 @@ public static class GameData
         dat.volume = volume;
         dat.cameraShake = CameraShake.globalIntensity;
 
-        UpdateAllLists();
+        //UpdateAllLists();
         dat.availableMaterials = new bool[allMaterials.Count];
         dat.availablePlanets = new bool[allPlanets.Count];
         dat.availableSpaceships = new bool[allSpaceships.Count];
@@ -81,7 +83,7 @@ public static class GameData
         volume = dat.volume;
         CameraShake.globalIntensity = dat.cameraShake;
 
-        UpdateAllLists();
+        //UpdateAllLists();
         for (int i = 0; i < dat.availableMaterials.Length; i++) if(dat.availableMaterials[i] && !availableMaterials.Contains(allMaterials[i])) availableMaterials.Add(allMaterials[i]);
         for (int i = 0; i < dat.availablePlanets.Length; i++) if (dat.availablePlanets[i] && !availablePlanets.Contains(allPlanets[i])) availablePlanets.Add(allPlanets[i]);
         for (int i = 0; i < dat.availableSpaceships.Length; i++) if (dat.availableSpaceships[i] && !availableSpaceships.Contains(allSpaceships[i])) availableSpaceships.Add(allSpaceships[i]);
@@ -110,9 +112,8 @@ public static class GameData
                     UpdateAllListsRecursive(planet1);
             }
         }
-
     }
-    static void UpdateAllLists()
+    public static void UpdateAllLists()
     {
         allMaterials.Clear();
         allPlanets.Clear();
@@ -201,9 +202,32 @@ public static class GameData
 
     public static void PurgeScores()
     {
-        foreach (PlanetData planet in availablePlanets)
-            foreach (LevelLayout level in planet.levels)
-                level.highScore = 0f;
+        if (availablePlanets != null)
+            foreach (PlanetData planet in availablePlanets)
+            {
+                foreach (LevelLayout level in planet.levels)
+                    level.highScore = 0f;
+                planet.unlockedLevels = 1;
+            }
+    }
+
+    public static void Clear()
+    {
+        PurgeScores();
+        availablePlanets.Clear();
+        availableMaterials.Clear();
+        availableSpaceships.Clear();
+        difficultyLevel = Difficulty.Normal;
+        difficultyFloat = 1f;
+        volume = 1f;
+        CameraShake.globalIntensity = 0f;
+
+        selectedMaterialId = 0;
+        selectedSpaceshipId = 0;
+        selectedPlanetId = 0;
+        selectedLevelId = 0;
+
+        currentSave = -1;
     }
     /*static GameData gameData;
     void Awake()
