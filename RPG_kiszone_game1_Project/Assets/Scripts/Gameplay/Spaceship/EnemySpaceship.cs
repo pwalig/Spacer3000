@@ -9,7 +9,7 @@ public class EnemySpaceship : Spaceship
     private GameObject powerupPrefab;
     public override IEnumerator Shoot()
     {
-        StartCoroutine(attacks[Random.Range(0, attacks.Count)].Perform(transform, ProjectilePrefab));
+        StartCoroutine(attacks[Random.Range(0, attacks.Count)].Perform(transform));
         return base.Shoot();
     }
 

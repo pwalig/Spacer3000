@@ -126,46 +126,57 @@ MonoBehaviour:
   - name: radius attack
     iterations: 3
     projectiles:
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: 0
       time: 0
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: 10
       time: 0
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: -10
       time: 0.2
   - name: waterfall attack
     iterations: 1
     projectiles:
-    - position: {x: -40, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: -40, y: 0, z: 0}
       rotation: -12
       time: 0.2
-    - position: {x: -30, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: -30, y: 0, z: 0}
       rotation: -9
       time: 0.2
-    - position: {x: -20, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: -20, y: 0, z: 0}
       rotation: -6
       time: 0.2
-    - position: {x: -10, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: -10, y: 0, z: 0}
       rotation: -3
       time: 0.2
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: 0, y: 0, z: 0}
       rotation: 0
       time: 0.2
-    - position: {x: 10, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: 10, y: 0, z: 0}
       rotation: 3
       time: 0.2
-    - position: {x: 20, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: 20, y: 0, z: 0}
       rotation: 6
       time: 0.2
-    - position: {x: 30, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: 30, y: 0, z: 0}
       rotation: 9
       time: 0.2
-    - position: {x: 40, y: 0, z: 0}
+    - projectile: {fileID: 0}
+      position: {x: 40, y: 0, z: 0}
       rotation: 12
       time: 0.2
-  ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
   hpBar: {fileID: 0}
 --- !u!61 &1933663113404844292
 BoxCollider2D:

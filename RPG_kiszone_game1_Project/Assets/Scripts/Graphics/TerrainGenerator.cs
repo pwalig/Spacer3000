@@ -178,6 +178,17 @@ public class TerrainGenerator : MonoBehaviour
         }
     }
 
+    public void Generate()
+    {
+        Vector3 prePos = transform.position;
+        transform.position = Vector3.zero;
+        Vector2 _resolution = new Vector2(Mathf.Round(resolution.x * GameData.GetQualityMultiplier()), Mathf.Round(resolution.y * GameData.GetQualityMultiplier()));
+        Vector2Int textureResolution = Vector2Int.one * (int)Mathf.Pow(2f, QualitySettings.GetQualityLevel() + 4);
+        GetComponent<MeshFilter>().mesh = Distort(MakeBasePlane(distance / GameData.GetQualityMultiplier(), _resolution), transformations, _resolution);
+        GetComponent<Renderer>().material.mainTexture = GenerateTexture(textureResolution);
+        transform.position = prePos;
+    }
+
     Mesh MakeBasePlane(Vector2 distance, Vector2 resolution)
     {
         Mesh mesh = new Mesh();

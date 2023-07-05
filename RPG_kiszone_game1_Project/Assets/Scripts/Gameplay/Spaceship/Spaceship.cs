@@ -10,9 +10,9 @@ using UnityEngine;
 [System.Serializable]
 public struct OneShoot
 {
+    public GameObject projectile;
     public Vector3 position;
     public float rotation;
-    //public float speed;
     public float time;
 }
 
@@ -22,14 +22,14 @@ public class AttackPattern //class describing one attack
     public string name;
     public int iterations; //how may times to repeat the attack pattern
     public List<OneShoot> projectiles;
-    public IEnumerator Perform(Transform host, GameObject ProjectilePrefab)
+    public IEnumerator Perform(Transform host)
     {
         for (int i = 0; i < iterations; i++)
         {
             foreach (OneShoot shoot in projectiles)
             {
                 CameraShake.Shake(30f);
-                GameObject clonedProjectile = GameObject.Instantiate(ProjectilePrefab, host.position + shoot.position, host.rotation);
+                GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + shoot.position, host.rotation);
                 VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
                 clonedProjectile.transform.Rotate(Vector3.forward * shoot.rotation);
                 clonedProjectile.gameObject.tag = host.tag + "_Projectile";
@@ -49,7 +49,6 @@ public class Spaceship : MonoBehaviour
     public List<AttackPattern> attacks;
 
     bool canShoot = true;
-    public GameObject ProjectilePrefab;
     //[SerializeField]
     //private float shootSpawn = 10f;
 

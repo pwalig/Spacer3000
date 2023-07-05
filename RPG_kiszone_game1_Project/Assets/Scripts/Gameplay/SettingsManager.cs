@@ -35,6 +35,16 @@ public class SettingsManager : MonoBehaviour
     public void ChangeQualityLevel(int qualityLevel)
     {
         QualitySettings.SetQualityLevel(qualityLevel);
+        TerrainGenerator [] terrains = FindObjectsOfType<TerrainGenerator>();
+        for (int i = 0; i<terrains.Length; i++)
+        {
+            terrains[i].Generate();
+        }
+        SpaceshipGenerator[] spaceships = FindObjectsOfType<SpaceshipGenerator>();
+        for (int i = 0; i<spaceships.Length; i++)
+        {
+            spaceships[i].Generate();
+        }
     }
     public void ChangeVolume(float volume)
     {

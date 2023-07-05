@@ -4870,31 +4870,36 @@ MonoBehaviour:
   - name: 1 projectile
     iterations: 1
     projectiles:
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: 0
       time: 0
   - name: 2 projectiles
     iterations: 1
     projectiles:
-    - position: {x: -5, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+      position: {x: -5, y: 0, z: 0}
       rotation: 0
       time: 0
-    - position: {x: 5, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+      position: {x: 5, y: 0, z: 0}
       rotation: 0
       time: 0
   - name: 3 projectiles
     iterations: 1
     projectiles:
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: 0
       time: 0
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: -5
       time: 0
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: 5
       time: 0
-  ProjectilePrefab: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
   projectiles: 1
 --- !u!114 &199775754796022615
 MonoBehaviour:

@@ -157,10 +157,10 @@ MonoBehaviour:
   - name: base attack
     iterations: 1
     projectiles:
-    - position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
+      position: {x: 0, y: 0, z: 0}
       rotation: 0
       time: 0
-  ProjectilePrefab: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
   powerupChance: 100
   powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
 --- !u!114 &6739364942743443445

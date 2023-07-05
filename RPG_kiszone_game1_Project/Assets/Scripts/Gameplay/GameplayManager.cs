@@ -100,8 +100,8 @@ public class GameplayManager : MonoBehaviour
     {
         if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7)) && !YouWonMenu.activeInHierarchy && !GameOverMenu.activeInHierarchy)
         {
-            if (paused) UnPause();
-            else Pause();
+            if (!paused) Pause();
+            else if (PauseMenu.activeInHierarchy) UnPause();
         }
 
 #if UNITY_EDITOR // cheat codes

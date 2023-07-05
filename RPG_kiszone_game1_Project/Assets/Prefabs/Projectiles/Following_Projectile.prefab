@@ -4900,7 +4900,7 @@ MonoBehaviour:
   speed: 100
   damage: 10
   lifespan: 4
-  projectile_destroy: 0
+  projectile_destroy: 1
   TurnSpeed: 0.5
 --- !u!1001 &1777774576730924748
 PrefabInstance:
@@ -4915,11 +4915,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.z
@@ -4967,12 +4967,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+      objectReference: {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     - target: {fileID: 919132149155446097, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_Name
       value: rakieta1
