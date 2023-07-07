@@ -32,7 +32,7 @@ public class AttackPattern //class describing one attack
                 GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + shoot.position, host.rotation);
                 VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
                 clonedProjectile.transform.Rotate(Vector3.forward * shoot.rotation);
-                clonedProjectile.gameObject.tag = host.tag + "_Projectile";
+                clonedProjectile.tag = host.tag + "_Projectile";
                 yield return new WaitForSeconds(shoot.time);
             }
         }
@@ -104,17 +104,17 @@ public class Spaceship : MonoBehaviour
         {
             if (moveDirection.magnitude > 0.05f)
             {
-                currentSpeed += moveDirection * responsiveness * Time.deltaTime;
+                currentSpeed += responsiveness * Time.deltaTime * moveDirection;
             }
             else
             {
-                if (responsiveness * Time.deltaTime <= (currentSpeed - Vector3.zero).magnitude) currentSpeed -= currentSpeed.normalized * responsiveness * Time.deltaTime;
+                if (responsiveness * Time.deltaTime <= (currentSpeed - Vector3.zero).magnitude) currentSpeed -= responsiveness * Time.deltaTime * currentSpeed.normalized;
                 else currentSpeed = Vector3.zero;
             }
             if (currentSpeed.magnitude > speed) currentSpeed = currentSpeed.normalized * speed;
             transform.position += currentSpeed * Time.deltaTime;
         }
-        else transform.position += moveDirection * speed * Time.deltaTime; //spaceship movement
+        else transform.position += speed * Time.deltaTime * moveDirection; //spaceship movement
 
         if (controller.shoot && canShoot)
         {

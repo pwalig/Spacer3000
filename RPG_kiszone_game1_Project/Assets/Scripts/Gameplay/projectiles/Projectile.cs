@@ -27,14 +27,14 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if ((CompareTag("Player_Projectile") && other.tag == "Enemy") || (CompareTag("Enemy_Projectile") && other.tag == "Player"))
+        if ((CompareTag("Player_Projectile") && other.CompareTag("Enemy")) || (CompareTag("Enemy_Projectile") && other.CompareTag("Player")))
         {
             VFXManager.CreateEffect(transform.position, 0, 0.3f);
             CameraShake.Shake(30f);
             if (other.CompareTag("Player")) other.gameObject.GetComponent<Spaceship>().DealDamage(damage * GameData.GetDifficultyMulitplier(2f));
             else other.gameObject.GetComponent<Spaceship>().DealDamage(damage * GameData.GetDifficultyMulitplier(2f, true));
             Destroy(gameObject);
-        }else if (CompareTag("Player_Projectile") && other.tag == "Enemy_Projectile" && (projectile_destroy == true || other.gameObject.GetComponent<Projectile>().projectile_destroy == true))
+        }else if (CompareTag("Player_Projectile") && other.CompareTag("Enemy_Projectile") && (projectile_destroy == true || other.gameObject.GetComponent<Projectile>().projectile_destroy == true))
         {
             VFXManager.CreateEffect(transform.position, 0, 0.3f);
             VFXManager.CreateEffect(other.transform.position, 0, 0.3f);

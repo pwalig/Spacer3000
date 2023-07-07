@@ -39,13 +39,13 @@ public class GameplayManager : MonoBehaviour
         //if (GameData.availableMaterials != null) playerGameObject.GetComponentInChildren<MeshRenderer>().material = GameData.availableMaterials[GameData.selectedMaterialId];
 
         // make terrain
-        if (GameData.availablePlanets[GameData.selectedPlanetId].terrainAsset != null)
-            Instantiate(GameData.availablePlanets[GameData.selectedPlanetId].terrainAsset).transform.position = new Vector3(0f, -200f, 300f);
+        if (GameData.GetPlanet().terrainAsset != null)
+            Instantiate(GameData.GetPlanet().terrainAsset).transform.position = new Vector3(0f, -200f, 300f);
         playerTransform = playerGameObject.transform;
 
         // generate same spaceship as in main menu
         GameObject psv = GameObject.Find("PlayerSpaceshipVisuals");
-        if (psv != null) psv.AddComponent<SpaceshipGenerator>().SetPreset(GameData.availableSpaceships[GameData.selectedSpaceshipId]);
+        if (psv != null) psv.AddComponent<SpaceshipGenerator>().SetPreset(GameData.GetSpaceshipPreset());
 
         UnPause();
         GameOverMenu.SetActive(false);

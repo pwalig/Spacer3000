@@ -33,7 +33,7 @@ public class LevelManager : MonoBehaviour
         Destroy(bar);
         for (int i = 0; i < bossBars.Count; i++)
         {
-            bossBars[i].transform.localPosition = Vector3.up * 40f * i;
+            bossBars[i].transform.localPosition = 40f * i * Vector3.up;
         }
     }
 
@@ -45,7 +45,7 @@ public class LevelManager : MonoBehaviour
             if (enemy.TryGetComponent(out BossSpaceship boss))
             {
                 GameObject bossBar = Instantiate(BossHpBar, GameObject.Find("BossBarsAnchor").transform);
-                bossBar.transform.localPosition += Vector3.up * 40f * bossBars.Count;
+                bossBar.transform.localPosition += 40f * bossBars.Count * Vector3.up;
                 bossBars.Add(bossBar);
                 TMP_Text barText = bossBar.transform.Find("BossHpBar").Find("BossName").gameObject.GetComponent<TMP_Text>();
                 barText.text = enemy.name;

@@ -8,6 +8,6 @@ public class Standard_Projectile : Projectile
     void Update()
     {
         //transform.position + transform.up * speed * Time.deltaTime;
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector3.up);
     }
 }

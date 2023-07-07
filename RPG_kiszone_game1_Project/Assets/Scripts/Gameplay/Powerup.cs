@@ -30,6 +30,6 @@ public class Powerup : MonoBehaviour
     {
         if (start) StartCoroutine(Expire());
         //transform.position + transform.up * speed * Time.deltaTime;
-        transform.Translate(Vector3.up * speed * Time.deltaTime * -1 * GameData.GetDifficultyMulitplier(1f));
+        transform.Translate(-1 * GameData.GetDifficultyMulitplier(1f) * speed * Time.deltaTime * Vector3.up);
     }
 }
