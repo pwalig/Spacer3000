@@ -10,7 +10,8 @@ public class Projectile : MonoBehaviour
     public float damage = 10;
     public float lifespan = 4f;
     private bool start = true;
-    public bool projectile_destroy = false;
+    public enum ProjDestrMod { Destructable, Ghost, Indestructable };
+    public ProjDestrMod destructionMode;
     // Start is called before the first frame update
     public IEnumerator Expire()
     {
@@ -34,13 +35,22 @@ public class Projectile : MonoBehaviour
             if (other.CompareTag("Player")) other.gameObject.GetComponent<Spaceship>().DealDamage(damage * GameData.GetDifficultyMulitplier(2f));
             else other.gameObject.GetComponent<Spaceship>().DealDamage(damage * GameData.GetDifficultyMulitplier(2f, true));
             Destroy(gameObject);
-        }else if (CompareTag("Player_Projectile") && other.CompareTag("Enemy_Projectile") && (projectile_destroy == true || other.gameObject.GetComponent<Projectile>().projectile_destroy == true))
+        }
+        else if (CompareTag("Player_Projectile") && other.CompareTag("Enemy_Projectile"))
         {
-            VFXManager.CreateEffect(transform.position, 0, 0.3f);
-            VFXManager.CreateEffect(other.transform.position, 0, 0.3f);
-            CameraShake.Shake(30f);
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            ProjDestrMod otherDestr = other.gameObject.GetComponent<Projectile>().destructionMode;
+            if (otherDestr == ProjDestrMod.Destructable && destructionMode != ProjDestrMod.Ghost)
+            {
+                VFXManager.CreateEffect(other.transform.position, 0, 0.3f);
+                Destroy(other.gameObject);
+                CameraShake.Shake(19f);
+            }
+            if (destructionMode == ProjDestrMod.Destructable && otherDestr != ProjDestrMod.Ghost)
+            {
+                VFXManager.CreateEffect(transform.position, 0, 0.3f);
+                CameraShake.Shake(19f);
+                Destroy(gameObject);
+            }
         }
     }
 

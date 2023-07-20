@@ -4883,7 +4883,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 8.47, y: 12.28}
+  m_Size: {x: 6, y: 12.28}
   m_Direction: 0
 --- !u!114 &3019192388980393079
 MonoBehaviour:
@@ -4914,11 +4914,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 350
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 350
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.z

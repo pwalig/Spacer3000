@@ -73,6 +73,7 @@ public class Spaceship : MonoBehaviour
     public virtual void DealDamage(float damage)
     {
         hp -= damage;
+        if (hp > maxHp) hp = maxHp;
 
         //add smoke effect: less hp left ---> more smoke
         if (smoke == null)

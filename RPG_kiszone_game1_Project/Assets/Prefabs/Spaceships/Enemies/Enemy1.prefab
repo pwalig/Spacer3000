@@ -161,8 +161,8 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       rotation: 0
       time: 0
-  powerupChance: 100
-  powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
+  powerupChance: 75
+  powerupPrefab: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
 --- !u!114 &6739364942743443445
 MonoBehaviour:
   m_ObjectHideFlags: 0

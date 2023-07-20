@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerSpaceship : Spaceship
 {
     public int projectiles = 1;
+    private float takenDmgMulti = 1f;
     RectTransform hpBar;
 
     private void Start()
@@ -18,14 +19,26 @@ public class PlayerSpaceship : Spaceship
         return base.Shoot();
     }
 
-    public void Powerup()
+    IEnumerator PowerupExp(float time, int proj, float addSpeed, float shield)
     {
-        projectiles += 1;
+        yield return new WaitForSeconds(time * GameData.GetDifficultyMulitplier(0.4f, true));
+        takenDmgMulti = Mathf.Clamp01(takenDmgMulti + shield);
+        speed -= addSpeed * GameData.GetDifficultyMulitplier(0.2f, true);
+        projectiles -= proj;
+    }
+
+    public void Powerup(float time, int proj = 1, float addSpeed = 0f, float shield = 0f)
+    {
+        projectiles += proj;
+        takenDmgMulti = Mathf.Clamp01(takenDmgMulti - (shield * GameData.GetDifficultyMulitplier(0.2f, true)));
+        speed += addSpeed * GameData.GetDifficultyMulitplier(0.2f, true);
+        StartCoroutine(PowerupExp(time, proj, addSpeed, shield));
     }
 
     public override void DealDamage(float damage)
     {
-        hpBar.sizeDelta = new Vector2(250f * (hp - damage) / maxHp, 50f);
+        if (damage > 0f) damage *= takenDmgMulti;
         base.DealDamage(damage);
+        hpBar.sizeDelta = new Vector2(250f * hp / maxHp, 50f);
     }
 }

@@ -87,11 +87,11 @@ MonoBehaviour:
   - name: base attack
     iterations: 2
     projectiles:
-    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+    - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
       time: 0.1
-  powerupChance: 100
+  powerupChance: 50
   powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
 --- !u!61 &5544208847590974672
 BoxCollider2D:

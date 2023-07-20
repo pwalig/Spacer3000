@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8183702454248987909}
   - component: {fileID: 6326568885737783820}
   m_Layer: 0
-  m_Name: Powerup
+  m_Name: Heal
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,12 +84,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3200ec27075c36644ad34228f5ab9228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  duration: 10
-  projectiles: 1
-  heal: 5
+  speed: 75
+  duration: 0
+  projectiles: 0
+  heal: 9999
   shield: 0
-  shipSpeed: 5
+  shipSpeed: 0
 --- !u!1 &8943529964751014295
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 1990562257873342499, guid: f22accf2f79740f4aa42a1b3e2d9fe6c, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

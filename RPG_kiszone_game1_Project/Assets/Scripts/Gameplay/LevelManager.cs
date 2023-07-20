@@ -75,21 +75,22 @@ public class LevelManager : MonoBehaviour
                 {
                     CheckEnemyList();
                 }
-                catch
+                catch (Exception e)
                 {
 #if UNITY_EDITOR
                     Debug.LogError("Wave: " + wave + ". Failed to check the list at count: " + enemies.Count);
+                    Debug.LogError("Original Error: " + e.Message);
 #endif
                     err = true;
                     enemies.Clear();
                 }
-                if (err) yield return new WaitForSeconds(enemies.Count * 3f * GameData.GetDifficultyMulitplier(1f));
+                if (err) yield return new WaitForSeconds(enemies.Count * 4f * GameData.GetDifficultyMulitplier(1f));
                 else yield return 0;
             }
             yield return new WaitForSeconds(wave.delayAfterSpawn);
         }
         Rewards();
-        AddToScore((int)(100f * GameData.GetDifficultyMulitplier(2f)));
+        AddToScore((int)(100f * GameData.GetDifficultyMulitplier(1f)));
         level.highScore = Mathf.Max(level.highScore, score);
         GameplayManager.GameWon();
     }
