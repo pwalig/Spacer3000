@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     static List<GameObject> bossBars = new();
     static GameObject RewardMenu;
     static TMP_Text scoreText;
+    private static bool signal = false;
 
     private void Awake()
     {
@@ -61,13 +62,17 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator PlayLevel()
     {
+        enemies.Clear();
         foreach (LevelLayout.Wave wave in level.waves)
         {
+            yield return new WaitForSeconds(wave.delayBeforeSpawn);
             GameCameraContoller.SetAngle(180f - wave.camAngle);
-            GameCameraContoller.SetFieldOfView(wave.camFOV == 0 ? 13f : wave.camFOV);
+            GameCameraContoller.SetFieldOfView(wave.camFOV <= 0 ? 13f : wave.camFOV);
             GameplayManager.SetBounds(wave.gameBoundsScale);
             StartCoroutine(Spawn(wave));
-            if (wave.waitMode != LevelLayout.Wave.WaitMode.runNextInParallel) yield return new WaitForSeconds(wave.delayAfterIteration * wave.iterations);
+            if (wave.waitMode != LevelLayout.Wave.WaitMode.runNextInParallel) yield return new WaitForSeconds(wave.delayAfterIteration * wave.iterations); // by default PlayLevel() doesn't wait till Spawn(wave) ends, it keeps going. This line fixes that.
+            while (wave.waitMode == LevelLayout.Wave.WaitMode.untilSignal && signal == false) yield return 0;
+            signal = false;
             while (wave.waitMode == LevelLayout.Wave.WaitMode.untilAllKilled && enemies.Count > 0)
             {
                 bool err = false;
@@ -107,6 +112,11 @@ public class LevelManager : MonoBehaviour
         score += _score;
         if (score < 0) score = 0;
         scoreText.text = "Score: " + score;
+    }
+
+    public static void SendSignal()
+    {
+        signal = true;
     }
 
     void Rewards()

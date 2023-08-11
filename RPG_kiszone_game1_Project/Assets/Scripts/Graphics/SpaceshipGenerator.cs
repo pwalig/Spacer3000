@@ -15,6 +15,18 @@ public class SpaceshipGenerator : MonoBehaviour
         Generate();
     }
 
+    [ContextMenu("Generata")]
+    void Generata()
+    {
+        Generate();
+    }
+
+    [ContextMenu("Cleare")]
+    void Cleare()
+    {
+        Clear();
+    }
+
     void RunPass(Pass pass)
     {
         if (!pass.randomizeSeed && !preset.randomizeSeeds)
@@ -60,7 +72,7 @@ public class SpaceshipGenerator : MonoBehaviour
                     prevpart.transform.eulerAngles = Vector3.zero;
 
                     // set position on the surface of chosen part
-                    Mesh premesh = prevpart.GetComponent<MeshFilter>().mesh;
+                    Mesh premesh = prevpart.GetComponent<MeshFilter>().sharedMesh; // unity recomended sharedMesh instead of mesh while generating in editor when game is not playing
                     int ind = Random.Range(0, Mathf.FloorToInt(premesh.triangles.Length / 3));
                     Vector3 pos = (premesh.vertices[premesh.triangles[ind * 3]] + premesh.vertices[premesh.triangles[ind * 3 + 1]] + premesh.vertices[premesh.triangles[ind * 3 + 2]]) / 3f;
                     part.transform.localPosition = (pos * prevpart.transform.localScale.z) + prevpart.transform.localPosition;
@@ -188,7 +200,8 @@ public class SpaceshipGenerator : MonoBehaviour
 
         foreach (GameObject part in parts)
         {
-            Destroy(part);
+            //Destroy(part); impossible to use in editor when game is not playing
+            DestroyImmediate(part);
         }
         parts.Clear();
     }

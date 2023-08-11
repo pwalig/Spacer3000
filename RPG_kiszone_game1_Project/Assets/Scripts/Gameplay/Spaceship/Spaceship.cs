@@ -32,7 +32,7 @@ public class AttackPattern //class describing one attack
                 GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + shoot.position, host.rotation);
                 VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
                 clonedProjectile.transform.Rotate(Vector3.forward * shoot.rotation);
-                clonedProjectile.tag = host.tag + "_Projectile";
+                if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
                 yield return new WaitForSeconds(shoot.time);
             }
         }
@@ -42,7 +42,7 @@ public class Spaceship : MonoBehaviour
 {
     SpaceshipController controller; //determines what controls the shpaceship: player or ai
     public float maxHp = 100f;
-    public float hp = 100f;
+    [HideInInspector] public float hp;
     public float speed = 20f;
     public float responsiveness = 1000f; //Spaceship's acceleration and deacceleration. Works only if GameplayManager.movement_mode == true;
     public float shootDelay = 1f;
@@ -58,6 +58,7 @@ public class Spaceship : MonoBehaviour
 
     void Awake()
     {
+        hp = maxHp;
         controller = GetComponent<SpaceshipController>(); //get controller
         if (controller == null) controller = gameObject.AddComponent<SpaceshipController>(); //if controller is missing create empty one
         shootDelay *= GameData.GetDifficultyMulitplier(0.2f, !CompareTag("Player"));

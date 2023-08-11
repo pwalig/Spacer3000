@@ -9,6 +9,7 @@ public class LevelLayout : ScriptableObject
     public class Wave
     {
         public string name; // Name of the wave. Does nothing practically. Only helps not to get lost while creating a level.
+        public float delayBeforeSpawn = 0f;
         public float gameBoundsScale = 1f;
         public float camFOV = 13f;
         public float camAngle = 35f;
@@ -19,7 +20,7 @@ public class LevelLayout : ScriptableObject
         public Vector3 deltaPosition; // Shift position of next enemies in the wave.
         public float screenTime; // Time until enemy flies away. Set to 0 or below to make enemy stay until it is killed.
         public bool addToMustKillList;
-        public enum WaitMode { untilSpawnEnd, untilAllKilled, runNextInParallel }
+        public enum WaitMode { untilSpawnEnd, untilAllKilled, runNextInParallel, untilSignal }
         public WaitMode waitMode;
         public float delayAfterSpawn; // Time to next wave in seconds.
     }
@@ -27,7 +28,7 @@ public class LevelLayout : ScriptableObject
 
     public float highScore = 0f;
 
-    [SerializeField] string[] notes;
+    [SerializeField] string[] notes; // level description displayed in level selection menu
 
     [Header("Rewards")]
     //public List<dynamic> rewards;

@@ -50,8 +50,22 @@ MonoBehaviour:
     deltaPosition: {x: 0, y: 0, z: 0}
     screenTime: 0
     addToMustKillList: 1
+    waitMode: 2
+    delayAfterSpawn: 20
+  - name: boss minions
+    gameBoundsScale: 1
+    camFOV: 10
+    camAngle: 35
+    enemyPrefab: {fileID: 3838212405406433343, guid: 6a73a6e044790ca4291ab94fa3d99204, type: 3}
+    position: {x: -100, y: 150, z: 0}
+    iterations: 5
+    delayAfterIteration: 2
+    deltaPosition: {x: 40, y: 0, z: 0}
+    screenTime: 0
+    addToMustKillList: 1
     waitMode: 1
     delayAfterSpawn: 1
+  highScore: 0
   notes:
   - long one
   - but interesting
