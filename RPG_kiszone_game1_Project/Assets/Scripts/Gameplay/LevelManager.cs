@@ -38,11 +38,32 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    IEnumerator Spawn(LevelLayout.Wave wave)
+    IEnumerator Spawn(List<LevelLayout.Wave.InWaveEnemySpawn> enemySpawns)
     {
-        for (int i = 0; i < wave.iterations; i++)
+        foreach (LevelLayout.Wave.InWaveEnemySpawn enemySpawn in enemySpawns)
         {
-            GameObject enemy = Instantiate(wave.enemyPrefab, wave.position + (wave.deltaPosition * i), Quaternion.Euler(0f, 0f, 180f));
+            yield return new WaitForSeconds(enemySpawn.delayBeforeSpawn);
+
+            // translate position form spawn_side + position_float to vector3
+            Vector3 pos = Vector3.up * (GameplayManager.gameAreaSize.y + enemySpawn.padding);
+            switch (enemySpawn.spawnSide)
+            {
+                case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.top:
+                    pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, GameplayManager.gameAreaSize.y + enemySpawn.padding);
+                    break;
+                case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.left:
+                    pos = new Vector3(GameplayManager.gameAreaSize.x + enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    break;
+                case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.right:
+                    pos = new Vector3(-GameplayManager.gameAreaSize.x - enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    break;
+                case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.bottom:
+                    pos = new Vector3(-enemySpawn.position * GameplayManager.gameAreaSize.x, GameplayManager.gameAreaSize.y + enemySpawn.padding);
+                    break;
+            }
+
+            // spawn
+            GameObject enemy = Instantiate(enemySpawn.enemyPrefab, pos, Quaternion.Euler(0f, 0f, 180f));
             if (enemy.TryGetComponent(out BossSpaceship boss))
             {
                 GameObject bossBar = Instantiate(BossHpBar, GameObject.Find("BossBarsAnchor").transform);
@@ -54,9 +75,8 @@ public class LevelManager : MonoBehaviour
                 boss.hpBar = bossBar.transform.Find("BossHpBar").gameObject.GetComponent<RectTransform>();
                 boss.DealDamage(0f);
             }
-            if (wave.screenTime > 0f) StartCoroutine(enemy.GetComponent<AiEscape>().FlyAway(wave.screenTime));
-            if (wave.addToMustKillList) enemies.Add(enemy);
-            yield return new WaitForSeconds(wave.delayAfterIteration);
+            if (enemySpawn.screenTime > 0f) StartCoroutine(enemy.GetComponent<AiEscape>().FlyAway(enemySpawn.screenTime));
+            if (enemySpawn.addToMustKillList) enemies.Add(enemy);
         }
     }
 
@@ -65,12 +85,17 @@ public class LevelManager : MonoBehaviour
         enemies.Clear();
         foreach (LevelLayout.Wave wave in level.waves)
         {
-            yield return new WaitForSeconds(wave.delayBeforeSpawn);
+            yield return new WaitForSeconds(wave.delayBeforeWave);
             GameCameraContoller.SetAngle(180f - wave.camAngle);
             GameCameraContoller.SetFieldOfView(wave.camFOV <= 0 ? 13f : wave.camFOV);
             GameplayManager.SetBounds(wave.gameBoundsScale);
-            StartCoroutine(Spawn(wave));
-            if (wave.waitMode != LevelLayout.Wave.WaitMode.runNextInParallel) yield return new WaitForSeconds(wave.delayAfterIteration * wave.iterations); // by default PlayLevel() doesn't wait till Spawn(wave) ends, it keeps going. This line fixes that.
+            StartCoroutine(Spawn(wave.enemies));
+
+            // wait until Spawn(wave.enemies) ends
+            float totalTime = 0f;
+            foreach (LevelLayout.Wave.InWaveEnemySpawn spawn in wave.enemies) totalTime += spawn.delayBeforeSpawn;
+            if (wave.waitMode != LevelLayout.Wave.WaitMode.runNextInParallel) yield return new WaitForSeconds(totalTime); // by default PlayLevel() doesn't wait till Spawn(wave) ends, it keeps going. This line fixes that.
+
             while (wave.waitMode == LevelLayout.Wave.WaitMode.untilSignal && signal == false) yield return 0;
             signal = false;
             while (wave.waitMode == LevelLayout.Wave.WaitMode.untilAllKilled && enemies.Count > 0)
@@ -92,7 +117,7 @@ public class LevelManager : MonoBehaviour
                 if (err) yield return new WaitForSeconds(enemies.Count * 4f * GameData.GetDifficultyMulitplier(1f));
                 else yield return 0;
             }
-            yield return new WaitForSeconds(wave.delayAfterSpawn);
+            yield return new WaitForSeconds(wave.delayAfterWave);
         }
         Rewards();
         AddToScore((int)(100f * GameData.GetDifficultyMulitplier(1f)));

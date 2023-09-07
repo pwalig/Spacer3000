@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AiFollow : AiEscape
 {
-    public float goalHeight;
+    public float goalHeight = 60f;
     void Update()
     {
         if (!escape)

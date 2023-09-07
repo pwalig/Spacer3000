@@ -111,10 +111,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6739364942743443447}
   - component: {fileID: 6739364942743443448}
-  - component: {fileID: 6739364942743443445}
   - component: {fileID: 6739364942743443444}
+  - component: {fileID: -1287887176046698714}
   m_Layer: 0
-  m_Name: Enemy1
+  m_Name: AbsoluteFollow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,9 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e041a37a73c8dd34ebadc9b207bce214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 60
   hp: 100
-  speed: 50
+  speed: 35
   responsiveness: 2000
   shootDelay: 1
   attacks:
@@ -163,24 +163,6 @@ MonoBehaviour:
       time: 0
   powerupChance: 75
   powerupPrefab: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
---- !u!114 &6739364942743443445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6739364942743443443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c2e8674e3629249b6f02728fba816b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirectionX: 0
-  moveDirectionY: 0
-  shoot: 0
-  escape: 0
-  defaultEscapeDir: {x: 1, y: 0}
-  goalHeight: 60
 --- !u!61 &6739364942743443444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -207,3 +189,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &-1287887176046698714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6739364942743443443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ca0ac5d79e60249959d6bbb49e0f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirectionX: 0
+  moveDirectionY: 0
+  shoot: 0
+  escape: 0
+  defaultEscapeDir: {x: 1, y: 0}
+  distanceToKeep: 100

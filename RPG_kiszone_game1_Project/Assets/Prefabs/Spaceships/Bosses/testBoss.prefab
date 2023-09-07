@@ -138,45 +138,6 @@ MonoBehaviour:
       position: {x: 0, y: 0, z: 0}
       rotation: -10
       time: 0.2
-  - name: waterfall attack
-    iterations: 1
-    projectiles:
-    - projectile: {fileID: 0}
-      position: {x: -40, y: 0, z: 0}
-      rotation: -12
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: -30, y: 0, z: 0}
-      rotation: -9
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: -20, y: 0, z: 0}
-      rotation: -6
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: -10, y: 0, z: 0}
-      rotation: -3
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: 0, y: 0, z: 0}
-      rotation: 0
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: 10, y: 0, z: 0}
-      rotation: 3
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: 20, y: 0, z: 0}
-      rotation: 6
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: 30, y: 0, z: 0}
-      rotation: 9
-      time: 0.2
-    - projectile: {fileID: 0}
-      position: {x: 40, y: 0, z: 0}
-      rotation: 12
-      time: 0.2
   hpBar: {fileID: 0}
 --- !u!61 &1933663113404844292
 BoxCollider2D:
@@ -220,6 +181,7 @@ MonoBehaviour:
   moveDirectionY: 0
   shoot: 0
   escape: 0
+  defaultEscapeDir: {x: 1, y: 0}
   xpath:
     serializedVersion: 2
     m_Curve:

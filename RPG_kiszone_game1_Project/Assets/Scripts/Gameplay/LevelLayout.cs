@@ -9,20 +9,28 @@ public class LevelLayout : ScriptableObject
     public class Wave
     {
         public string name; // Name of the wave. Does nothing practically. Only helps not to get lost while creating a level.
-        public float delayBeforeSpawn = 0f;
+        public float delayBeforeWave = 0f;
         public float gameBoundsScale = 1f;
         public float camFOV = 13f;
         public float camAngle = 35f;
-        public GameObject enemyPrefab;
-        public Vector3 position = new Vector3(0f, 150f, 0f);
-        public int iterations = 1;
-        public float delayAfterIteration = 2f;
-        public Vector3 deltaPosition; // Shift position of next enemies in the wave.
-        public float screenTime; // Time until enemy flies away. Set to 0 or below to make enemy stay until it is killed.
-        public bool addToMustKillList;
+
+        [System.Serializable]
+        public class InWaveEnemySpawn
+        {
+            public float delayBeforeSpawn;
+            public GameObject enemyPrefab;
+            public enum SpawnSide { top, left, right, bottom };
+            public SpawnSide spawnSide;
+            public float position; // value between -1 and 1 adjusts to gameAreaSize automatically
+            public float padding = 30f; // increase if enenemy spawns within camera range
+            public float screenTime; // Time until enemy flies away. Set to 0 or below to make enemy stay until it is killed.
+            public bool addToMustKillList = true;
+        }
+        public List<InWaveEnemySpawn> enemies;
+
         public enum WaitMode { untilSpawnEnd, untilAllKilled, runNextInParallel, untilSignal }
         public WaitMode waitMode;
-        public float delayAfterSpawn; // Time to next wave in seconds.
+        public float delayAfterWave; // Time to next wave in seconds.
     }
     public List<Wave> waves;
 
