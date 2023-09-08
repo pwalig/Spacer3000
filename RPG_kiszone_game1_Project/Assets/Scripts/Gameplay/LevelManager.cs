@@ -14,12 +14,14 @@ public class LevelManager : MonoBehaviour
     static GameObject RewardMenu;
     static TMP_Text scoreText;
     private static bool signal = false;
+    Camera gameCam;
 
     private void Awake()
     {
         RewardMenu = GameObject.Find("RewardMenu");
         RewardMenu.SetActive(false);
         scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
+        gameCam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
     void Start()
     {
@@ -45,6 +47,7 @@ public class LevelManager : MonoBehaviour
             yield return new WaitForSeconds(enemySpawn.delayBeforeSpawn);
 
             // translate position form spawn_side + position_float to vector3
+            // float TopPadding = gameCam.transform.position.magnitude * Mathf.Sin(Mathf.Deg2Rad * gameCam.fieldOfView / 2f) / Mathf.Sin(Mathf.Deg2Rad * (270f + gameCam.transform.eulerAngles.x - (gameCam.fieldOfView / 2f))) + (enemySpawn.enemyPrefab.GetComponent<BoxCollider2D>().size.x / 2f) // padding equasion that doesnt work but theoretically should
             Vector3 pos = Vector3.up * (GameplayManager.gameAreaSize.y + enemySpawn.padding);
             switch (enemySpawn.spawnSide)
             {
@@ -58,7 +61,7 @@ public class LevelManager : MonoBehaviour
                     pos = new Vector3(-GameplayManager.gameAreaSize.x - enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
                     break;
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.bottom:
-                    pos = new Vector3(-enemySpawn.position * GameplayManager.gameAreaSize.x, GameplayManager.gameAreaSize.y + enemySpawn.padding);
+                    pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, -GameplayManager.gameAreaSize.y - enemySpawn.padding);
                     break;
             }
 
@@ -98,7 +101,7 @@ public class LevelManager : MonoBehaviour
 
             while (wave.waitMode == LevelLayout.Wave.WaitMode.untilSignal && signal == false) yield return 0;
             signal = false;
-            while (wave.waitMode == LevelLayout.Wave.WaitMode.untilAllKilled && enemies.Count > 0)
+            while (wave.waitMode == LevelLayout.Wave.WaitMode.untilMustKillListEmpty && enemies.Count > 0)
             {
                 bool err = false;
                 try
@@ -116,6 +119,10 @@ public class LevelManager : MonoBehaviour
                 }
                 if (err) yield return new WaitForSeconds(enemies.Count * 4f * GameData.GetDifficultyMulitplier(1f));
                 else yield return 0;
+            }
+            while (wave.waitMode == LevelLayout.Wave.WaitMode.untilNoEnemies && GameObject.FindGameObjectsWithTag("Enemy").Length > 0)
+            {
+                yield return 0;
             }
             yield return new WaitForSeconds(wave.delayAfterWave);
         }

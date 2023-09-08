@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5544208847590974672}
   - component: {fileID: 2482575073654092272}
   m_Layer: 0
-  m_Name: EnemyLCC
+  m_Name: E_CrvFol
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,19 +78,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e041a37a73c8dd34ebadc9b207bce214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 90
   hp: 100
-  speed: 60
+  speed: 25
   responsiveness: 100
-  shootDelay: 1.9
+  shootDelay: 2.2
   attacks:
   - name: base attack
-    iterations: 1
+    iterations: 4
     projectiles:
-    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 0, y: 0, z: 0}
-      rotation: 15
-      time: 0.1
+      rotation: 0
+      time: 0.2
   powerupChance: 50
   powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
 --- !u!61 &5544208847590974672
@@ -135,32 +135,33 @@ MonoBehaviour:
   moveDirectionY: 0
   shoot: 0
   escape: 0
+  defaultEscapeDir: {x: 1, y: 0}
   xpath:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: -149.9002
-      inSlope: 197.61093
-      outSlope: 197.61093
+      value: 0.009338379
+      inSlope: 0
+      outSlope: 0
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.50403225
-      value: -50.29793
-      inSlope: -1.6065903
-      outSlope: -1.6065903
-      tangentMode: 34
+      time: 0.4938407
+      value: 0.009338379
+      inSlope: 10.456352
+      outSlope: 10.456352
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.073232315
     - serializedVersion: 3
       time: 1
-      value: -149.9002
-      inSlope: -200.82411
-      outSlope: -200.82411
+      value: -0.006500244
+      inSlope: -0.031291775
+      outSlope: -0.031291775
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -173,28 +174,41 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 130.61494
-      inSlope: -138.85886
-      outSlope: -138.85886
-      tangentMode: 34
+      value: 0.90172195
+      inSlope: 2.070483
+      outSlope: 2.070483
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.48427892
     - serializedVersion: 3
-      time: 1
-      value: -8.243904
-      inSlope: -138.85886
-      outSlope: -138.85886
+      time: 0.49731183
+      value: 0.49194193
+      inSlope: -0.004406363
+      outSlope: -0.004406363
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.90172195
+      inSlope: -0.9491295
+      outSlope: -0.9491295
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.46928066
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   moveMode: 0
-  cyclic: 0
-  pathTime: 10
+  cyclic: 1
+  pathTime: 20
+  downwardOffset:
+    value: 0
+    speed: 0.07
+    acceleration: 0
 --- !u!1 &5893358188648193649
 GameObject:
   m_ObjectHideFlags: 0

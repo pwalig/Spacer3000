@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 6739364942743443444}
   - component: {fileID: -1287887176046698714}
   m_Layer: 0
-  m_Name: AbsoluteFollow
+  m_Name: E_AbsFol
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,11 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e041a37a73c8dd34ebadc9b207bce214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 60
+  maxHp: 40
   hp: 100
   speed: 35
   responsiveness: 2000
-  shootDelay: 1
+  shootDelay: 2.1
   attacks:
   - name: base attack
     iterations: 1
@@ -206,4 +206,11 @@ MonoBehaviour:
   shoot: 0
   escape: 0
   defaultEscapeDir: {x: 1, y: 0}
-  distanceToKeep: 100
+  distanceToKeep:
+    value: 130
+    speed: -0.02
+    acceleration: 0
+  shootingDistance:
+    value: 180
+    speed: 0
+    acceleration: 0

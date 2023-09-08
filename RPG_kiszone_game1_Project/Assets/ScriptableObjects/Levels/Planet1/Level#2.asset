@@ -13,30 +13,273 @@ MonoBehaviour:
   m_Name: Level#2
   m_EditorClassIdentifier: 
   waves:
-  - name: enemyi2
-    delayBeforeSpawn: 0
+  - name: beginess 111111
+    delayBeforeWave: 0
     gameBoundsScale: 1
-    camFOV: 10
+    camFOV: 15
     camAngle: 35
-    enemies: []
-    waitMode: 1
-    delayAfterWave: 0
-  - name: "kr\u0105\u017Cowniki2"
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1
+    enemies:
+    - delayBeforeSpawn: 3
+      enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.7
+      enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
+      spawnSide: 0
+      position: -0.3
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1.1
+      enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
+      spawnSide: 0
+      position: 0.4
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 20
+  - name: beginess 22222
+    delayBeforeWave: 1
+    gameBoundsScale: 1.1
     camFOV: 10
-    camAngle: 35
-    enemies: []
+    camAngle: 30
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.2
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 0
+      position: 0.5
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.4
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 0
+      position: -0.5
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.2
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 1
+      position: 0.5
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.1
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 2
+      position: 0.5
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 30
+  - name: beginess 333333
+    delayBeforeWave: 1
+    gameBoundsScale: 1.2
+    camFOV: 8
+    camAngle: 25
+    enemies:
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 40
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 30
+  - name: meat and potatoes 11111111
+    delayBeforeWave: 1
+    gameBoundsScale: 1.5
+    camFOV: 6
+    camAngle: 15
+    enemies:
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 0
+      position: -0.1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    - delayBeforeSpawn: 1.1
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 0
+      position: -0.4
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    - delayBeforeSpawn: 0.7
+      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      spawnSide: 0
+      position: 0.6
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    - delayBeforeSpawn: 0.7
+      enemyPrefab: {fileID: 6739364942743443443, guid: b7ff407634a581c4d9f79ab87a872c74, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    waitMode: 3
+    delayAfterWave: 1
+  - name: yeeeeeeeeeeet 11111111
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 5
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 2
+    delayAfterWave: 1
+  - name: yeeeeeeeeeeet 2222222
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 5
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 6739364942743443443, guid: b7ff407634a581c4d9f79ab87a872c74, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    waitMode: 0
+    delayAfterWave: 10
+  - name: yeeeeeeeeeeet 333333
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 5
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    - delayBeforeSpawn: 4.3
+      enemyPrefab: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    - delayBeforeSpawn: 4.3
+      enemyPrefab: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    - delayBeforeSpawn: 4.3
+      enemyPrefab: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    waitMode: 3
+    delayAfterWave: 1
+  - name: the bosssso 11111111111
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 5
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
     waitMode: 1
-    delayAfterWave: 0
-  - name: boss
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1
-    camFOV: 10
-    camAngle: 35
-    enemies: []
-    waitMode: 1
-    delayAfterWave: 0
+    delayAfterWave: 2
   highScore: 0
   notes:
   - slightly hardah

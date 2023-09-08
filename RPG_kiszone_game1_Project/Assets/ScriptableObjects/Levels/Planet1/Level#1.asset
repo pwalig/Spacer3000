@@ -13,6 +13,21 @@ MonoBehaviour:
   m_Name: Level#1
   m_EditorClassIdentifier: 
   waves:
+  - name: simpl
+    delayBeforeWave: 0
+    gameBoundsScale: 1.4
+    camFOV: 5
+    camAngle: 5
+    enemies:
+    - delayBeforeSpawn: 4
+      enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 1
+    waitMode: 1
+    delayAfterWave: 2
   - name: osaczenie
     delayBeforeWave: 0
     gameBoundsScale: 1.5

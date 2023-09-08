@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 5544208847590974672}
   - component: {fileID: 2482575073654092272}
   m_Layer: 0
-  m_Name: EnemyRCC
+  m_Name: E_CrvFolZigzager
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,19 +78,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e041a37a73c8dd34ebadc9b207bce214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 67
   hp: 100
-  speed: 60
+  speed: 25
   responsiveness: 100
-  shootDelay: 1.9
+  shootDelay: 2.2
   attacks:
   - name: base attack
-    iterations: 1
+    iterations: 4
     projectiles:
-    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 0, y: 0, z: 0}
-      rotation: -15
-      time: 0.1
+      rotation: 0
+      time: 0.2
   powerupChance: 50
   powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
 --- !u!61 &5544208847590974672
@@ -135,32 +135,24 @@ MonoBehaviour:
   moveDirectionY: 0
   shoot: 0
   escape: 0
+  defaultEscapeDir: {x: 1, y: 0}
   xpath:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 150.49028
-      inSlope: -199.57634
-      outSlope: -199.57634
+      value: -1.0055542
+      inSlope: 2.0055542
+      outSlope: 2.0055542
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.50403225
-      value: 49.897373
-      inSlope: 1.6225662
-      outSlope: 1.6225662
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
       time: 1
-      value: 150.49028
-      inSlope: 202.82147
-      outSlope: 202.82147
+      value: 1
+      inSlope: 2.0055542
+      outSlope: 2.0055542
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -173,28 +165,86 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 130.61494
-      inSlope: -138.85886
-      outSlope: -138.85886
-      tangentMode: 34
+      value: 0.9503374
+      inSlope: -0.0028283785
+      outSlope: -0.0028283785
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.33572164
     - serializedVersion: 3
-      time: 1
-      value: -8.243904
-      inSlope: -138.85886
-      outSlope: -138.85886
-      tangentMode: 34
+      time: 0.15452436
+      value: 0.74792457
+      inSlope: 0.0053638327
+      outSlope: 0.0053638327
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
+      outWeight: 0.31481627
+    - serializedVersion: 3
+      time: 0.2995077
+      value: 0.9510023
+      inSlope: -0.03386658
+      outSlope: -0.03386658
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.21680698
+    - serializedVersion: 3
+      time: 0.4487301
+      value: 0.74866605
+      inSlope: -0.018449819
+      outSlope: -0.018449819
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.160958
+    - serializedVersion: 3
+      time: 0.59537417
+      value: 0.950703
+      inSlope: -0.00957155
+      outSlope: -0.00957155
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.315369
+    - serializedVersion: 3
+      time: 0.7505707
+      value: 0.7470628
+      inSlope: 0.0021464392
+      outSlope: 0.0021464392
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.2794935
+    - serializedVersion: 3
+      time: 0.9022895
+      value: 0.9506732
+      inSlope: -0.007378204
+      outSlope: -0.007378204
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99975586
+      value: 0.85066605
+      inSlope: -1.4926394
+      outSlope: -1.4926394
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.35883498
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   moveMode: 0
-  cyclic: 0
-  pathTime: 10
+  cyclic: 1
+  pathTime: 40
+  downwardOffset:
+    value: 0
+    speed: 0.04
+    acceleration: 0
 --- !u!1 &5893358188648193649
 GameObject:
   m_ObjectHideFlags: 0

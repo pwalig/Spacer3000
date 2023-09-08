@@ -263,7 +263,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 127.95846
+      value: 0.6662885
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -272,7 +272,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 127.95846
+      value: 0.6662885
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -285,6 +285,10 @@ MonoBehaviour:
   moveMode: 0
   cyclic: 1
   pathTime: 20
+  downwardOffset:
+    value: 0
+    speed: 0
+    acceleration: 0
 --- !u!61 &1933663113404844292
 BoxCollider2D:
   m_ObjectHideFlags: 0

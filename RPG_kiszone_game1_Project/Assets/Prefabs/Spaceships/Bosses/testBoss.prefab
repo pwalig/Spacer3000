@@ -187,7 +187,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: -0.0012538433
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -196,16 +196,16 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0.48825672
-      value: 1
-      inSlope: 945.0814
-      outSlope: 945.0814
+      value: -0.0012538433
+      inSlope: 6.943039
+      outSlope: 6.943039
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.08183671
+      outWeight: 0.048798352
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: -0.0012538433
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -220,7 +220,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 30.279987
+      value: 0.89612746
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -229,7 +229,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 30.279987
+      value: 0.89612746
       inSlope: 0
       outSlope: 0
       tangentMode: 34
@@ -242,6 +242,10 @@ MonoBehaviour:
   moveMode: 1
   cyclic: 1
   pathTime: 20
+  downwardOffset:
+    value: 0
+    speed: 0
+    acceleration: 0
 --- !u!1 &1933663114041981694
 GameObject:
   m_ObjectHideFlags: 0

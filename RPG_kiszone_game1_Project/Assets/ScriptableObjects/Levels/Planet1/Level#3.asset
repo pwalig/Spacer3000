@@ -13,37 +13,107 @@ MonoBehaviour:
   m_Name: Level#3
   m_EditorClassIdentifier: 
   waves:
-  - name: "kr\u0105\u017Cowniki2"
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1
+  - name: daBosss
+    delayBeforeWave: 0
+    gameBoundsScale: 1.5
     camFOV: 10
-    camAngle: 35
-    enemies: []
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
     waitMode: 0
-    delayAfterWave: 0
-  - name: enemyi2
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1
+    delayAfterWave: 50
+  - name: reenforcements 111111111111
+    delayBeforeWave: 1
+    gameBoundsScale: 1.5
     camFOV: 10
-    camAngle: -35
-    enemies: []
-    waitMode: 1
-    delayAfterWave: 0
-  - name: boss
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 50
+  - name: reenforcements 2222222
+    delayBeforeWave: 1
+    gameBoundsScale: 1.5
     camFOV: 10
-    camAngle: 35
-    enemies: []
-    waitMode: 2
-    delayAfterWave: 0
-  - name: boss minions
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 50
+  - name: reenforcements 33333333
+    delayBeforeWave: 1
+    gameBoundsScale: 1.5
     camFOV: 10
-    camAngle: 35
-    enemies: []
-    waitMode: 1
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
+      spawnSide: 0
+      position: -1
+      padding: 0
+      screenTime: 20
+      addToMustKillList: 0
+    waitMode: 3
     delayAfterWave: 0
   highScore: 0
   notes:

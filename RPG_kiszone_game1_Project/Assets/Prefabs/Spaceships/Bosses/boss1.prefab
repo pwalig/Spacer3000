@@ -292,7 +292,11 @@ MonoBehaviour:
   moveDirectionY: 0
   shoot: 0
   escape: 0
-  goalHeight: 70
+  defaultEscapeDir: {x: 1, y: 0}
+  goalHeight:
+    value: 100
+    speed: 0
+    acceleration: 0
 --- !u!61 &1933663113404844292
 BoxCollider2D:
   m_ObjectHideFlags: 0

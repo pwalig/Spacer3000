@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AiAbsoluteFollow : AiEscape
 {
-    public float distanceToKeep = 150f;
+    public FF distanceToKeep;
+    public FF shootingDistance;
     void Update()
     {
         Vector3 distance = GameplayManager.GetPlayerPosition() - transform.position;
@@ -12,10 +13,12 @@ public class AiAbsoluteFollow : AiEscape
         moveDirectionY = Mathf.Clamp(distance.y, -1f, 1f);
         if (Mathf.Abs(distance.x) < 1) moveDirectionX = 0;
         if (Mathf.Abs(distance.y) < 1) moveDirectionX = 0;
-        if (distance.magnitude < distanceToKeep)
+        if (distance.magnitude < distanceToKeep.F())
         {
             moveDirectionX *= -1f;
             moveDirectionY *= -1f;
         }
+        if (shootingDistance.F() > distance.magnitude) shoot = true;
+        else shoot = false;
     }
 }

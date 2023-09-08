@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class AiEscape : SpaceshipController
 {
+    [System.Serializable]
+    public class FF
+    {
+        public float value;
+        public float speed;
+        public float acceleration;
+        public float F()
+        {
+            value += speed;
+            speed += acceleration;
+            return value;
+        }
+    }
+
     [HideInInspector] public bool escape = false; // wrap child classes update code in if(!escape){ }
     [SerializeField] Vector2 defaultEscapeDir = Vector2.right;
 

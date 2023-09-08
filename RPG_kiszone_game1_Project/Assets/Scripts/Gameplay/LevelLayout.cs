@@ -12,7 +12,7 @@ public class LevelLayout : ScriptableObject
         public float delayBeforeWave = 0f;
         public float gameBoundsScale = 1f;
         public float camFOV = 13f;
-        public float camAngle = 35f;
+        public float camAngle = 0f;
 
         [System.Serializable]
         public class InWaveEnemySpawn
@@ -28,7 +28,7 @@ public class LevelLayout : ScriptableObject
         }
         public List<InWaveEnemySpawn> enemies;
 
-        public enum WaitMode { untilSpawnEnd, untilAllKilled, runNextInParallel, untilSignal }
+        public enum WaitMode { untilSpawnEnd, untilMustKillListEmpty, runNextInParallel, untilNoEnemies, untilSignal }
         public WaitMode waitMode;
         public float delayAfterWave; // Time to next wave in seconds.
     }
