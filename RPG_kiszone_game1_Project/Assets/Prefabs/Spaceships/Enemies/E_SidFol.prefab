@@ -95,12 +95,12 @@ MonoBehaviour:
     z: 0.5
     r: -2
     amplitude: 30
-    offset: 180
+    offset: 0
   - f: 1.5
     z: 0.5
     r: -2
     amplitude: 15
-    offset: 0
+    offset: 180
 --- !u!1 &6739364942743443443
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,8 +111,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6739364942743443447}
   - component: {fileID: 6739364942743443448}
-  - component: {fileID: 6739364942743443445}
   - component: {fileID: 6739364942743443444}
+  - component: {fileID: 1214036475336689038}
   m_Layer: 0
   m_Name: E_SidFol
   m_TagString: Enemy
@@ -160,30 +160,10 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
   powerupChance: 75
   powerupPrefab: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
---- !u!114 &6739364942743443445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6739364942743443443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c2e8674e3629249b6f02728fba816b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirectionX: 0
-  moveDirectionY: 0
-  shoot: 0
-  escape: 0
-  defaultEscapeDir: {x: 1, y: 0}
-  goalHeight:
-    value: 90
-    speed: -0.07
-    acceleration: 0
 --- !u!61 &6739364942743443444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -210,3 +190,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30, y: 20}
   m_EdgeRadius: 0
+--- !u!114 &1214036475336689038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6739364942743443443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37c2e8674e3629249b6f02728fba816b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirectionX: 0
+  moveDirectionY: 0
+  shoot: 0
+  escape: 0
+  defaultEscapeDir: {x: 1, y: 0}
+  goalHeight:
+    value: 90
+    speed: -1
+    acceleration: 0

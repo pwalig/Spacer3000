@@ -23,6 +23,8 @@ public class LevelLayout : ScriptableObject
             public SpawnSide spawnSide;
             public float position; // value between -1 and 1 adjusts to gameAreaSize automatically
             public float padding = 30f; // increase if enenemy spawns within camera range
+            public float rotation;
+            public bool flipHorizontal;
             public float screenTime; // Time until enemy flies away. Set to 0 or below to make enemy stay until it is killed.
             public bool addToMustKillList = true;
         }

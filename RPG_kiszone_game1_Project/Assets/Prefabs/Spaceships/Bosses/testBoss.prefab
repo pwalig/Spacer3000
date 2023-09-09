@@ -121,23 +121,16 @@ MonoBehaviour:
   hp: 100
   speed: 13
   responsiveness: 10
-  shootDelay: 5
+  shootDelay: 6.5
   attacks:
-  - name: radius attack
-    iterations: 3
+  - name: map
+    iterations: 1
     projectiles:
-    - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
-      position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
+      position: {x: 15, y: 0, z: 0}
       rotation: 0
-      time: 0
-    - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
-      position: {x: 0, y: 0, z: 0}
-      rotation: 10
-      time: 0
-    - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
-      position: {x: 0, y: 0, z: 0}
-      rotation: -10
-      time: 0.2
+      pattern: {fileID: 2800000, guid: 210f176c8a40cc94b98e8f81ff2ab270, type: 3}
+      time: 1.5
   hpBar: {fileID: 0}
 --- !u!61 &1933663113404844292
 BoxCollider2D:
@@ -197,12 +190,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.48825672
       value: -0.0012538433
-      inSlope: 6.943039
-      outSlope: 6.943039
+      inSlope: 1.6333189
+      outSlope: 1.6333189
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.048798352
+      outWeight: 0.10174218
     - serializedVersion: 3
       time: 1
       value: -0.0012538433

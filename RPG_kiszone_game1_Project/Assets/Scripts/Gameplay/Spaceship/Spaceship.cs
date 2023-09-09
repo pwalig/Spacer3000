@@ -1,10 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Security.Cryptography;
-using System.Threading;
 using UnityEngine;
 
 [System.Serializable]
@@ -13,7 +9,28 @@ public struct OneShoot
     public GameObject projectile;
     public Vector3 position;
     public float rotation;
+    public Texture2D pattern;
     public float time;
+    
+    public IEnumerator ReadPattern(Transform host)
+    {
+        for (int i = 0; i < pattern.height; i++)
+        {
+            for(int j = 0; j < pattern.width; j++)
+            {
+                Color data = pattern.GetPixel(j, i);
+                if (data.b > 0.5f)
+                {
+                    CameraShake.Shake(30f);
+                    GameObject clonedProjectile = GameObject.Instantiate(projectile, host.position + (host.transform.rotation * new Vector3((j - ((pattern.width - 1) / 2f)) * position.x * Mathf.Sign(host.localScale.x), position.y, position.z)), host.rotation);
+                    VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+                    clonedProjectile.transform.Rotate((data.r - 0.5f) * Mathf.Sign(host.localScale.x) * rotation * Vector3.forward);
+                    if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
+                }
+                if (data.g > 0f) yield return new WaitForSeconds(data.g * time);
+            }
+        }
+    }
 }
 
 [System.Serializable]
@@ -21,6 +38,7 @@ public class AttackPattern //class describing one attack
 {
     public string name;
     public int iterations; //how may times to repeat the attack pattern
+
     public List<OneShoot> projectiles;
     public IEnumerator Perform(Transform host)
     {
@@ -28,12 +46,16 @@ public class AttackPattern //class describing one attack
         {
             foreach (OneShoot shoot in projectiles)
             {
-                CameraShake.Shake(30f);
-                GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + shoot.position, host.rotation);
-                VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-                clonedProjectile.transform.Rotate(Vector3.forward * shoot.rotation);
-                if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
-                yield return new WaitForSeconds(shoot.time);
+                if (shoot.pattern != null) host.gameObject.GetComponent<Spaceship>().StartCoroutine(shoot.ReadPattern(host));
+                else
+                {
+                    CameraShake.Shake(30f);
+                    GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + shoot.position, host.rotation);
+                    VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+                    clonedProjectile.transform.Rotate(Mathf.Sign(host.localScale.x) * shoot.rotation * Vector3.forward);
+                    if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
+                    yield return new WaitForSeconds(shoot.time);
+                }
             }
         }
     }
@@ -99,7 +121,7 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
-        Vector3 moveDirection = new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0);
+        Vector3 moveDirection = transform.rotation * new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0);
         if (GameplayManager.movementDirectionNormalize || moveDirection.magnitude > 1f) moveDirection.Normalize(); //disable ability to move slowly granted by gamepads and joysticks. To activate press N while GameplayManager is present.
 
         if (GameplayManager.movementMode) //Alternative way to move ship involving acceleration and deacceleration. To activate press M while GameplayManager is present.

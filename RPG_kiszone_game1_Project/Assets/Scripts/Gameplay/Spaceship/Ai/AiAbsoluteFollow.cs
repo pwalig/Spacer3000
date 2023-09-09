@@ -8,7 +8,7 @@ public class AiAbsoluteFollow : AiEscape
     public FF shootingDistance;
     void Update()
     {
-        Vector3 distance = GameplayManager.GetPlayerPosition() - transform.position;
+        Vector3 distance = Quaternion.Inverse(transform.rotation) * (GameplayManager.GetPlayerPosition() - transform.position);
         moveDirectionX = Mathf.Clamp(distance.x, -1f, 1f);
         moveDirectionY = Mathf.Clamp(distance.y, -1f, 1f);
         if (Mathf.Abs(distance.x) < 1) moveDirectionX = 0;

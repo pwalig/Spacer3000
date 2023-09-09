@@ -14,57 +14,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: "kr\u0105\u017Cowniki"
+    delayBeforeWave: 0
     gameBoundsScale: 1
     camFOV: 10
     camAngle: 35
-    enemyPrefab: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
-    position: {x: 0, y: 150, z: 0}
-    iterations: 5
-    delayAfterIteration: 2
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
-    addToMustKillList: 1
-    waitMode: 1
-    delayAfterSpawn: 1
+    enemies:
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 1933663113404844293, guid: 1bbe6a2a91f5fa1429a17e6ac3518347, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 0
   - name: basic1
+    delayBeforeWave: 0
     gameBoundsScale: 1
     camFOV: 10
     camAngle: 35
-    enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
-    position: {x: 140, y: 150, z: 0}
-    iterations: 2
-    delayAfterIteration: 2
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 10
-    addToMustKillList: 1
+    enemies: []
     waitMode: 2
-    delayAfterSpawn: 0
+    delayAfterWave: 0
   - name: basic2
+    delayBeforeWave: 0
     gameBoundsScale: 1
     camFOV: 10
     camAngle: 35
-    enemyPrefab: {fileID: 3838212405406433343, guid: 6a73a6e044790ca4291ab94fa3d99204, type: 3}
-    position: {x: -140, y: 150, z: 0}
-    iterations: 2
-    delayAfterIteration: 2
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 10
-    addToMustKillList: 1
+    enemies: []
     waitMode: 1
-    delayAfterSpawn: 5
+    delayAfterWave: 0
   - name: boss
+    delayBeforeWave: 0
     gameBoundsScale: 1
     camFOV: 10
     camAngle: 35
-    enemyPrefab: {fileID: 1933663113404844293, guid: 1bbe6a2a91f5fa1429a17e6ac3518347, type: 3}
-    position: {x: 0, y: 150, z: 0}
-    iterations: 1
-    delayAfterIteration: 0
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
-    addToMustKillList: 1
+    enemies: []
     waitMode: 1
-    delayAfterSpawn: 1
+    delayAfterWave: 0
+  highScore: 0
   notes:
   - ye
   materialRewards: []

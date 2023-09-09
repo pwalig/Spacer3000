@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 19582
+  controlID: 54335
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 19583
+  controlID: 54311
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 19559
+  controlID: 54312
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,8 +187,8 @@ MonoBehaviour:
     y: 0
     width: 284
     height: 955
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -227,7 +227,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 28f0fdfffc47ffff36fbffffc65b0000b06a0000766c0000
+      m_ExpandedIDs: b8f7a8ffecf7a8ff383aa9ff164cc2ff6080c8ff3251c9ff42d7c9ff500bcbffa2d5ceff44c9cfff4ec9cfffa20bd0ff9c42d1ffdeeed3ffc617d5ff1a5ad5ffaabed9ff96d5daffa0d5dafff417dbfff817dcff7ae9dcff84e9dcffce55ddff2cf0defff40de0ff9e83e0ff107ae6ff5cbce6ff008bf1ffd070f3ffda70f3ff2eb3f3ff8a6ef4ffb090f4ff04d3f4ff04f6f6ff80fffbff9eeafcff36fbffff8ebe0000144f0100e25c0100548801002496010004b20100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -536,9 +536,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -49.000854, y: -297.22617, z: 1194.0708}
+    m_Target: {x: -4.832332, y: 83.825195, z: 41.837925}
     speed: 2
-    m_Value: {x: -49.000854, y: -297.22617, z: 1194.0708}
+    m_Value: {x: -4.832332, y: 83.825195, z: 41.837925}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -585,13 +585,13 @@ MonoBehaviour:
     m_GridAxis: 2
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.12840873, y: -0.26091623, z: 0.035040803, w: 0.9561414}
+    m_Target: {x: 0.008999376, y: -0.009898121, z: 0.000089065405, w: 0.99991196}
     speed: 2
-    m_Value: {x: 0.12840872, y: -0.2609162, z: 0.0350408, w: 0.9561413}
+    m_Value: {x: 0.008999363, y: -0.009898107, z: 0.000089065274, w: 0.99991053}
   m_Size:
-    m_Target: 1091.9437
+    m_Target: 185.88373
     speed: 2
-    m_Value: 1091.9437
+    m_Value: 185.88373
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1681,7 +1681,7 @@ MonoBehaviour:
     x: 1088
     y: 73
     width: 972
-    height: 973
+    height: 934
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1781,22 +1781,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ScriptableObjects/Levels/Planet1
+    - Assets/Prefabs/Spaceships
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 82
   m_LastFolders:
-  - Assets/ScriptableObjects/Levels/Planet1
+  - Assets/Prefabs/Spaceships
   m_LastFoldersGridSize: 82
   m_LastProjectPath: C:\D\Politechnika\RPG\RPG_kiszone_ogorki_gra1\RPG_kiszone_ogorki_gra1\RPG_kiszone_game1_Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 505}
-    m_SelectedIDs: 5e5f0000
-    m_LastClickedID: 24414
-    m_ExpandedIDs: 00000000dc5e0000de5e0000e05e0000e25e0000e45e0000e65e0000e85e0000ea5e0000ec5e0000ee5e0000f05e0000f25e0000f45e0000f65e0000f85e0000fa5e0000fc5e0000fe5e0000005f0000025f0000045f0000065f0000085f00000a5f00000c5f00000e5f0000105f0000125f00001a5f000000ca9a3b
+    scrollPos: {x: 0, y: 329}
+    m_SelectedIDs: 0a5f0000
+    m_LastClickedID: 24330
+    m_ExpandedIDs: 00000000dc5e0000de5e0000e05e0000e25e0000e45e0000e65e0000e85e0000ea5e0000ec5e0000ee5e0000f05e0000f25e0000f45e0000f65e0000f85e0000fa5e0000fc5e0000fe5e0000005f0000025f0000045f0000065f0000085f00000a5f00000c5f00000e5f0000105f0000125f00001e5f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1849,8 +1849,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e6630000
-    m_LastClickedInstanceID: 25574
+    m_SelectedInstanceIDs: 2a440200
+    m_LastClickedInstanceID: 148522
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000885e0000
     m_RenameOverlay:
@@ -1965,10 +1965,10 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: -160
+    m_CachedPref: 318
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 25574
+  m_LastInspectedObjectInstanceID: 148522
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

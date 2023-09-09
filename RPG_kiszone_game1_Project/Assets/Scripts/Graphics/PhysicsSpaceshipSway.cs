@@ -18,6 +18,6 @@ public class PhysicsSpaceshipSway : MonoBehaviour
 
     void Update()
     {
-        transform.eulerAngles = new Vector3(systems[1].Update(controller.moveDirectionY), systems[0].Update(-controller.moveDirectionX), 0f);
+        transform.localEulerAngles = new Vector3(systems[1].Update(controller.moveDirectionY), systems[0].Update(-controller.moveDirectionX), 0f);
     }
 }

@@ -12,8 +12,8 @@ public class AiEscape : SpaceshipController
         public float acceleration;
         public float F()
         {
-            value += speed;
-            speed += acceleration;
+            value += speed * Time.deltaTime;
+            speed += acceleration * Time.deltaTime;
             return value;
         }
     }

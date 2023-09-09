@@ -55,10 +55,10 @@ public class LevelManager : MonoBehaviour
                     pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, GameplayManager.gameAreaSize.y + enemySpawn.padding);
                     break;
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.left:
-                    pos = new Vector3(GameplayManager.gameAreaSize.x + enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    pos = new Vector3(-GameplayManager.gameAreaSize.x - enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
                     break;
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.right:
-                    pos = new Vector3(-GameplayManager.gameAreaSize.x - enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    pos = new Vector3(GameplayManager.gameAreaSize.x + enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
                     break;
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.bottom:
                     pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, -GameplayManager.gameAreaSize.y - enemySpawn.padding);
@@ -66,7 +66,8 @@ public class LevelManager : MonoBehaviour
             }
 
             // spawn
-            GameObject enemy = Instantiate(enemySpawn.enemyPrefab, pos, Quaternion.Euler(0f, 0f, 180f));
+            GameObject enemy = Instantiate(enemySpawn.enemyPrefab, pos, Quaternion.Euler(0f, 0f, 180f + enemySpawn.rotation));
+            if (enemySpawn.flipHorizontal) enemy.transform.localScale = new Vector3(-enemy.transform.localScale.x, enemy.transform.localScale.y, enemy.transform.localScale.z);
             if (enemy.TryGetComponent(out BossSpaceship boss))
             {
                 GameObject bossBar = Instantiate(BossHpBar, GameObject.Find("BossBarsAnchor").transform);

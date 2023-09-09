@@ -90,6 +90,7 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0.2
   powerupChance: 50
   powerupPrefab: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
@@ -243,7 +244,7 @@ MonoBehaviour:
   pathTime: 40
   downwardOffset:
     value: 0
-    speed: 0.04
+    speed: 1
     acceleration: 0
 --- !u!1 &5893358188648193649
 GameObject:
@@ -309,9 +310,9 @@ MonoBehaviour:
     z: 0.5
     r: -2
     amplitude: 30
-    offset: 180
+    offset: 0
   - f: 1.5
     z: 0.5
     r: -2
     amplitude: 15
-    offset: 0
+    offset: 180

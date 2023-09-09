@@ -24,12 +24,12 @@ public class AiFollowCurve : AiEscape
 
     void EngineFollow()
     {
-        Vector2 distance = (Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y);
+        Vector2 distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
         while (distance.magnitude < proximityTreshold)
         {
             pathPos += curveIncrement;
             if (pathPos > 1f) pathPos -= 1f;
-            distance = (Vector2.down * downwardOffset.value) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y);
+            distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.value) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
         }
         moveDirectionX = Mathf.Clamp(distance.x, -1f, 1f);
         moveDirectionY = Mathf.Clamp(distance.y, -1f, 1f);
@@ -37,7 +37,7 @@ public class AiFollowCurve : AiEscape
 
     void ConstantPath()
     {
-        Vector2 distance = (Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y);
+        Vector2 distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
         pathPos += Time.deltaTime / pathTime;
         moveDirectionX = Mathf.Clamp(distance.x, -1f, 1f);
         moveDirectionY = Mathf.Clamp(distance.y, -1f, 1f);
@@ -45,7 +45,7 @@ public class AiFollowCurve : AiEscape
 
     void PerfectPath()
     {
-        transform.position = (Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y);
+        transform.position = transform.rotation * ((Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y));
         pathPos += Time.deltaTime / pathTime / (GameplayManager.gameAreaSize.magnitude / 18.3575597507f);
     }
 
