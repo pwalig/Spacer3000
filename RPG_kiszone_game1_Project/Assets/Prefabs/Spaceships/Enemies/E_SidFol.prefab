@@ -152,6 +152,30 @@ MonoBehaviour:
   hp: 100
   speed: 50
   responsiveness: 2000
+  escapeForce:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.099487305
+      value: 1.9951756
+      inSlope: -0.076868586
+      outSlope: -0.076868586
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.1790638
+    - serializedVersion: 3
+      time: 70.581894
+      value: 0.0027006464
+      inSlope: -0.00006999238
+      outSlope: -0.00006999238
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   shootDelay: 1.34
   attacks:
   - name: base attack

@@ -22,8 +22,17 @@ MonoBehaviour:
     placementMethod: 0
     rotationMethod: 0
     partsGroup: 0
+    parts:
+    - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     mirror: 0
-    seed: 500
+    seed: 0
     randomizeSeed: 0
     addToRenderers: 0
     amount: 7
@@ -65,8 +74,17 @@ MonoBehaviour:
     placementMethod: 0
     rotationMethod: 0
     partsGroup: 0
+    parts:
+    - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     mirror: 1
-    seed: 160
+    seed: 0
     randomizeSeed: 0
     addToRenderers: 0
     amount: 10
@@ -117,8 +135,17 @@ MonoBehaviour:
     placementMethod: 1
     rotationMethod: 0
     partsGroup: 0
+    parts:
+    - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     mirror: 1
-    seed: -1310
+    seed: 0
     randomizeSeed: 0
     addToRenderers: 0
     amount: 10
@@ -160,8 +187,13 @@ MonoBehaviour:
     placementMethod: 2
     rotationMethod: 1
     partsGroup: 1
+    parts:
+    - {fileID: 973543403404581923, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: -424755751035905546, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 65ad685948f2a994e8b0bf7bdc340b49, type: 2}
     mirror: 1
-    seed: 500
+    seed: 0
     randomizeSeed: 0
     addToRenderers: 0
     amount: 16
@@ -197,11 +229,20 @@ MonoBehaviour:
     - 0
     - 0.5
     - 1.1
-    qualityInfluence: 0.2
+    qualityInfluence: 0
   - passName: guns
     placementMethod: 2
     rotationMethod: 1
     partsGroup: 2
+    parts:
+    - {fileID: 2941274158721294118, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 7197068143331612903, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 2165579551946672802, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     mirror: 1
     seed: 0
     randomizeSeed: 0
@@ -239,13 +280,26 @@ MonoBehaviour:
     - 0
     - 1
     - 1
-    qualityInfluence: 0.5
+    qualityInfluence: 0
   - passName: greebles
     placementMethod: 2
     rotationMethod: 2
     partsGroup: 3
+    parts:
+    - {fileID: -2010744640243958960, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: -7332548585985969769, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: -4894330547861294975, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 1156859308178620914, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: -2302468678975828958, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: -2467390685343385556, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 8382293008533190388, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     mirror: 1
-    seed: 500
+    seed: 0
     randomizeSeed: 0
     addToRenderers: 0
     amount: 1000
@@ -277,7 +331,7 @@ MonoBehaviour:
     assignToLayers: 
     parameters:
     - 2
-    qualityInfluence: 1
+    qualityInfluence: 0
   materials:
   - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
   - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}

@@ -121,6 +121,30 @@ MonoBehaviour:
   hp: 1500
   speed: 7
   responsiveness: 20
+  escapeForce:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.00041294098
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.041214
+      value: 0.00041294098
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   shootDelay: 5
   attacks:
   - name: radius attack
@@ -129,14 +153,17 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 10
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: -10
+      pattern: {fileID: 0}
       time: 0.2
   - name: waterfall attack
     iterations: 1
@@ -144,38 +171,47 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: -40, y: 0, z: 0}
       rotation: -12
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: -30, y: 0, z: 0}
       rotation: -9
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: -20, y: 0, z: 0}
       rotation: -6
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: -10, y: 0, z: 0}
       rotation: -3
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: 10, y: 0, z: 0}
       rotation: 3
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: 20, y: 0, z: 0}
       rotation: 6
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: 30, y: 0, z: 0}
       rotation: 9
+      pattern: {fileID: 0}
       time: 0.2
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
       position: {x: 40, y: 0, z: 0}
       rotation: 12
+      pattern: {fileID: 0}
       time: 0.2
   - name: wall attack
     iterations: 30
@@ -183,14 +219,17 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -100, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 100, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0.1
   - name: alternating attack
     iterations: 2
@@ -198,82 +237,102 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -95, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -85, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -75, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -65, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -55, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 5, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 15, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 25, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 35, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 45, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 1
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -45, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -35, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -25, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -15, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: -5, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 55, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 65, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 75, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 85, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 95, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 1
   hpBar: {fileID: 0}
 --- !u!114 &1933663113404844291

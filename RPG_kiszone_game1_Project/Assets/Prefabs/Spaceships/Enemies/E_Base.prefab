@@ -112,10 +112,9 @@ GameObject:
   - component: {fileID: 6739364942743443447}
   - component: {fileID: 6739364942743443448}
   - component: {fileID: 6739364942743443444}
-  - component: {fileID: 8327048536736035925}
-  - component: {fileID: -5893678656079242899}
+  - component: {fileID: 998401048797087310}
   m_Layer: 0
-  m_Name: E_MissleMine
+  m_Name: E_Base
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e041a37a73c8dd34ebadc9b207bce214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 40
+  maxHp: 50
   hp: 100
   speed: 50
-  responsiveness: 1000
+  responsiveness: 2000
   escapeForce:
     serializedVersion: 2
     m_Curve:
@@ -177,33 +176,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  shootDelay: 0.33
+  shootDelay: 1
   attacks:
-  - name: base attack
+  - name: 
     iterations: 1
-    projectiles:
-    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
-      position: {x: 0, y: 0, z: 0}
-      rotation: 0
-      pattern: {fileID: 0}
-      time: 0
-    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
-      position: {x: 0, y: 0, z: 0}
-      rotation: 90
-      pattern: {fileID: 0}
-      time: 0
-    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
-      position: {x: 0, y: 0, z: 0}
-      rotation: 180
-      pattern: {fileID: 0}
-      time: 0
-    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
-      position: {x: 0, y: 0, z: 0}
-      rotation: 270
-      pattern: {fileID: 0}
-      time: 0
-  powerupChance: 75
-  powerupPrefab: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
+    projectiles: []
+  powerupChance: 50
+  powerupPrefab: {fileID: 0}
 --- !u!61 &6739364942743443444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -230,7 +209,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30, y: 30}
   m_EdgeRadius: 0
---- !u!114 &8327048536736035925
+--- !u!114 &998401048797087310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,7 +218,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6739364942743443443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7802c07a6b8ac6543ab200cf188ebd8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 989fa23e5bc31e6498c8944f2c68555c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirectionX: 0
@@ -247,72 +226,3 @@ MonoBehaviour:
   shoot: 0
   escape: 0
   defaultEscapeDir: {x: 1, y: 0}
-  xpath:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.00032532215
-      outSlope: 0.00032532215
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.00032532215
-      inSlope: 0.00032532215
-      outSlope: 0.00032532215
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  ypath:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: -0.20057754
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: -0.20057754
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  moveMode: 0
-  cyclic: 1
-  pathTime: 5
-  downwardOffset:
-    value: 0
-    speed: 0
-    acceleration: 0
---- !u!114 &-5893678656079242899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6739364942743443443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f78fabc46c707f43929736ce1fd6108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 35
-  axisOfRotation: {x: 0, y: 0, z: 1}

@@ -4865,6 +4865,30 @@ MonoBehaviour:
   hp: 100
   speed: 100
   responsiveness: 2000
+  escapeForce:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.29715243
+      inSlope: -0.016761847
+      outSlope: -0.016761847
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06875369
+    - serializedVersion: 3
+      time: 49.828518
+      value: 0.0027006464
+      inSlope: 0.000096845324
+      outSlope: 0.000096845324
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.8156184
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   shootDelay: 0.5
   attacks:
   - name: 1 projectile
@@ -4873,6 +4897,7 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
   - name: 2 projectiles
     iterations: 1
@@ -4880,10 +4905,12 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: -5, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 5, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
   - name: 3 projectiles
     iterations: 1
@@ -4891,14 +4918,17 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: -5
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 5
+      pattern: {fileID: 0}
       time: 0
   - name: 4 projectiles
     iterations: 1
@@ -4906,18 +4936,22 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: -5, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 5, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: -7.5, y: 0, z: 0}
       rotation: 6
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 7.5, y: 0, z: 0}
       rotation: -6
+      pattern: {fileID: 0}
       time: 0
   - name: 5 projectiles
     iterations: 1
@@ -4925,22 +4959,27 @@ MonoBehaviour:
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 0
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: -5
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 5
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: 10
+      pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
       position: {x: 0, y: 0, z: 0}
       rotation: -10
+      pattern: {fileID: 0}
       time: 0
   projectiles: 1
 --- !u!114 &199775754796022615

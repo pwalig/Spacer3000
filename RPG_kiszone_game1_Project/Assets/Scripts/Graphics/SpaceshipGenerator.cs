@@ -121,7 +121,8 @@ public class SpaceshipGenerator : MonoBehaviour
             }
 
             // add mesh and material
-            part.AddComponent<MeshFilter>().mesh = preset.meshes[pass.partsGroup].meshes[Random.Range(0, preset.meshes[pass.partsGroup].meshes.Count)];
+            //part.AddComponent<MeshFilter>().mesh = preset.meshes[pass.partsGroup].meshes[Random.Range(0, preset.meshes[pass.partsGroup].meshes.Count)];
+            part.AddComponent<MeshFilter>().mesh = pass.parts[Random.Range(0, pass.parts.Count)];
 
             if (pass.addToRenderers)
             {
@@ -129,7 +130,8 @@ public class SpaceshipGenerator : MonoBehaviour
                 partMeshRenderer.material = GameData.GetMaterial();
                 meshRenderers.Add(partMeshRenderer);
             }
-            else part.AddComponent<MeshRenderer>().material = preset.materials[Random.Range(0, preset.materials.Count)];
+            else part.AddComponent<MeshRenderer>().material = pass.materials[Random.Range(0, pass.materials.Count)];
+            //else part.AddComponent<MeshRenderer>().material = preset.materials[Random.Range(0, preset.materials.Count)];
 
             // set random rotation and scale
             part.transform.Rotate(new Vector3(Random.Range(-pass.randomPostRotation.x, pass.randomPostRotation.x), Random.Range(-pass.randomPostRotation.y, pass.randomPostRotation.y), Random.Range(-pass.randomPostRotation.z, pass.randomPostRotation.z)));

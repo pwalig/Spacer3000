@@ -34,9 +34,11 @@ public class LevelManager : MonoBehaviour
     {
         bossBars.Remove(bar);
         Destroy(bar);
-        for (int i = 0; i < bossBars.Count; i++)
+        int i = 0;
+        foreach (GameObject bbar in bossBars)
         {
-            bossBars[i].transform.localPosition = 40f * i * Vector3.up;
+            bbar.transform.localPosition = 40f * i * Vector3.up;
+            i++;
         }
     }
 

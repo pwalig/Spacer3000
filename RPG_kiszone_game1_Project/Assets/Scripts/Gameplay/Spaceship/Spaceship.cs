@@ -67,6 +67,7 @@ public class Spaceship : MonoBehaviour
     [HideInInspector] public float hp;
     public float speed = 20f;
     public float responsiveness = 1000f; //Spaceship's acceleration and deacceleration. Works only if GameplayManager.movement_mode == true;
+    public AnimationCurve escapeForce;
     public float shootDelay = 1f;
     public List<AttackPattern> attacks;
 
@@ -121,7 +122,24 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        float maxDist = escapeForce.keys[escapeForce.keys.Length - 1].time;
+        Vector3 AddMove = Vector3.zero;
+
+        Vector3 dist = Quaternion.Inverse(transform.rotation) * (GameplayManager.GetPlayerPosition() - transform.position);
+        if (dist.magnitude > 0f && dist.magnitude < maxDist) AddMove -= escapeForce.Evaluate(dist.magnitude) * dist.normalized;
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            dist = Quaternion.Inverse(transform.rotation) * (enemies[i].transform.position - transform.position);
+            if (dist.magnitude > 0f && dist.magnitude < maxDist) AddMove -= escapeForce.Evaluate(dist.magnitude) * dist.normalized;
+        }
+        float factor = Mathf.Clamp(new Vector2(controller.moveDirectionX, controller.moveDirectionY).magnitude / 2f + 0.5f, 0.01f, 1f);
+        controller.moveDirectionX += AddMove.x * factor;
+        controller.moveDirectionY += AddMove.y * factor;
+
         Vector3 moveDirection = transform.rotation * new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0);
+
         if (GameplayManager.movementDirectionNormalize || moveDirection.magnitude > 1f) moveDirection.Normalize(); //disable ability to move slowly granted by gamepads and joysticks. To activate press N while GameplayManager is present.
 
         if (GameplayManager.movementMode) //Alternative way to move ship involving acceleration and deacceleration. To activate press M while GameplayManager is present.
