@@ -38,7 +38,7 @@ public class PlayerSpaceship : Spaceship
     public override void DealDamage(float damage)
     {
         if (damage > 0f) damage *= takenDmgMulti;
-        base.DealDamage(damage);
+        if (!GameplayManager.immortality) base.DealDamage(damage);
         hpBar.sizeDelta = new Vector2(250f * hp / maxHp, 50f);
     }
 }

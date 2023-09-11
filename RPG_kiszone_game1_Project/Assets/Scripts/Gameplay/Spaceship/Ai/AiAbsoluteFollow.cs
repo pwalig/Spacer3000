@@ -11,12 +11,12 @@ public class AiAbsoluteFollow : AiEscape
     void Update()
     {
         Vector3 distance = Quaternion.Inverse(transform.rotation) * (GameplayManager.GetPlayerPosition() + offset - transform.position);
-        moveDirectionX = Mathf.Clamp(distance.x, -1f, 1f);
-        moveDirectionY = Mathf.Clamp(distance.y, -1f, 1f);
+        moveDirectionX = distance.normalized.x;
+        moveDirectionY = distance.normalized.y;
         if (distance.magnitude < distanceToKeep.F())
         {
-            moveDirectionX *= -1f;
-            moveDirectionY *= -1f;
+            moveDirectionX = -distance.normalized.x;
+            moveDirectionY = -distance.normalized.y;
         }
         if (Mathf.Abs(distance.magnitude - distanceToKeep.value) < 1f)
         {

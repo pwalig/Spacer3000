@@ -31,16 +31,18 @@ public class AiFollowCurve : AiEscape
             if (pathPos > 1f) pathPos -= 1f;
             distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.value) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
         }
-        moveDirectionX = Mathf.Clamp(distance.x, -1f, 1f);
-        moveDirectionY = Mathf.Clamp(distance.y, -1f, 1f);
+        distance = distance.normalized;
+        moveDirectionX = distance.x;
+        moveDirectionY = distance.y;
     }
 
     void ConstantPath()
     {
         Vector2 distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
         pathPos += Time.deltaTime / pathTime;
-        moveDirectionX = Mathf.Clamp(distance.x, -1f, 1f);
-        moveDirectionY = Mathf.Clamp(distance.y, -1f, 1f);
+        distance = distance.normalized;
+        moveDirectionX = distance.x;
+        moveDirectionY = distance.y;
     }
 
     void PerfectPath()

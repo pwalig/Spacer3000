@@ -20,7 +20,7 @@ MonoBehaviour:
     camAngle: 5
     enemies:
     - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 6739364942743443443, guid: 4daa66d7cafba1640a50ba191f22a248, type: 3}
+      enemyPrefab: {fileID: 8485658034915277440, guid: 45301e2b86ca61044b4b76f28014485b, type: 3}
       spawnSide: 0
       position: 0
       padding: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
     camAngle: 35
     enemies:
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 1
       position: 0.5
       padding: 90
@@ -63,7 +63,7 @@ MonoBehaviour:
       screenTime: 0
       addToMustKillList: 1
     - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: 0.5
       padding: 90
@@ -72,7 +72,7 @@ MonoBehaviour:
       screenTime: 0
       addToMustKillList: 1
     - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: 0
       padding: 90

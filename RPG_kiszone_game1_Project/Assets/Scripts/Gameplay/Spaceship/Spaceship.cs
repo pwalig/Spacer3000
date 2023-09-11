@@ -46,7 +46,19 @@ public class AttackPattern //class describing one attack
         {
             foreach (OneShoot shoot in projectiles)
             {
-                if (shoot.pattern != null) host.gameObject.GetComponent<Spaceship>().StartCoroutine(shoot.ReadPattern(host));
+                if (shoot.pattern != null)
+                {
+                    host.gameObject.GetComponent<Spaceship>().StartCoroutine(shoot.ReadPattern(host));
+                    float waittime = 0f;
+                    for (int k = 0; k < shoot.pattern.height; k++)
+                    {
+                        for (int j = 0; j < shoot.pattern.width; j++)
+                        {
+                            waittime += shoot.pattern.GetPixel(j, k).g;
+                        }
+                    }
+                    yield return new WaitForSeconds(waittime * shoot.time);
+                }
                 else
                 {
                     CameraShake.Shake(30f);
@@ -122,22 +134,29 @@ public class Spaceship : MonoBehaviour
 
     void Update()
     {
+        // ANTI COLISION SYSTEM
+        //setup: find spaceships, determine max distance, declare AddMove
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float maxDist = escapeForce.keys[escapeForce.keys.Length - 1].time;
         Vector3 AddMove = Vector3.zero;
 
+        //check player proximity
         Vector3 dist = Quaternion.Inverse(transform.rotation) * (GameplayManager.GetPlayerPosition() - transform.position);
         if (dist.magnitude > 0f && dist.magnitude < maxDist) AddMove -= escapeForce.Evaluate(dist.magnitude) * dist.normalized;
 
+        //check enemies proximity
         for (int i = 0; i < enemies.Length; i++)
         {
             dist = Quaternion.Inverse(transform.rotation) * (enemies[i].transform.position - transform.position);
             if (dist.magnitude > 0f && dist.magnitude < maxDist) AddMove -= escapeForce.Evaluate(dist.magnitude) * dist.normalized;
         }
-        float factor = Mathf.Clamp(new Vector2(controller.moveDirectionX, controller.moveDirectionY).magnitude / 2f + 0.5f, 0.01f, 1f);
+        //speed influence
+        float factor = Mathf.Clamp(new Vector2(controller.moveDirectionX, controller.moveDirectionY).magnitude / 2f + 0.5f, 0.01f, 1f); //slower moving ships should recieve less effect to prevent jittering
+        //add effect
         controller.moveDirectionX += AddMove.x * factor;
         controller.moveDirectionY += AddMove.y * factor;
 
+        // MOVEMENT
         Vector3 moveDirection = transform.rotation * new Vector3(controller.moveDirectionX, controller.moveDirectionY, 0);
 
         if (GameplayManager.movementDirectionNormalize || moveDirection.magnitude > 1f) moveDirection.Normalize(); //disable ability to move slowly granted by gamepads and joysticks. To activate press N while GameplayManager is present.

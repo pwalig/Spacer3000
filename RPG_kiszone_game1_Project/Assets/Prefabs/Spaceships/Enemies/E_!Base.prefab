@@ -112,9 +112,8 @@ GameObject:
   - component: {fileID: 6739364942743443447}
   - component: {fileID: 6739364942743443448}
   - component: {fileID: 6739364942743443444}
-  - component: {fileID: 998401048797087310}
   m_Layer: 0
-  m_Name: E_Base
+  m_Name: E_!Base
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,15 +126,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6739364942743443443}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 150, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6739364942654206740}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6739364942743443448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,20 +208,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30, y: 30}
   m_EdgeRadius: 0
---- !u!114 &998401048797087310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6739364942743443443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 989fa23e5bc31e6498c8944f2c68555c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveDirectionX: 0
-  moveDirectionY: 0
-  shoot: 0
-  escape: 0
-  defaultEscapeDir: {x: 1, y: 0}

@@ -201,30 +201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BossHpBar: {fileID: 4064791898187164471, guid: 7cf68b6e940ba984eb322ce018dce688, type: 3}
-  CamraAnglePadding:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -2.6104364
-      value: -2.6285923
-      inSlope: 0.9932089
-      outSlope: 0.9932089
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 100.28482
-      value: 99.56789
-      inSlope: 0.9932089
-      outSlope: 0.9932089
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &16071386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,7 +1694,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -130}
-  m_SizeDelta: {x: 400, y: 350}
+  m_SizeDelta: {x: 400, y: 379.9}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &600069222
 MonoBehaviour:
@@ -2637,15 +2613,17 @@ MonoBehaviour:
 
     H - heal
 
-    B+scroll - game
-    area
+    I - Immortality
+
+    B+scroll
+    - game area
 
     J+scroll - game speed
 
     Z+scroll - camera angle
 
-    X+scroll -
-    field of view'
+    X+scroll
+    - field of view'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4017,7 +3995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769589174635, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000034332275
+      value: 0.00002670288
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769621887938, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchorMax.x

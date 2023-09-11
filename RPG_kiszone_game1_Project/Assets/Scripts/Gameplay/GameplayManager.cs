@@ -10,7 +10,8 @@ public class GameplayManager : MonoBehaviour
     static GameplayManager Manager;
     public static Transform playerTransform;
     public static bool paused;
-    public static bool movementMode = false;
+    public static bool movementMode = true;
+    public static bool immortality = false;
     public static bool movementDirectionNormalize = false;
     public static Vector2 gameAreaSize = new Vector2(160f, 90f);
     static GameObject PauseMenu;
@@ -109,6 +110,7 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N) || Input.GetKeyDown(KeyCode.Joystick1Button9)) { movementDirectionNormalize = !movementDirectionNormalize; Debug.Log("movementDirectionNormalize: " + movementDirectionNormalize); }
         if (Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.Joystick1Button4)) { playerTransform.gameObject.GetComponent<PlayerSpaceship>().projectiles += 1; }
         if (Input.GetKeyDown(KeyCode.H) || Input.GetKeyDown(KeyCode.Joystick1Button5)) { playerTransform.gameObject.GetComponent<Spaceship>().DealDamage(-100f); }
+        if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Joystick1Button1)) { immortality = !immortality; }
         if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y * 5f); Debug.Log("game Bounds: " + gameAreaSize); }
         if (Input.GetKey(KeyCode.Joystick1Button2)) { ChangeBounds(-(Input.GetAxis("JoystickScroll") * Time.deltaTime) * 50f); Debug.Log("game Bounds: " + gameAreaSize); }
         if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f && Time.timeScale + Input.mouseScrollDelta.y * 0.1f >= 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }

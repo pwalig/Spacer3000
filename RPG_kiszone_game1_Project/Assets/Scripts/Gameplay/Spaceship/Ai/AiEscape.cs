@@ -19,7 +19,6 @@ public class AiEscape : SpaceshipController
     }
 
     [HideInInspector] public bool escape = false; // wrap child classes update code in if(!escape){ }
-    [SerializeField] Vector2 defaultEscapeDir = Vector2.right;
 
     public IEnumerator FlyAway(float delay=0f)
     {
@@ -27,15 +26,15 @@ public class AiEscape : SpaceshipController
         if (this != null)
         {
             escape = true;
-            Vector2 dir = new Vector2(moveDirectionX, moveDirectionY).normalized;
-            moveDirectionX = dir.x; moveDirectionY = dir.y;
-            if (dir.magnitude < 0.1f)
+            // correct course
+            while (this != null && Mathf.Abs(transform.position.x) < GameplayManager.gameAreaSize.x + 40f && Mathf.Abs(transform.position.y) < GameplayManager.gameAreaSize.y + 40f)
             {
-                defaultEscapeDir.Normalize();
-                moveDirectionX = defaultEscapeDir.x;
-                moveDirectionY = defaultEscapeDir.y;
+                Vector3 dir = (Quaternion.Inverse(transform.rotation) * transform.position.normalized);
+                moveDirectionX = dir.x;
+                moveDirectionY = dir.y;
+                yield return 0;
             }
-            while (this != null && Mathf.Abs(transform.position.x) < GameplayManager.gameAreaSize.x + 40f && Mathf.Abs(transform.position.y) < GameplayManager.gameAreaSize.y + 40f) yield return 0;
+            //delete
             if (this != null)
             {
                 LevelManager.enemies.Remove(gameObject);

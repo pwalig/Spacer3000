@@ -147,24 +147,29 @@ MonoBehaviour:
     m_RotationOrder: 4
   shootDelay: 5
   attacks:
-  - name: yeeet
-    iterations: 3
+  - name: labirynth
+    iterations: 2
     projectiles:
-    - projectile: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
-      position: {x: 0, y: 0, z: 0}
+    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+      position: {x: 16, y: 0, z: 0}
       rotation: 0
-      pattern: {fileID: 0}
-      time: 2
-  - name: wall attack
+      pattern: {fileID: 2800000, guid: 210f176c8a40cc94b98e8f81ff2ab270, type: 3}
+      time: 1.6
+  - name: 5 walls
     iterations: 30
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
-      position: {x: -150, y: 0, z: 0}
+      position: {x: -75, y: 0, z: 0}
       rotation: 0
       pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
       position: {x: 0, y: 0, z: 0}
+      rotation: 0
+      pattern: {fileID: 0}
+      time: 0
+    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+      position: {x: 75, y: 0, z: 0}
       rotation: 0
       pattern: {fileID: 0}
       time: 0
@@ -174,16 +179,11 @@ MonoBehaviour:
       pattern: {fileID: 0}
       time: 0
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
-      position: {x: 300, y: 0, z: 0}
+      position: {x: -150, y: 0, z: 0}
       rotation: 0
       pattern: {fileID: 0}
-      time: 0
-    - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
-      position: {x: -300, y: 0, z: 0}
-      rotation: 0
-      pattern: {fileID: 0}
-      time: 0.1
-  - name: hehe
+      time: 0.2
+  - name: powerup bait
     iterations: 1
     projectiles:
     - projectile: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
@@ -261,6 +261,14 @@ MonoBehaviour:
       rotation: 3
       pattern: {fileID: 0}
       time: 0.07
+  - name: Circle Waves
+    iterations: 1
+    projectiles:
+    - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 0
+      pattern: {fileID: 2800000, guid: e51fa6c738f81ea4183ec2ad80bc2cd6, type: 3}
+      time: 0.3
   hpBar: {fileID: 0}
 --- !u!114 &-7868133836765701247
 MonoBehaviour:
@@ -278,7 +286,6 @@ MonoBehaviour:
   moveDirectionY: 0
   shoot: 0
   escape: 0
-  defaultEscapeDir: {x: 0, y: 1}
   xpath:
     serializedVersion: 2
     m_Curve:
@@ -358,7 +365,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 600, y: 50}
+  m_Size: {x: 350, y: 50}
   m_EdgeRadius: 0
 --- !u!1 &1933663114041981694
 GameObject:

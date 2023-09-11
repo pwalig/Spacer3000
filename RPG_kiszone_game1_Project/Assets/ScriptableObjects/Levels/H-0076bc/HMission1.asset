@@ -13,58 +13,295 @@ MonoBehaviour:
   m_Name: HMission1
   m_EditorClassIdentifier: 
   waves:
-  - name: boss
-    gameBoundsScale: 1
+  - name: cloud_testing
+    delayBeforeWave: 0
+    gameBoundsScale: 1.4
+    camFOV: 8
+    camAngle: 17
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: -0.5
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0.5
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: side_ambush
+    delayBeforeWave: 0
+    gameBoundsScale: 0.9
+    camFOV: 29
+    camAngle: 7
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      spawnSide: 2
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      spawnSide: 1
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: combined
+    delayBeforeWave: 0
+    gameBoundsScale: 1.5
     camFOV: 5
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 8
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      spawnSide: 1
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 4.3
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      spawnSide: 2
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: MissleMine
+    delayBeforeWave: 0
+    gameBoundsScale: 1
+    camFOV: 9
     camAngle: 0
-    enemyPrefab: {fileID: 1933663113404844293, guid: 1bbe6a2a91f5fa1429a17e6ac3518347, type: 3}
-    position: {x: 0, y: 150, z: 0}
-    iterations: 5
-    delayAfterIteration: 5
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
-    addToMustKillList: 1
-    waitMode: 1
-    delayAfterSpawn: 4
-  - name: "kr\u0105\u017Cowniki"
-    gameBoundsScale: 2
-    camFOV: 20
-    camAngle: 15
-    enemyPrefab: {fileID: 4024259808775123609, guid: 287773f76a2d6df4ebb66cc55c1a9990, type: 3}
-    position: {x: 0, y: 150, z: 0}
-    iterations: 5
-    delayAfterIteration: 2
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
-    addToMustKillList: 1
-    waitMode: 1
-    delayAfterSpawn: 1
-  - name: basic1
+    enemies:
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 8485658034915277440, guid: 45301e2b86ca61044b4b76f28014485b, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: tresDeliquentes
+    delayBeforeWave: 0
+    gameBoundsScale: 1.2
+    camFOV: 9
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 14
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.1
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      spawnSide: 0
+      position: -0.5
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 14
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.1
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      spawnSide: 0
+      position: 0.5
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 14
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 10
+  - name: moreClouds
+    delayBeforeWave: 0
+    gameBoundsScale: 1.1
+    camFOV: 15
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 1.5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 10
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1.5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 10
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1.5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 10
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1.5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 10
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1.5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 10
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1.5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 10
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 10
+  - name: TwoMissleMines
+    delayBeforeWave: 0
+    gameBoundsScale: 1.2
+    camFOV: 7
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 8485658034915277440, guid: 45301e2b86ca61044b4b76f28014485b, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 8
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 8485658034915277440, guid: 45301e2b86ca61044b4b76f28014485b, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: singleCloud
+    delayBeforeWave: 0
     gameBoundsScale: 1
-    camFOV: 20
-    camAngle: 30
-    enemyPrefab: {fileID: 6739364942743443443, guid: 2d449a6a08602464fa03bc9d34ea6e72, type: 3}
-    position: {x: 140, y: 150, z: 0}
-    iterations: 2
-    delayAfterIteration: 2
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 10
-    addToMustKillList: 1
-    waitMode: 2
-    delayAfterSpawn: 0
-  - name: basic2
-    gameBoundsScale: 1
-    camFOV: 30
-    camAngle: 45
-    enemyPrefab: {fileID: 3838212405406433343, guid: 6a73a6e044790ca4291ab94fa3d99204, type: 3}
-    position: {x: -140, y: 150, z: 0}
-    iterations: 2
-    delayAfterIteration: 2
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 10
-    addToMustKillList: 1
-    waitMode: 1
-    delayAfterSpawn: 1
+    camFOV: 15
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 5
+      addToMustKillList: 0
+    waitMode: 0
+    delayAfterWave: 5
+  - name: tuhBosso
+    delayBeforeWave: 0
+    gameBoundsScale: 1.1
+    camFOV: 15
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  highScore: 0
   notes:
   - there should be some story here
   - but i dont know what happend yet

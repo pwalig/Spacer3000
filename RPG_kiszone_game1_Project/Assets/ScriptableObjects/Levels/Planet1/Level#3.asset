@@ -15,7 +15,7 @@ MonoBehaviour:
   waves:
   - name: daBosss
     delayBeforeWave: 0
-    gameBoundsScale: 1.5
+    gameBoundsScale: 1
     camFOV: 10
     camAngle: 10
     enemies:
@@ -23,98 +23,13 @@ MonoBehaviour:
       enemyPrefab: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
+      padding: -20
+      rotation: 0
+      flipHorizontal: 0
       screenTime: 0
       addToMustKillList: 0
-    waitMode: 0
-    delayAfterWave: 50
-  - name: reenforcements 111111111111
-    delayBeforeWave: 1
-    gameBoundsScale: 1.5
-    camFOV: 10
-    camAngle: 10
-    enemies:
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    waitMode: 0
-    delayAfterWave: 50
-  - name: reenforcements 2222222
-    delayBeforeWave: 1
-    gameBoundsScale: 1.5
-    camFOV: 10
-    camAngle: 10
-    enemies:
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    waitMode: 0
-    delayAfterWave: 50
-  - name: reenforcements 33333333
-    delayBeforeWave: 1
-    gameBoundsScale: 1.5
-    camFOV: 10
-    camAngle: 10
-    enemies:
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 4024259808775123609, guid: ae36675b822112f46bae9fde06c42ac3, type: 3}
-      spawnSide: 0
-      position: -1
-      padding: 0
-      screenTime: 20
-      addToMustKillList: 0
     waitMode: 3
-    delayAfterWave: 0
+    delayAfterWave: 1
   highScore: 0
   notes:
   - long one
