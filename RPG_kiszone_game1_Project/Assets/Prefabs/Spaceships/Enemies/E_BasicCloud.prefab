@@ -115,7 +115,7 @@ MonoBehaviour:
   shoot: 0
   escape: 0
   turnSpeed: 0
-  offset: {x: 0, y: 60, z: 0}
+  offset: {x: 0, y: 100, z: 0}
   distanceToKeep:
     value: 0
     speed: 0

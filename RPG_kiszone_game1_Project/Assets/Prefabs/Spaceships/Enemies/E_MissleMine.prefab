@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6739364942743443443, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Name
-      value: E_MissleMan
+      value: E_MissleMine
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443447, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_RootOrder
@@ -118,7 +118,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6739364942743443443, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
   m_PrefabInstance: {fileID: 2901467920479677811}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-6050230329501778218
+--- !u!114 &217393714597180495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,69 +127,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8485658034915277440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7802c07a6b8ac6543ab200cf188ebd8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7eb58995ae902c2449383f1237061ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirectionX: 0
   moveDirectionY: 0
   shoot: 0
   escape: 0
-  xpath:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.00032532215
-      outSlope: 0.00032532215
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.00032532215
-      inSlope: 0.00032532215
-      outSlope: 0.00032532215
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  ypath:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: -0.20057754
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: -0.20057754
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  moveMode: 0
-  cyclic: 1
-  pathTime: 5
-  downwardOffset:
-    value: 0
-    speed: 0
-    acceleration: 0
---- !u!114 &-69223333033994376
+  targetPosition: {x: 0, y: -0.2}
+--- !u!114 &2680877724779829620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

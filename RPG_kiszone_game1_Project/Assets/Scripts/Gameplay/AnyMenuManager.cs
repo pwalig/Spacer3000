@@ -32,7 +32,7 @@ public class AnyMenuManager : MonoBehaviour
         GameData.PurgeScores();
         foreach (Material material in GameData.availableMaterials) material.color = Color.white;
 #else
-        SaveSystem.SaveGame();
+        if (SceneManager.GetActiveScene().name != "TitleScreen") SaveSystem.SaveGame();
         Application.Quit();
 #endif
     }
