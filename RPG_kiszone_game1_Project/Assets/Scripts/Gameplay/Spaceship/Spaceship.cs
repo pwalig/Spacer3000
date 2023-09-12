@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +10,26 @@ public struct OneShoot
     public float rotation;
     public Texture2D pattern;
     public float time;
-    
+    public float TotalTime()
+    {
+        if (pattern != null)
+        {
+            float sum = 0f;
+            for (int k = 0; k < pattern.height; k++)
+            {
+                for (int j = 0; j < pattern.width; j++)
+                {
+                    sum += pattern.GetPixel(j, k).g;
+                }
+            }
+            return sum * time;
+        }
+        else
+        {
+            return time;
+        }
+    }
+
     public IEnumerator ReadPattern(Transform host)
     {
         for (int i = 0; i < pattern.height; i++)
@@ -40,6 +58,12 @@ public class AttackPattern //class describing one attack
     public int iterations; //how may times to repeat the attack pattern
 
     public List<OneShoot> projectiles;
+    public float TotalTime()
+    {
+        float sum = 0f;
+        foreach (OneShoot os in projectiles) sum += os.TotalTime();
+        return sum * iterations;
+    }
     public IEnumerator Perform(Transform host)
     {
         for (int i = 0; i < iterations; i++)
@@ -49,15 +73,6 @@ public class AttackPattern //class describing one attack
                 if (shoot.pattern != null)
                 {
                     host.gameObject.GetComponent<Spaceship>().StartCoroutine(shoot.ReadPattern(host));
-                    float waittime = 0f;
-                    for (int k = 0; k < shoot.pattern.height; k++)
-                    {
-                        for (int j = 0; j < shoot.pattern.width; j++)
-                        {
-                            waittime += shoot.pattern.GetPixel(j, k).g;
-                        }
-                    }
-                    yield return new WaitForSeconds(waittime * shoot.time);
                 }
                 else
                 {
@@ -66,8 +81,8 @@ public class AttackPattern //class describing one attack
                     VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
                     clonedProjectile.transform.Rotate(Mathf.Sign(host.localScale.x) * shoot.rotation * Vector3.forward);
                     if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
-                    yield return new WaitForSeconds(shoot.time);
                 }
+                yield return new WaitForSeconds(shoot.TotalTime());
             }
         }
     }
@@ -83,13 +98,13 @@ public class Spaceship : MonoBehaviour
     public float shootDelay = 1f;
     public List<AttackPattern> attacks;
 
-    bool canShoot = true;
+    [HideInInspector] public bool canShoot = true;
     //[SerializeField]
     //private float shootSpawn = 10f;
 
     ParticleSystem smoke = null;
 
-    Vector3 currentSpeed = Vector3.zero; 
+    Vector3 currentSpeed = Vector3.zero;
 
     void Awake()
     {
@@ -99,9 +114,13 @@ public class Spaceship : MonoBehaviour
         shootDelay *= GameData.GetDifficultyMulitplier(0.2f, !CompareTag("Player"));
     }
 
-    public virtual IEnumerator Shoot()
+    public virtual IEnumerator Shoot(int attack_id)
     {
-        // in child class override this member and implement shooting logic before return base.Shoot();
+        // in child class override this member and implement shooting logic and return base.Shoot(); at the end
+        if (attack_id < 0) attack_id = Random.Range(0, attacks.Count);
+        AttackPattern attack = attacks[attack_id];
+        StartCoroutine(attack.Perform(transform));
+        yield return new WaitForSeconds(attack.TotalTime());
         yield return new WaitForSeconds(shootDelay);
         canShoot = true;
     }
@@ -161,7 +180,7 @@ public class Spaceship : MonoBehaviour
 
         if (GameplayManager.movementDirectionNormalize || moveDirection.magnitude > 1f) moveDirection.Normalize(); //disable ability to move slowly granted by gamepads and joysticks. To activate press N while GameplayManager is present.
 
-        if (GameplayManager.movementMode) //Alternative way to move ship involving acceleration and deacceleration. To activate press M while GameplayManager is present.
+        if (GameplayManager.movementMode) //Alternative way to move ship involving acceleration and deacceleration. To deactivate press M while GameplayManager is present.
         {
             if (moveDirection.magnitude > 0.05f)
             {
@@ -180,7 +199,7 @@ public class Spaceship : MonoBehaviour
         if (controller.shoot && canShoot)
         {
             canShoot = false;
-            StartCoroutine(Shoot());
+            StartCoroutine(Shoot(controller.attack));
         }
     }
 

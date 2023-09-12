@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 850251290754137108, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 932225577908929629}
     - target: {fileID: 6739364942743443443, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Name
       value: E_BaseWaypointFollower
@@ -72,9 +76,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].name
       value: base attack
       objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.data[0].chance
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.size
       value: 1
@@ -104,7 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirectionX: 0
   moveDirectionY: 0
+  attack: 0
   shoot: 0
-  escape: 0
+  awailableAttacks: 1
   waypoints: {fileID: 5089909908618541515, guid: 193e125b1f0c00a49a5ff87843f0f5b1, type: 3}
   counter: 0

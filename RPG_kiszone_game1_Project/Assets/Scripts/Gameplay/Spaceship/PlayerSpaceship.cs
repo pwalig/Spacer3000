@@ -13,10 +13,10 @@ public class PlayerSpaceship : Spaceship
         hpBar = GameObject.Find("PlayerHpBar").GetComponent<RectTransform>();
     }
 
-    public override IEnumerator Shoot()
+    public override IEnumerator Shoot(int attack_id)
     {
-        StartCoroutine(attacks[Mathf.Clamp(projectiles-1, 0, attacks.Count-1)].Perform(transform));
-        return base.Shoot();
+        attack_id = Mathf.Clamp(projectiles-1, 0, attacks.Count-1);
+        return base.Shoot(attack_id);
     }
 
     IEnumerator PowerupExp(float time, int proj, float addSpeed, float shield)
@@ -39,6 +39,7 @@ public class PlayerSpaceship : Spaceship
     {
         if (damage > 0f) damage *= takenDmgMulti;
         if (!GameplayManager.immortality) base.DealDamage(damage);
+        Powerup(1f * GameData.GetDifficultyMulitplier(0.2f, true), 0, 0, 0.5f * GameData.GetDifficultyMulitplier(0.2f, true)); // system preventing instant death when coliding with swarm of projectiles
         hpBar.sizeDelta = new Vector2(250f * hp / maxHp, 50f);
     }
 }

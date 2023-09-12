@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiFollowCurve : AiEscape
+public class AiFollowCurve : AiBehaviour
 {
     public AnimationCurve xpath;
     public AnimationCurve ypath;
@@ -18,8 +18,8 @@ public class AiFollowCurve : AiEscape
     float pathPos = 0f;
     private void Start()
     {
-        moveDirectionX = moveDirectionY = 0f;
         shoot = true;
+        attack = -1;
     }
 
     void EngineFollow()
@@ -53,28 +53,25 @@ public class AiFollowCurve : AiEscape
 
     public void Update()
     {
-        if (!escape)
+        switch (moveMode)
         {
-            switch (moveMode)
-            {
-                case MoveMode.EngineFollow:
-                    EngineFollow();
-                    break;
-                case MoveMode.ConstantPath:
-                    ConstantPath();
-                    break;
-                case MoveMode.PerfectPath:
-                    PerfectPath();
-                    break;
-                default:
-                    break;
-            }
+            case MoveMode.EngineFollow:
+                EngineFollow();
+                break;
+            case MoveMode.ConstantPath:
+                ConstantPath();
+                break;
+            case MoveMode.PerfectPath:
+                PerfectPath();
+                break;
+            default:
+                break;
+        }
 
-            if (pathPos > 1f)
-            {
-                if (cyclic) pathPos -= 1f;
-                else StartCoroutine(FlyAway());
-            }
+        if (pathPos > 1f)
+        {
+            if (cyclic) pathPos -= 1f;
+            else StartCoroutine(GetComponent<EnemyController>().FlyAway());
         }
     }
 

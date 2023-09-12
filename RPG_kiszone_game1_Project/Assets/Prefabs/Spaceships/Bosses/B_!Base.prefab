@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 1933663113404844289}
   - component: {fileID: 1933663113404844288}
   - component: {fileID: 1933663113404844292}
-  - component: {fileID: -4363450252409048712}
+  - component: {fileID: 3674619739738789762}
   m_Layer: 0
   m_Name: B_!Base
   m_TagString: Enemy
@@ -121,7 +121,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  shootDelay: 10
+  shootDelay: 2
   attacks:
   - name: followingMissles
     iterations: 3
@@ -265,6 +265,85 @@ MonoBehaviour:
       rotation: 0
       pattern: {fileID: 2800000, guid: 210f176c8a40cc94b98e8f81ff2ab270, type: 3}
       time: 0.2
+  - name: powerup bait
+    iterations: 1
+    projectiles:
+    - projectile: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 180
+      pattern: {fileID: 0}
+      time: 1.2
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 2
+      pattern: {fileID: 0}
+      time: 0.06
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 0
+      pattern: {fileID: 0}
+      time: 0.09
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 3
+      pattern: {fileID: 0}
+      time: 0.1
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: -5
+      pattern: {fileID: 0}
+      time: 0.07
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: -4
+      pattern: {fileID: 0}
+      time: 0.1
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 0
+      pattern: {fileID: 0}
+      time: 0.08
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 1
+      pattern: {fileID: 0}
+      time: 0.1
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: -1
+      pattern: {fileID: 0}
+      time: 0.08
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 2
+      pattern: {fileID: 0}
+      time: 0.09
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 5
+      pattern: {fileID: 0}
+      time: 0.06
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: -3
+      pattern: {fileID: 0}
+      time: 0.07
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 1
+      pattern: {fileID: 0}
+      time: 0.09
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: -5
+      pattern: {fileID: 0}
+      time: 0.1
+    - projectile: {fileID: 6283896247070897233, guid: c5bad5d091ed49b4d9617898fc63948f, type: 3}
+      position: {x: 0, y: 0, z: 0}
+      rotation: 3
+      pattern: {fileID: 0}
+      time: 0.07
+  canShoot: 1
   hpBar: {fileID: 0}
 --- !u!61 &1933663113404844292
 BoxCollider2D:
@@ -292,7 +371,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 320, y: 50}
   m_EdgeRadius: 0
---- !u!114 &-4363450252409048712
+--- !u!114 &3674619739738789762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -301,68 +380,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1933663113404844293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7802c07a6b8ac6543ab200cf188ebd8c, type: 3}
+  m_Script: {fileID: 11500000, guid: d6be9d19aaedb4e40a60169c3bdad737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirectionX: 0
   moveDirectionY: 0
+  attack: 0
   shoot: 0
+  behaviour: {fileID: 0}
   escape: 0
-  xpath:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.0013476014
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.0013476014
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  ypath:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.8008602
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0.8008602
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  moveMode: 0
-  cyclic: 1
-  pathTime: 20
-  downwardOffset:
-    value: 0
-    speed: 0
-    acceleration: 0
 --- !u!1 &1933663114041981694
 GameObject:
   m_ObjectHideFlags: 0

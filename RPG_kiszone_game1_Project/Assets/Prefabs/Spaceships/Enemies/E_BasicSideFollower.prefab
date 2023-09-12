@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 850251290754137108, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: behaviour
+      value: 
+      objectReference: {fileID: 8871576978835966646}
     - target: {fileID: 6739364942743443443, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Name
       value: E_BasicSideFollower
@@ -72,9 +76,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].name
       value: base attack
       objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.data[0].chance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.data[0].prefab
+      value: 
+      objectReference: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.data[1].chance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: powerups.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.size
       value: 1
@@ -104,8 +128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirectionX: 0
   moveDirectionY: 0
+  attack: 0
   shoot: 0
-  escape: 0
+  awailableAttacks: 1
   goalHeight:
     value: 0.9
     speed: -0.03

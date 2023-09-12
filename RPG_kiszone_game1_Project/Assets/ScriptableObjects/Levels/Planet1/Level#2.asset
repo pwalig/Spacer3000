@@ -13,6 +13,41 @@ MonoBehaviour:
   m_Name: Level#2
   m_EditorClassIdentifier: 
   waves:
+  - name: beginess 111111
+    delayBeforeWave: 0
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 35
+    enemies:
+    - delayBeforeSpawn: 3
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+      spawnSide: 0
+      position: 0
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 0.7
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+      spawnSide: 0
+      position: -0.3
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 40
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1.1
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+      spawnSide: 0
+      position: 0.4
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 40
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
   - name: beginess 22222
     delayBeforeWave: 1
     gameBoundsScale: 1.1
@@ -59,41 +94,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 2
       position: 0.5
-      padding: 0
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 40
-      addToMustKillList: 0
-    waitMode: 3
-    delayAfterWave: 1
-  - name: beginess 111111
-    delayBeforeWave: 0
-    gameBoundsScale: 1
-    camFOV: 15
-    camAngle: 35
-    enemies:
-    - delayBeforeSpawn: 3
-      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
-      spawnSide: 0
-      position: 0
-      padding: 0
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 40
-      addToMustKillList: 0
-    - delayBeforeSpawn: 0.7
-      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
-      spawnSide: 0
-      position: -0.3
-      padding: 0
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 40
-      addToMustKillList: 0
-    - delayBeforeSpawn: 1.1
-      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
-      spawnSide: 0
-      position: 0.4
       padding: 0
       rotation: 0
       flipHorizontal: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
     camAngle: 10
     enemies:
     - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      enemyPrefab: {fileID: 6849342441319260961, guid: 81590817c4307ba47b409b5a40b2eb64, type: 3}
       spawnSide: 0
       position: 0
       padding: 0

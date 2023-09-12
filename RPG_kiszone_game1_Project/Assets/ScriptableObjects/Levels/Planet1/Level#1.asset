@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Level#1
   m_EditorClassIdentifier: 
   waves:
-  - name: simpl
+  - name: begines
     delayBeforeWave: 0
-    gameBoundsScale: 1.4
-    camFOV: 5
-    camAngle: 5
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 10
     enemies:
-    - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 8485658034915277440, guid: 45301e2b86ca61044b4b76f28014485b, type: 3}
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0
       padding: 0
@@ -29,77 +29,111 @@ MonoBehaviour:
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
-    delayAfterWave: 2
-  - name: boss
+    delayAfterWave: 1
+  - name: wincyj
     delayBeforeWave: 0
     gameBoundsScale: 1
-    camFOV: 5
-    camAngle: 5
+    camFOV: 15
+    camAngle: 10
     enemies:
-    - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 1933663113404844293, guid: 1bbe6a2a91f5fa1429a17e6ac3518347, type: 3}
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+      spawnSide: 0
+      position: -0.3
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+      spawnSide: 0
+      position: 0.3
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: nowosc
+    delayBeforeWave: 0
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
       position: 0
       padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
-    waitMode: 1
-    delayAfterWave: 0
-  - name: osaczenie
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: razem
     delayBeforeWave: 0
-    gameBoundsScale: 1.5
-    camFOV: 10
-    camAngle: 35
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 10
     enemies:
-    - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
-      spawnSide: 1
-      position: 0.5
-      padding: 90
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 1
-    - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
-      position: 0.5
-      padding: 90
+      position: -0.3
+      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
-    - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+      spawnSide: 0
+      position: 0.3
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+      spawnSide: 0
+      position: -0.2
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0.4
+      padding: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: duzy gosciu
+    delayBeforeWave: 0
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 3180321262640741672, guid: 021d70e9764b7274d87fa3b8565d9a64, type: 3}
       spawnSide: 0
       position: 0
-      padding: 90
+      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
-    - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
-      spawnSide: 0
-      position: -0.5
-      padding: 90
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 1
-    - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 6739364942743443443, guid: a6f011c1cafdb0048a707ac443c518cb, type: 3}
-      spawnSide: 2
-      position: 0.5
-      padding: 60
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 1
-    waitMode: 1
-    delayAfterWave: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
   highScore: 0
   notes:
   - easy level

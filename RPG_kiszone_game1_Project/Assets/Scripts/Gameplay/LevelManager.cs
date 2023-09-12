@@ -81,7 +81,7 @@ public class LevelManager : MonoBehaviour
                 boss.hpBar = bossBar.transform.Find("BossHpBar").gameObject.GetComponent<RectTransform>();
                 boss.DealDamage(0f);
             }
-            if (enemySpawn.screenTime > 0f) StartCoroutine(enemy.GetComponent<AiEscape>().FlyAway(enemySpawn.screenTime));
+            if (enemySpawn.screenTime > 0f) StartCoroutine(enemy.GetComponent<EnemyController>().FlyAway(enemySpawn.screenTime));
             if (enemySpawn.addToMustKillList) enemies.Add(enemy);
         }
     }

@@ -7,5 +7,6 @@ public class SpaceshipController : MonoBehaviour
 {
     [HideInInspector] public float moveDirectionX = 0f;
     [HideInInspector] public float moveDirectionY = 0f;
+    [HideInInspector] public int attack = 0;
     [HideInInspector] public bool shoot = false;
 }

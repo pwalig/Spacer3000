@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8783164359664504277
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844289, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      propertyPath: m_Name
+      value: GrandReinforcer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+--- !u!1 &7147724054960080080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+  m_PrefabInstance: {fileID: 8783164359664504277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-6629361241286826583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147724054960080080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb58995ae902c2449383f1237061ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirectionX: 0
+  moveDirectionY: 0
+  attack: 0
+  shoot: 0
+  availableAttacks: 1
+  targetPosition: {x: 0, y: 0.9}
+--- !u!114 &-1473309934129766182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7147724054960080080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22500340657137f499f841906b4f775c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveDirectionX: 0
+  moveDirectionY: 0
+  attack: 0
+  shoot: 0
+  availableAttacks: 1
+  stages:
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 07000000
+    hpThreshold: 0.9
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 07000000
+    hpThreshold: 0.8
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 0700000003000000
+    hpThreshold: 0.7
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 0700000003000000
+    hpThreshold: 0.6
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 070000000300000000000000
+    hpThreshold: 0.5
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 070000000300000000000000
+    hpThreshold: 0.4
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 030000000000000001000000
+    hpThreshold: 0.3
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 030000000000000001000000
+    hpThreshold: 0.2
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 0300000000000000010000000700000006000000
+    hpThreshold: 0.1
+    sendWaveSignal: 1
+  - behaviour: {fileID: -6629361241286826583}
+    allowedAttacks: 0300000000000000010000000700000006000000
+    hpThreshold: -1
+    sendWaveSignal: 0

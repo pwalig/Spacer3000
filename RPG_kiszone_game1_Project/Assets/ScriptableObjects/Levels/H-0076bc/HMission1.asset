@@ -291,7 +291,7 @@ MonoBehaviour:
     camAngle: 10
     enemies:
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 1933663113404844293, guid: 95ea70ccbcc49b84f946e215a106491d, type: 3}
+      enemyPrefab: {fileID: 6849342441319260961, guid: 81590817c4307ba47b409b5a40b2eb64, type: 3}
       spawnSide: 0
       position: 0
       padding: 0
