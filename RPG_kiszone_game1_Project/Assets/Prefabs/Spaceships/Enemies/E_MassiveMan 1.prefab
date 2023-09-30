@@ -150,8 +150,8 @@ MonoBehaviour:
   moveDirectionY: 0
   attack: 0
   shoot: 0
-  awailableAttacks: 1
+  availableAttacks: 1
   goalHeight:
-    value: 100
+    value: 1
     speed: -1
     acceleration: 0

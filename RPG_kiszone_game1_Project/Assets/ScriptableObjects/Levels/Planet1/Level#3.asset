@@ -37,4 +37,4 @@ MonoBehaviour:
   materialRewards: []
   spaceshipRewards: []
   planetRewards:
-  - {fileID: 11400000, guid: cdfc046779c5eb9448032a7e5b617700, type: 2}
+  - {fileID: 11400000, guid: 86792d6a12e415348aae527db17a7d21, type: 2}

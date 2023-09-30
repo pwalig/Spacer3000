@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 6389198852383176804}
   - component: {fileID: 2974266037025150205}
   - component: {fileID: 4878846481037236172}
-  - component: {fileID: 7746271812466240477}
+  - component: {fileID: 4958988523815259955}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -116,14 +116,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943529964751014295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.42019424, y: 0.5661703, z: 0.3537206, w: 0.61462986}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 4247, y: 4247, z: 4247}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5795863165312657341}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -66.5, y: 89.17, z: -5.9}
 --- !u!33 &2974266037025150205
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943529964751014295}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2534964839176971238, guid: fa7777eb352972a44930ddefec8c3d78, type: 3}
 --- !u!23 &4878846481037236172
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 8be0a231dcb0abd45affe7ecb8c9251c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,16 +174,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &7746271812466240477
-SphereCollider:
+--- !u!114 &4958988523815259955
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8943529964751014295}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f78fabc46c707f43929736ce1fd6108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 20
+  axisOfRotation: {x: 0, y: 0.2, z: 1}
