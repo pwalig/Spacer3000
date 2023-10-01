@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 479838787100886040, guid: 8c3bfc3836ebf9445aedf8afb64c177a, type: 3}
+      propertyPath: lifeTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5406681015825778860, guid: 8c3bfc3836ebf9445aedf8afb64c177a, type: 3}
       propertyPath: m_Name
       value: Explosion1

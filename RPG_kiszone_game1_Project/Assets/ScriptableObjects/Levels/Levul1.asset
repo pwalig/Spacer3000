@@ -13,51 +13,22 @@ MonoBehaviour:
   m_Name: Levul1
   m_EditorClassIdentifier: 
   waves:
-  - name: bossso
-    delayBeforeSpawn: 0
+  - name: teszt
+    delayBeforeWave: 0
     gameBoundsScale: 1.65
     camFOV: 5
     camAngle: 0
-    enemyPrefab: {fileID: 1933663113404844293, guid: b7fb72eba6cc0724481e1c5aeb626329, type: 3}
-    position: {x: 0, y: 200, z: 0}
-    flip: 0
-    iterations: 1
-    delayAfterIteration: 0
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
-    addToMustKillList: 1
-    waitMode: 1
-    delayAfterSpawn: 1
-  - name: initiality
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1.2
-    camFOV: 15
-    camAngle: 0
-    enemyPrefab: {fileID: 4024259808775123609, guid: 05798856d66cc30459093a590dedc4e2, type: 3}
-    position: {x: 200, y: 150, z: 0}
-    flip: 1
-    iterations: 5
-    delayAfterIteration: 4
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
-    addToMustKillList: 1
-    waitMode: 1
-    delayAfterSpawn: 2
-  - name: initiallity
-    delayBeforeSpawn: 0
-    gameBoundsScale: 1.2
-    camFOV: 15
-    camAngle: 0
-    enemyPrefab: {fileID: 4024259808775123609, guid: 9d114eb06a972254a9dfd538a53ef10d, type: 3}
-    position: {x: -200, y: 150, z: 0}
-    flip: 0
-    iterations: 5
-    delayAfterIteration: 4
-    deltaPosition: {x: 0, y: 0, z: 0}
-    screenTime: 0
-    addToMustKillList: 1
-    waitMode: 1
-    delayAfterSpawn: 2
+    enemies:
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 3180321262640741672, guid: 493ec66b45cc5a547a432f8993a175d9, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 0
   highScore: 0
   notes: []
   materialRewards: []

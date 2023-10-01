@@ -113,7 +113,7 @@ public class GameplayManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Joystick1Button1)) { immortality = !immortality; }
         if (Input.GetKey(KeyCode.B)) { ChangeBounds(-Input.mouseScrollDelta.y * 5f); Debug.Log("game Bounds: " + gameAreaSize); }
         if (Input.GetKey(KeyCode.Joystick1Button2)) { ChangeBounds(-(Input.GetAxis("JoystickScroll") * Time.deltaTime) * 50f); Debug.Log("game Bounds: " + gameAreaSize); }
-        if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f && Time.timeScale + Input.mouseScrollDelta.y * 0.1f >= 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.1f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
+        if (Input.GetKey(KeyCode.J) && Input.mouseScrollDelta.y != 0f && Time.timeScale + Input.mouseScrollDelta.y * 0.1f >= 0f) { Time.timeScale += Input.mouseScrollDelta.y * 0.25f; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
         if (Input.GetKey(KeyCode.Joystick1Button3) && Input.GetAxis("JoystickScroll") != 0f && Time.timeScale + (Input.GetAxis("JoystickScroll") * Time.deltaTime) >= 0f) { Time.timeScale += Input.GetAxis("JoystickScroll") * Time.deltaTime; Debug.Log("gameSpeed: " + (Mathf.Round(Time.timeScale * 100)) + "%"); }
 #endif
     }

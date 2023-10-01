@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: -7485794508757908663}
     - target: {fileID: 6739364942743443443, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Name
-      value: E_MassiveMan 1
+      value: E_FireWorker
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443444, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Size.y
@@ -105,16 +105,16 @@ PrefabInstance:
       objectReference: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[0].position.x
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[0].projectile
       value: 
-      objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+      objectReference: {fileID: 6283896247070897233, guid: f4b197cba308da947a0095828485f2cf, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[1].projectile
       value: 
@@ -152,6 +152,6 @@ MonoBehaviour:
   shoot: 0
   availableAttacks: 1
   goalHeight:
-    value: 1
-    speed: -0.01
+    value: 0.9
+    speed: 0
     acceleration: 0

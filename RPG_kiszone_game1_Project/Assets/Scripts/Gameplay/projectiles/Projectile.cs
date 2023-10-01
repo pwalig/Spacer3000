@@ -8,21 +8,30 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 100;
     public float damage = 10;
-    public float lifespan = 4f;
-    private bool start = true;
+    Camera gameCam;
     public enum ProjDestrMod { Destructable, Ghost, Indestructable };
     public ProjDestrMod destructionMode;
-    // Start is called before the first frame update
+
     public IEnumerator Expire()
     {
-        start = false;
-        yield return new WaitForSeconds(lifespan);
+        yield return new WaitForSeconds(2f); // projectile has 2 seconds to enter game area
+
+        // wait until projectile exits the screen
+        Vector2 scrPos = gameCam.WorldToViewportPoint(transform.position);
+        bool apeared = false;
+        while (scrPos.x > 0f && scrPos.x < 1f && scrPos.y > 0f && scrPos.y < 1f)
+        {
+            yield return 0;
+            scrPos = gameCam.WorldToViewportPoint(transform.position);
+            apeared = true;
+        }
+        if (apeared) yield return new WaitForSeconds(0.5f); // wait additional to let it leave entirely
         Destroy(gameObject);
     }
-    void Start()
+    void Awake()
     {
+        gameCam = GameObject.Find("Main Camera").GetComponent<Camera>();
         speed *= GameData.GetDifficultyMulitplier(0.2f, CompareTag("Player_Projectile"));
-        lifespan *= GameData.GetDifficultyMulitplier(0.2f, !CompareTag("Player_Projectile"));
         StartCoroutine(Expire());
     }
 
