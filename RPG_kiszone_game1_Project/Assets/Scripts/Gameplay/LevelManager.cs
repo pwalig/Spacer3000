@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour
     {
         if (GameData.GetLevel() != null) level = GameData.GetLevel();
         score = 0;
+        bossBars.Clear();
         StartCoroutine(PlayLevel());
     }
 
@@ -50,20 +51,37 @@ public class LevelManager : MonoBehaviour
 
             // translate position form spawn_side + position_float to vector3
             // float TopPadding = gameCam.transform.position.magnitude * Mathf.Sin(Mathf.Deg2Rad * gameCam.fieldOfView / 2f) / Mathf.Sin(Mathf.Deg2Rad * (270f + gameCam.transform.eulerAngles.x - (gameCam.fieldOfView / 2f))) + (enemySpawn.enemyPrefab.GetComponent<BoxCollider2D>().size.x / 2f) // padding equasion that doesnt work but theoretically should
-            Vector3 pos = Vector3.up * (GameplayManager.gameAreaSize.y + enemySpawn.padding);
+            Vector3 pos;
+            Vector2 box1 = enemySpawn.enemyPrefab.GetComponent<BoxCollider2D>().size / 2f;
+            Vector2 box2 = new Vector2(-box1.x, box1.y);
+            box1 = Quaternion.Euler(0f, 0f, enemySpawn.rotation) * box1;
+            box2 = Quaternion.Euler(0f, 0f, enemySpawn.rotation) * box2;
             switch (enemySpawn.spawnSide)
             {
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.top:
-                    pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, GameplayManager.gameAreaSize.y + enemySpawn.padding);
+                    pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, GameplayManager.gameAreaSize.y / 2f);
+                    while (gameCam.WorldToViewportPoint(pos).y < 1f) pos += Vector3.up;
+                    pos += Vector3.up * Mathf.Max(box1.y, box2.y, -box2.y, -box2.y);
                     break;
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.left:
-                    pos = new Vector3(-GameplayManager.gameAreaSize.x - enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    pos = new Vector3(-GameplayManager.gameAreaSize.x / 2f, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    while (gameCam.WorldToViewportPoint(pos).x > 0f) pos -= Vector3.right;
+                    pos -= Vector3.right * Mathf.Max(box1.x, box2.x, -box2.x, -box2.x);
                     break;
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.right:
-                    pos = new Vector3(GameplayManager.gameAreaSize.x + enemySpawn.padding, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    pos = new Vector3(GameplayManager.gameAreaSize.x / 2f, enemySpawn.position * GameplayManager.gameAreaSize.y);
+                    while (gameCam.WorldToViewportPoint(pos).x > 0f) pos += Vector3.right;
+                    pos += Vector3.right * Mathf.Max(box1.x, box2.x, -box2.x, -box2.x);
                     break;
                 case LevelLayout.Wave.InWaveEnemySpawn.SpawnSide.bottom:
-                    pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, -GameplayManager.gameAreaSize.y - enemySpawn.padding);
+                    pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, -GameplayManager.gameAreaSize.y / 2f);
+                    while (gameCam.WorldToViewportPoint(pos).y > 0f) pos -= Vector3.up;
+                    pos -= Vector3.up * Mathf.Max(box1.y, box2.y, -box2.y, -box2.y);
+                    break;
+                default:
+                    pos = new Vector3(enemySpawn.position * GameplayManager.gameAreaSize.x, GameplayManager.gameAreaSize.y / 2f);
+                    while (gameCam.WorldToViewportPoint(pos).y < 1f) pos += Vector3.up;
+                    pos += Vector3.up * Mathf.Max(box1.y, box2.y, -box2.y, -box2.y);
                     break;
             }
 
