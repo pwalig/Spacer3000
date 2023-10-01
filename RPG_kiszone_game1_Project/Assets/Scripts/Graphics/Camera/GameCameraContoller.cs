@@ -54,7 +54,7 @@ public class GameCameraContoller : MonoBehaviour
 
     public static void ChangeFieldOfView(float delta, bool adjustDistance = true)
     {
-        desiredFieldOfView = Mathf.Clamp(desiredFieldOfView + delta, 1f, 90f);
+        desiredFieldOfView = Mathf.Clamp(desiredFieldOfView + delta, 1f, 87f);
         if (adjustDistance)
         {
             desiredDistance = TargetGrasp() / Mathf.Tan(desiredFieldOfView * Mathf.Deg2Rad);
@@ -62,7 +62,7 @@ public class GameCameraContoller : MonoBehaviour
     }
     public static void SetFieldOfView(float val, bool adjustDistance = true)
     {
-        desiredFieldOfView = Mathf.Clamp(val, 1f, 90f);
+        desiredFieldOfView = Mathf.Clamp(val, 1f, 87f);
         if (adjustDistance)
         {
             desiredDistance = TargetGrasp() / Mathf.Tan(desiredFieldOfView * Mathf.Deg2Rad);
@@ -89,8 +89,8 @@ public class GameCameraContoller : MonoBehaviour
         transform.localPosition = -Vector3.forward * systems[0].Update(desiredDistance);
         if (autoDistance) transform.localPosition = -Vector3.forward * CalculateDistance();
 
-        cam.nearClipPlane = Mathf.Clamp(-transform.localPosition.z - 100f, 1f, 1000000f);
-        cam.farClipPlane = Mathf.Clamp(-transform.localPosition.z + 1000f, 1f, 1000000f);
+        cam.nearClipPlane = Mathf.Clamp(-transform.localPosition.z - 100f, 1f, 100000f);
+        cam.farClipPlane = Mathf.Clamp((-transform.localPosition.z + 1000f) / Mathf.Cos(Mathf.Deg2Rad * transform.parent.eulerAngles.x), 1f, 1000000f);
 
 #if (UNITY_EDITOR)
         if (Input.GetKey(KeyCode.Z)) { ChangeAngle(-Input.mouseScrollDelta.y); Debug.Log("camera angle: " + desiredAngle); }

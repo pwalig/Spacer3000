@@ -4,29 +4,34 @@ using UnityEngine;
 
 public class TerrainScroll : MonoBehaviour
 {
-    public GameObject next;
-    public float objectSize = 1000f;
+    public GameObject nextUp;
+    public Vector2 objectSize = Vector2.one * 500f;
     public Vector3 speed = Vector3.up * -100f;
+
+    Camera gameCam;
     bool spawn = false;
-    static Vector3 startPosition = Vector3.zero;
     private void Start()
     {
-        if (startPosition == Vector3.zero)
-            startPosition = transform.position - (speed.normalized * objectSize);
-        if (next == null)
-            next = gameObject;
+        if (nextUp == null)
+            nextUp = gameObject;
+
+        gameCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        spawn = false;
     }
 
     void Update()
     {
         transform.position += speed * Time.deltaTime;
-        if (!spawn && ((transform.position - startPosition).magnitude > objectSize))
+
+        if (!spawn && gameCam.WorldToViewportPoint(objectSize.y / 2f * Vector3.up + transform.position).y < 2f && transform.position.y < objectSize.y)
         {
-            Instantiate(next, transform.position - (speed.normalized * objectSize), transform.rotation);
+            Instantiate(nextUp, transform.position - (speed.normalized * objectSize.y), transform.rotation);
             spawn = true;
         }
-        if ((transform.position - startPosition).magnitude >= 2f * objectSize)
+
+        if (gameCam.WorldToViewportPoint(objectSize.y / 2f * Vector3.up + transform.position).y < -1f && transform.position.y < -objectSize.y)
         {
+            if (!spawn) Instantiate(nextUp, transform.position - (speed.normalized * objectSize.y), transform.rotation);
             Destroy(gameObject);
         }
     }

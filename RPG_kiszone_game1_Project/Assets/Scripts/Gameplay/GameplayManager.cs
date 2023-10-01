@@ -41,7 +41,7 @@ public class GameplayManager : MonoBehaviour
 
         // make terrain
         if (GameData.GetPlanet().terrainAsset != null)
-            Instantiate(GameData.GetPlanet().terrainAsset).transform.position = new Vector3(0f, -200f, 300f);
+            Instantiate(GameData.GetPlanet().terrainAsset).transform.position = new Vector3(0f, -gameAreaSize.y, 0f);
         playerTransform = playerGameObject.transform;
 
         // generate same spaceship as in main menu
