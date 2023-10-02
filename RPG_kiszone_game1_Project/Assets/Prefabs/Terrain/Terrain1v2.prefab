@@ -129,5 +129,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextUp: {fileID: 7408411089792263121}
-  objectSize: {x: 500, y: 500}
+  objectSize: {x: 500, y: 1500}
   speed: {x: -0, y: -100, z: -0}
