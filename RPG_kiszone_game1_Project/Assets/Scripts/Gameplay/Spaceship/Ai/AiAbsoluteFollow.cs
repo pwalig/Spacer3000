@@ -10,7 +10,7 @@ public class AiAbsoluteFollow : AiBehaviour
     public FF shootingDistance;
     void Update()
     {
-        Vector3 distance = Quaternion.Inverse(transform.rotation) * (GameplayManager.GetPlayerPosition() + offset - transform.position);
+        Vector3 distance = Quaternion.Inverse(transform.rotation) * GameplayManager.GetPlayerPosition() + offset - transform.position;
         moveDirectionX = distance.normalized.x;
         moveDirectionY = distance.normalized.y;
         if (distance.magnitude < distanceToKeep.F())
