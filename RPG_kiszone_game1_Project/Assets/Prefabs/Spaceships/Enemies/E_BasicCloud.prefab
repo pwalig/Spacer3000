@@ -11,13 +11,37 @@ PrefabInstance:
       propertyPath: behaviour
       value: 
       objectReference: {fileID: -2634190217263374141}
+    - target: {fileID: 6739364942654206740, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1.9106855e-15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942654206740, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000004371139
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942654206740, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000004371139
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942654206741, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: preset
+      value: 
+      objectReference: {fileID: 11400000, guid: f06f55c318043964085ffc944358fca1, type: 2}
     - target: {fileID: 6739364942743443443, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Name
       value: E_BasicCloud
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443444, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: m_Size.x
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443444, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Size.y
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443444, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443447, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_RootOrder
@@ -130,7 +154,7 @@ MonoBehaviour:
   moveDirectionY: 0
   attack: 0
   shoot: 0
-  awailableAttacks: 1
+  availableAttacks: 1
   turnSpeed: 0
   offset: {x: 0, y: 100, z: 0}
   distanceToKeep:

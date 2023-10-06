@@ -20,6 +20,14 @@ public class SpaceshipGenerator : MonoBehaviour
     {
         Generate();
     }
+    
+    [ContextMenu("Seed Shuffle")]
+    void Seed_Shuffle()
+    {
+        for (int i = 0; i<preset.passes.Count; i++)
+            preset.passes[i].seed++;
+        Generate();
+    }
 
     [ContextMenu("Cleare")]
     void Cleare()

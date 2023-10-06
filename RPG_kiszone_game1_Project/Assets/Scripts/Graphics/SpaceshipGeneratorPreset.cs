@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public struct Pass
+public class Pass
 {
     public string passName;
     public enum PartPlacementMethod { Loose, Interpolate, Scatter };
