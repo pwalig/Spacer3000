@@ -123,7 +123,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   shootDelay: 2
   attacks:
-  - name: followingMissles
+  - name: 0-followingMissles
     iterations: 3
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: 2030c62600fa0f849b6212cf7406e4c2, type: 3}
@@ -141,7 +141,7 @@ MonoBehaviour:
       rotation: -10
       pattern: {fileID: 0}
       time: 0.2
-  - name: waterfall
+  - name: 1-waterfall
     iterations: 1
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: d75432b6a996ae64dac15efcd5063e84, type: 3}
@@ -189,7 +189,7 @@ MonoBehaviour:
       rotation: 12
       pattern: {fileID: 0}
       time: 0.2
-  - name: 5 walls
+  - name: 2-5 walls
     iterations: 30
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
@@ -217,7 +217,7 @@ MonoBehaviour:
       rotation: 0
       pattern: {fileID: 0}
       time: 0.1
-  - name: alternating
+  - name: 3-alternating
     iterations: 5
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
@@ -225,7 +225,7 @@ MonoBehaviour:
       rotation: 0
       pattern: {fileID: 2800000, guid: 2fd26f827e98ee44585ac7ce6c6e63cc, type: 3}
       time: 0.7
-  - name: zigzag
+  - name: 4-zigzag
     iterations: 2
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
@@ -233,7 +233,7 @@ MonoBehaviour:
       rotation: 0
       pattern: {fileID: 2800000, guid: 89cc199c204f93648af205fd16ca8b6c, type: 3}
       time: 0.15
-  - name: side blocks
+  - name: 5-side blocks
     iterations: 2
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
@@ -241,7 +241,7 @@ MonoBehaviour:
       rotation: 0
       pattern: {fileID: 2800000, guid: 63163045d35e0ff44bbcb2bd35057e53, type: 3}
       time: 0.25
-  - name: circle waves
+  - name: 6-circle waves
     iterations: 2
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
@@ -249,7 +249,7 @@ MonoBehaviour:
       rotation: 90
       pattern: {fileID: 2800000, guid: e51fa6c738f81ea4183ec2ad80bc2cd6, type: 3}
       time: 1
-  - name: checker
+  - name: 7-checker
     iterations: 7
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
@@ -257,7 +257,7 @@ MonoBehaviour:
       rotation: 0
       pattern: {fileID: 2800000, guid: e51ca7f548079c9459e84b01de649a97, type: 3}
       time: 0.7
-  - name: pattern
+  - name: 8-pattern
     iterations: 2
     projectiles:
     - projectile: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
@@ -265,7 +265,7 @@ MonoBehaviour:
       rotation: 0
       pattern: {fileID: 2800000, guid: 210f176c8a40cc94b98e8f81ff2ab270, type: 3}
       time: 0.2
-  - name: powerup bait
+  - name: 9-powerup bait
     iterations: 1
     projectiles:
     - projectile: {fileID: 5689742700282723057, guid: 0ec421dabddd27c45a294d652abb5aa3, type: 3}

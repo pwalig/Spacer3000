@@ -77,7 +77,7 @@ public class AttackPattern //class describing one attack
                 else
                 {
                     CameraShake.Shake(30f);
-                    GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + shoot.position, host.rotation);
+                    GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + (host.transform.rotation * shoot.position), host.rotation);
                     VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
                     clonedProjectile.transform.Rotate(Mathf.Sign(host.localScale.x) * shoot.rotation * Vector3.forward);
                     if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
