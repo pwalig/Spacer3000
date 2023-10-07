@@ -30,7 +30,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
     - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     mirror: 1
-    seed: 0
+    seed: 1
     randomizeSeed: 0
     addToRenderers: 0
     amount: 10
@@ -86,7 +86,7 @@ MonoBehaviour:
     materials:
     - {fileID: 2100000, guid: 4af65ff69eced3e4f82a49dce829dbc9, type: 2}
     mirror: 1
-    seed: 0
+    seed: 1
     randomizeSeed: 0
     addToRenderers: 0
     amount: 10
@@ -137,7 +137,7 @@ MonoBehaviour:
     - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
     - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
     mirror: 1
-    seed: 0
+    seed: 1
     randomizeSeed: 0
     addToRenderers: 0
     amount: 12

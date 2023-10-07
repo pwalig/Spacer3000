@@ -23,7 +23,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -32,7 +31,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: -0.3
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -41,7 +39,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0.4
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -58,7 +55,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -67,7 +63,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: 0.5
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -76,7 +71,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: -0.5
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -85,7 +79,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 1
       position: 0.5
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -94,7 +87,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 2
       position: 0.5
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -111,7 +103,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -120,7 +111,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
@@ -129,13 +119,12 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 40
       addToMustKillList: 0
     waitMode: 0
-    delayAfterWave: 30
+    delayAfterWave: 1
   - name: meat and potatoes 11111111
     delayBeforeWave: 1
     gameBoundsScale: 1.5
@@ -146,7 +135,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: -0.1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -155,7 +143,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: -0.4
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -164,7 +151,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: 0.6
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -173,7 +159,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -190,7 +175,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -199,7 +183,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -208,7 +191,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -217,7 +199,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -226,7 +207,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -235,7 +215,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -244,7 +223,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -253,7 +231,6 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: -1
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
@@ -270,11 +247,10 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3180321262640741672, guid: 021d70e9764b7274d87fa3b8565d9a64, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
+      addToMustKillList: 0
     waitMode: 0
     delayAfterWave: 10
   - name: yeeeeeeeeeeet 333333
@@ -287,38 +263,34 @@ MonoBehaviour:
       enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
+      addToMustKillList: 0
     - delayBeforeSpawn: 4.3
       enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
+      addToMustKillList: 0
     - delayBeforeSpawn: 4.3
       enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
+      addToMustKillList: 0
     - delayBeforeSpawn: 4.3
       enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
+      addToMustKillList: 0
     waitMode: 3
     delayAfterWave: 1
   - name: the bosssso 11111111111
@@ -331,12 +303,11 @@ MonoBehaviour:
       enemyPrefab: {fileID: 6849342441319260961, guid: 81590817c4307ba47b409b5a40b2eb64, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
       screenTime: 0
-      addToMustKillList: 1
-    waitMode: 1
+      addToMustKillList: 0
+    waitMode: 3
     delayAfterWave: 2
   highScore: 0
   notes:
