@@ -145,7 +145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextUp: {fileID: 7408411089792263121}
-  objectSize: {x: 500, y: 3000}
+  nextSides: {fileID: 7408411089792263121}
+  objectSize: {x: 750, y: 3000}
   speed: {x: -0, y: -100, z: -0}
 --- !u!1 &9210606688304641196
 GameObject:

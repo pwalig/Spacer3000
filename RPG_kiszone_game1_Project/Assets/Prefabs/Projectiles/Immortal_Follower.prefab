@@ -4823,9 +4823,9 @@ GameObject:
   - component: {fileID: 9204588449162123295}
   - component: {fileID: 5150035373389710991}
   - component: {fileID: -2471194410589622409}
-  - component: {fileID: 6594061731119714403}
+  - component: {fileID: 746858355364894178}
   m_Layer: 0
-  m_Name: Firework
+  m_Name: Immortal_Follower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4885,7 +4885,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 6, y: 12.28}
   m_Direction: 0
---- !u!114 &6594061731119714403
+--- !u!114 &746858355364894178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4894,15 +4894,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6283896247070897233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ad29ac01bbe5b488f53650c87ab0d2, type: 3}
+  m_Script: {fileID: 11500000, guid: e4303af498bfecf4497042121fe9ade2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 70
-  damage: 10
+  speed: 90
+  damage: 8
   destructionMode: 2
-  projectile: {fileID: 6283896247070897233, guid: 9f3c0658ed76a4c4f8d245e064cce65f, type: 3}
-  amount: 8
-  time: 2
+  TurnSpeed: 0.4
 --- !u!1001 &1777774576730924748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4916,15 +4914,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 120
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 120
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4974,10 +4972,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4031db087cc367c4aa63f3e98d4e752a, type: 2}
-    - target: {fileID: -5754084199372789682, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 2534964839176971238, guid: 742b7e29afeffce42b0433be7cc138b5, type: 3}
     - target: {fileID: 919132149155446097, guid: 3fdd68b3aa2e7db428cc0bf298dd75c4, type: 3}
       propertyPath: m_Name
       value: rakieta1

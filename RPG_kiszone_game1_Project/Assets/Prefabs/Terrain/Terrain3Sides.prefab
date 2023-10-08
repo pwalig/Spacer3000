@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8389346099026651841}
   - component: {fileID: 6991740450497480454}
   m_Layer: 0
-  m_Name: Terrain3
+  m_Name: Terrain3Sides
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextUp: {fileID: 283132172404661725}
-  nextSides: {fileID: 283132172404661725, guid: 9fcf067d60e43d94392802cef2851b38, type: 3}
+  nextSides: {fileID: 283132172404661725, guid: 45fb3cdce5c94e14c8121c0ef9ca66cb, type: 3}
   objectSize: {x: 890, y: 3000}
   speed: {x: -0, y: -100, z: -0}
 --- !u!1 &5252055350283203061
@@ -76,8 +76,8 @@ Transform:
   m_GameObject: {fileID: 5252055350283203061}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -500, z: 300}
-  m_LocalScale: {x: 150, y: 150, z: 150}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: -150, y: 150, z: 150}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8389346099026651841}
   m_RootOrder: 0
