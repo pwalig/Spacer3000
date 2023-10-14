@@ -9,6 +9,7 @@ public struct OneShoot
     public Vector3 position;
     public float rotation;
     public Texture2D pattern;
+    [Tooltip("Delay after in seconds")]
     public float time;
     public float TotalTime()
     {

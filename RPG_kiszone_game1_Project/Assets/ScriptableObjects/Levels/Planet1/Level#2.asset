@@ -24,7 +24,7 @@ MonoBehaviour:
       spawnSide: 0
       position: 0
       rotation: 0
-      flipHorizontal: 0
+      flipHorizontal: 1
       screenTime: 40
       addToMustKillList: 0
     - delayBeforeSpawn: 0.7

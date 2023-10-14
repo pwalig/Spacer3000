@@ -4670,7 +4670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: speed
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: shootDelay
@@ -4742,6 +4742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirectionX: 0
   moveDirectionY: 0
+  levelOffset: {x: 0, y: 0}
   attack: 0
   shoot: 0
   availableAttacks: 1
@@ -4812,9 +4813,15 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   moveMode: 0
+  curvePlacement: 0
   cyclic: 1
   pathTime: 20
-  downwardOffset:
-    value: 0
-    speed: 1
-    acceleration: 0
+  variableOffset:
+    x:
+      value: 0
+      speed: 0
+      acceleration: 0
+    y:
+      value: 0
+      speed: 0
+      acceleration: 0

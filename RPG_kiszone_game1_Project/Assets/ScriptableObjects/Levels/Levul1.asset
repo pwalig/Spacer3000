@@ -19,15 +19,95 @@ MonoBehaviour:
     camFOV: 5
     camAngle: 0
     enemies:
-    - delayBeforeSpawn: 0
-      enemyPrefab: {fileID: 3180321262640741672, guid: 493ec66b45cc5a547a432f8993a175d9, type: 3}
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 2368761078460985058, guid: 4df32c73beab7c945b65d59daa39bd95, type: 3}
+      spawnSide: 0
+      position: 0.9
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0.9, y: 0.9}
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 2368761078460985058, guid: 4df32c73beab7c945b65d59daa39bd95, type: 3}
+      spawnSide: 3
+      position: -0.9
+      rotation: 180
+      flipHorizontal: 0
+      aiOffset: {x: -0.9, y: -0.9}
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 2368761078460985058, guid: 4df32c73beab7c945b65d59daa39bd95, type: 3}
+      spawnSide: 1
+      position: 0.9
+      rotation: 90
+      flipHorizontal: 0
+      aiOffset: {x: -0.9, y: 0.9}
+      screenTime: 20
+      addToMustKillList: 0
+    - delayBeforeSpawn: 2
+      enemyPrefab: {fileID: 2368761078460985058, guid: 4df32c73beab7c945b65d59daa39bd95, type: 3}
+      spawnSide: 2
+      position: -0.9
+      rotation: -90
+      flipHorizontal: 0
+      aiOffset: {x: 0.9, y: -0.9}
+      screenTime: 20
+      addToMustKillList: 0
+    waitMode: 2
+    delayAfterWave: 0
+  - name: teszt
+    delayBeforeWave: 0
+    gameBoundsScale: 1.65
+    camFOV: 5
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
       position: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
-      addToMustKillList: 0
-    waitMode: 3
+      addToMustKillList: 1
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 1
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 1
+    waitMode: 1
+    delayAfterWave: 0
+  - name: teszt
+    delayBeforeWave: 0
+    gameBoundsScale: 1.65
+    camFOV: 5
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 8485658034915277440, guid: 45301e2b86ca61044b4b76f28014485b, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 1
+    waitMode: 1
     delayAfterWave: 0
   highScore: 0
   notes: []

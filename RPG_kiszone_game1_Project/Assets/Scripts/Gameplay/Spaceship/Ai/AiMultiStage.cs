@@ -44,7 +44,8 @@ public class AiMultiStage : AiBehaviour
         {
             if (stages[currentStage].sendWaveSignal) LevelManager.SendSignal();
             currentStage = Mathf.Clamp(currentStage + 1, 0, stages.Count);
-            stages[currentStage].behaviour.availableAttacks = stages[currentStage].allowedAttacks.Count;
+            stages[currentStage].behaviour.levelOffset = levelOffset; //inform new behaviour of level offset
+            stages[currentStage].behaviour.availableAttacks = stages[currentStage].allowedAttacks.Count; //inform new behaviour of the ammount of attacks available
         }
     }
 }

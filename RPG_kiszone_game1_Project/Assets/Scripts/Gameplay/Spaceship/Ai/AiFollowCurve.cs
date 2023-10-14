@@ -8,9 +8,11 @@ public class AiFollowCurve : AiBehaviour
     public AnimationCurve ypath;
     public enum MoveMode { ConstantPath, EngineFollow, PerfectPath } // ConstantPath recommended
     public MoveMode moveMode;
+    public enum CurvePlacement { Global, Local};
+    public CurvePlacement curvePlacement;
     public bool cyclic = true;
     public float pathTime = 20f;
-    public FF downwardOffset;
+    public Vector2FF variableOffset;
 
     static readonly float proximityTreshold = 5f;
     static readonly float curveIncrement = 0.01f;
@@ -22,14 +24,21 @@ public class AiFollowCurve : AiBehaviour
         attack = -1;
     }
 
+    Vector2 GetTargetPosition()
+    {
+        Vector2 global = variableOffset.F() + new Vector2((xpath.Evaluate(pathPos) + levelOffset.x) * GameplayManager.gameAreaSize.x, (ypath.Evaluate(pathPos) + levelOffset.y) * GameplayManager.gameAreaSize.y);
+        if (curvePlacement == CurvePlacement.Global) return global;
+        else return transform.rotation * global;
+    }
+
     void EngineFollow()
     {
-        Vector2 distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
+        Vector2 distance = Quaternion.Inverse(transform.rotation) * (GetTargetPosition() - new Vector2(transform.position.x, transform.position.y));
         while (distance.magnitude < proximityTreshold)
         {
             pathPos += curveIncrement;
             if (pathPos > 1f) pathPos -= 1f;
-            distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.value) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
+            distance = Quaternion.Inverse(transform.rotation) * (GetTargetPosition() - new Vector2(transform.position.x, transform.position.y));
         }
         distance = distance.normalized;
         moveDirectionX = distance.x;
@@ -38,7 +47,7 @@ public class AiFollowCurve : AiBehaviour
 
     void ConstantPath()
     {
-        Vector2 distance = Quaternion.Inverse(transform.rotation) * ((Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y) - new Vector2(transform.position.x, transform.position.y));
+        Vector2 distance = Quaternion.Inverse(transform.rotation) * (GetTargetPosition() - new Vector2(transform.position.x, transform.position.y));
         pathPos += Time.deltaTime / pathTime;
         distance = distance.normalized;
         moveDirectionX = distance.x;
@@ -47,7 +56,7 @@ public class AiFollowCurve : AiBehaviour
 
     void PerfectPath()
     {
-        transform.position = transform.rotation * ((Vector2.down * downwardOffset.F()) + new Vector2(xpath.Evaluate(pathPos) * GameplayManager.gameAreaSize.x, ypath.Evaluate(pathPos) * GameplayManager.gameAreaSize.y));
+        transform.position = GetTargetPosition();
         pathPos += Time.deltaTime / pathTime / (GameplayManager.gameAreaSize.magnitude / 18.3575597507f);
     }
 

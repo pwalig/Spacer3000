@@ -12,7 +12,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0af4bd43844114c438bbf4c69edc0970, type: 3}
   m_Name: TestLevel
   m_EditorClassIdentifier: 
-  waves: []
+  waves:
+  - name: circle mine
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 15
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 8485658034915277440, guid: f14e3b0e32804334a87160f3f0bd89d5, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 0
+  - name: 
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 15
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 35
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 78
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 5
+      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 120
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 0
   highScore: 0
   notes:
   - ye

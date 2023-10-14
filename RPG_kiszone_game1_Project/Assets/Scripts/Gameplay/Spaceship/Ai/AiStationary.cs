@@ -12,7 +12,7 @@ public class AiStationary : AiBehaviour
     }
     void Update()
     {
-        Vector3 pos = targetPosition * GameplayManager.gameAreaSize;
+        Vector3 pos = (targetPosition + levelOffset) * GameplayManager.gameAreaSize;
         Vector3 distance = Quaternion.Inverse(transform.rotation) * (pos - transform.position);
         moveDirectionX = distance.normalized.x;
         moveDirectionY = distance.normalized.y;

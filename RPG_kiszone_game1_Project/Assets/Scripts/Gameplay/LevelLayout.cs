@@ -21,9 +21,14 @@ public class LevelLayout : ScriptableObject
             public GameObject enemyPrefab;
             public enum SpawnSide { top, left, right, bottom };
             public SpawnSide spawnSide;
+            [Tooltip("value from -1 to 1 scales with game area size")]
             public float position; // value between -1 and 1 adjusts to gameAreaSize automatically
+            [Tooltip("value in degrees, positive on left side")]
             public float rotation;
             public bool flipHorizontal;
+            [Tooltip("Vector offsetting enemy ai target position, values from -1 to 1 scales with game area size")]
+            public Vector2 aiOffset;
+            [Tooltip("Time until enemy flies away. Set to 0 or below to make enemy stay until it is killed")]
             public float screenTime; // Time until enemy flies away. Set to 0 or below to make enemy stay until it is killed.
             public bool addToMustKillList = true;
         }

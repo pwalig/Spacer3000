@@ -17,8 +17,30 @@ public class AiBehaviour : MonoBehaviour
             return value;
         }
     }
+    [System.Serializable]
+    public class Vector2FF
+    {
+        public FF x;
+        public FF y;
+        public Vector2 F()
+        {
+            return new Vector2(x.F(), y.F());
+        }
+    }
+    [System.Serializable]
+    public class Vector3FF
+    {
+        public FF x;
+        public FF y;
+        public FF z;
+        public Vector3 F()
+        {
+            return new Vector3(x.F(), y.F(), z.F());
+        }
+    }
     [HideInInspector] public float moveDirectionX = 0f;
     [HideInInspector] public float moveDirectionY = 0f;
+    [HideInInspector] public Vector2 levelOffset = Vector2.zero;
     [HideInInspector] public int attack = 0;
     [HideInInspector] public bool shoot = false;
     [HideInInspector] public int availableAttacks = 1;

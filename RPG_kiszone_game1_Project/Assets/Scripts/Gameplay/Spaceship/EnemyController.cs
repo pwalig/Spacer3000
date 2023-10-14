@@ -21,6 +21,11 @@ public class EnemyController : SpaceshipController
     [SerializeField] AiBehaviour behaviour;
     [HideInInspector] public bool escape = false; // wrap child classes update code in if(!escape){ }
 
+    public void SetAiOffset(Vector2 offset)
+    {
+        behaviour.levelOffset = offset;
+    }
+
     private void Awake()
     {
         if (behaviour == null)
