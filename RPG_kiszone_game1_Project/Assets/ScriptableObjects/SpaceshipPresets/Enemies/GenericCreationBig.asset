@@ -1,0 +1,282 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ed2f6a760bc944688e48a91085b0e6, type: 3}
+  m_Name: GenericCreationBig
+  m_EditorClassIdentifier: 
+  notes:
+  - layer 0 - interpolate between these
+  - layer 1 - put wings on
+  - layer 2 - put greebles and guns on top
+  randomizeSeeds: 0
+  passes:
+  - passName: body inline
+    placementMethod: 0
+    rotationMethod: 0
+    parts:
+    - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
+    mirror: 0
+    seed: 23
+    randomizeSeed: 0
+    addToRenderers: 0
+    amount: 20
+    scaleDistribution:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.2002983
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1.2002983
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    randomPostRotation: {x: 15, y: 0, z: 0}
+    assignToLayers: 02000000
+    parameters:
+    - 0
+    - 35
+    - 7
+    - 0
+    - 0
+    - 0
+    qualityInfluence: 0
+  - passName: body random wide
+    placementMethod: 0
+    rotationMethod: 0
+    parts:
+    - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
+    mirror: 1
+    seed: 23
+    randomizeSeed: 0
+    addToRenderers: 0
+    amount: 10
+    scaleDistribution:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.1949978
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5005335
+        value: 1.1949978
+        inSlope: 2.8655937
+        outSlope: 2.8655937
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.07410183
+      - serializedVersion: 3
+        time: 1
+        value: 1.1949978
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    randomPostRotation: {x: 0, y: 0, z: 0}
+    assignToLayers: 000000000100000002000000
+    parameters:
+    - 37
+    - 33
+    - 7
+    - 0
+    - 0
+    - 0
+    qualityInfluence: 0
+  - passName: body fill
+    placementMethod: 1
+    rotationMethod: 0
+    parts:
+    - {fileID: 1868328438652346346, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4184538922395553223, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 4867982236619091832, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
+    mirror: 1
+    seed: 23
+    randomizeSeed: 0
+    addToRenderers: 0
+    amount: 18
+    scaleDistribution:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.7952455
+        inSlope: 0.079780936
+        outSlope: 0.079780936
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0.87502646
+        inSlope: 0.079780936
+        outSlope: 0.079780936
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    randomPostRotation: {x: 0, y: 15, z: 0}
+    assignToLayers: 02000000
+    parameters:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    qualityInfluence: 0
+  - passName: wings
+    placementMethod: 2
+    rotationMethod: 1
+    parts:
+    - {fileID: 973543403404581923, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: -424755751035905546, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 1700a5e1f75dae64d9e3951417803359, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
+    mirror: 1
+    seed: 23
+    randomizeSeed: 0
+    addToRenderers: 0
+    amount: 22
+    scaleDistribution:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.4208728
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1.4208728
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    randomPostRotation: {x: 0, y: 0, z: 0}
+    assignToLayers: 02000000
+    parameters:
+    - 1
+    - 0
+    - 0
+    - 0.5
+    - 1.1
+    qualityInfluence: 0
+  - passName: guns
+    placementMethod: 2
+    rotationMethod: 1
+    parts:
+    - {fileID: 2941274158721294118, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 7197068143331612903, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 2165579551946672802, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    - {fileID: 8812634154593453696, guid: 309b150e3da5c0d43aee639cddee2de5, type: 3}
+    materials:
+    - {fileID: 2100000, guid: 6b0a99de7cfb0574f8ac979651dce101, type: 2}
+    - {fileID: 2100000, guid: 62c29ead95638034096a765908b9606e, type: 2}
+    - {fileID: 2100000, guid: a2f17bcf0b8487849bf2e3b9287a5c0c, type: 2}
+    - {fileID: 2100000, guid: c07fd2c0dc604764c81f59d481ba56d6, type: 2}
+    mirror: 1
+    seed: 23
+    randomizeSeed: 0
+    addToRenderers: 0
+    amount: 20
+    scaleDistribution:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.9774035
+        inSlope: 0.09347534
+        outSlope: 0.09347534
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1.0708789
+        inSlope: 0.09347534
+        outSlope: 0.09347534
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    randomPostRotation: {x: 15, y: 0, z: 0}
+    assignToLayers: 
+    parameters:
+    - 2
+    - 0
+    - 0
+    - 1
+    - 1
+    qualityInfluence: 0

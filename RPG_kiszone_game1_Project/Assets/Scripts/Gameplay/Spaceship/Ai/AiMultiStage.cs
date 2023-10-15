@@ -30,9 +30,9 @@ public class AiMultiStage : AiBehaviour
         shoot = false;
         if (ship.canShoot)
         {
-            if (stages[currentStage].behaviour.attack < 0) attack = stages[currentStage].allowedAttacks[Random.Range(0, stages[currentStage].allowedAttacks.Count)];
-            else attack = stages[currentStage].allowedAttacks[stages[currentStage].behaviour.attack];
-            shoot = stages[currentStage].behaviour.shoot;
+            if (stages[currentStage].behaviour.attack < 0) attack = stages[currentStage].allowedAttacks[Random.Range(0, stages[currentStage].allowedAttacks.Count)]; // if current stage behaviour choses random attack pick a random attack
+            else attack = stages[currentStage].allowedAttacks[stages[currentStage].behaviour.attack]; // map attacks from stage behaviour's choice to list of available attacks in this stage
+            shoot = stages[currentStage].behaviour.shoot; //copy stage's behaviour's shooting choice
         }
 
         // MOVEMENT
