@@ -4265,7 +4265,7 @@ MonoBehaviour:
   shoot: 0
   availableAttacks: 1
   turnSpeed: 0
-  offset: {x: 0, y: 110, z: 0}
+  offset: {x: 0, y: -110, z: 0}
   distanceToKeep:
     value: 0
     speed: 0

@@ -6,6 +6,11 @@ public class AiAttackToBehaviour : AiBehaviour
 {
     public List<AiBehaviour> behaviours;
     Spaceship ship;
+    private void Awake()
+    {
+        ship = GetComponent<Spaceship>();
+    }
+
     void Start()
     {
         attack = Random.Range(0, availableAttacks);

@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Level#2
   m_EditorClassIdentifier: 
   waves:
-  - name: beginess 111111
+  - name: 3 basic
     delayBeforeWave: 0
     gameBoundsScale: 1
     camFOV: 15
-    camAngle: 35
+    camAngle: 15
     enemies:
     - delayBeforeSpawn: 3
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
@@ -25,7 +25,8 @@ MonoBehaviour:
       position: 0
       rotation: 0
       flipHorizontal: 1
-      screenTime: 40
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 0.7
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
@@ -33,7 +34,8 @@ MonoBehaviour:
       position: -0.3
       rotation: 0
       flipHorizontal: 0
-      screenTime: 40
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 1.1
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
@@ -41,15 +43,16 @@ MonoBehaviour:
       position: 0.4
       rotation: 0
       flipHorizontal: 0
-      screenTime: 40
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
       addToMustKillList: 0
     waitMode: 3
     delayAfterWave: 1
-  - name: beginess 22222
+  - name: facing introduction
     delayBeforeWave: 1
-    gameBoundsScale: 1.1
-    camFOV: 10
-    camAngle: 30
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 15
     enemies:
     - delayBeforeSpawn: 1
       enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
@@ -57,78 +60,50 @@ MonoBehaviour:
       position: 0
       rotation: 0
       flipHorizontal: 0
-      screenTime: 40
-      addToMustKillList: 0
-    - delayBeforeSpawn: 0.2
-      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
-      spawnSide: 0
-      position: 0.5
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 40
-      addToMustKillList: 0
-    - delayBeforeSpawn: 0.4
-      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
-      spawnSide: 0
-      position: -0.5
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 40
-      addToMustKillList: 0
-    - delayBeforeSpawn: 0.2
-      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
-      spawnSide: 1
-      position: 0.5
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 40
-      addToMustKillList: 0
-    - delayBeforeSpawn: 0.1
-      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
-      spawnSide: 2
-      position: 0.5
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 40
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
       addToMustKillList: 0
     waitMode: 3
     delayAfterWave: 1
-  - name: beginess 333333
+  - name: toogeva
     delayBeforeWave: 1
-    gameBoundsScale: 1.2
-    camFOV: 8
-    camAngle: 25
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 15
     enemies:
     - delayBeforeSpawn: 2
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
-      position: 0
+      position: -0.5
       rotation: 0
       flipHorizontal: 0
-      screenTime: 40
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
       addToMustKillList: 0
-    - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
+    - delayBeforeSpawn: 0
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
       position: 0
       rotation: 0
       flipHorizontal: 0
-      screenTime: 40
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
       addToMustKillList: 0
-    - delayBeforeSpawn: 2
+    - delayBeforeSpawn: 0
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
-      position: 0
+      position: 0.5
       rotation: 0
       flipHorizontal: 0
-      screenTime: 40
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
       addToMustKillList: 0
-    waitMode: 0
+    waitMode: 3
     delayAfterWave: 1
-  - name: meat and potatoes 11111111
+  - name: wincyj
     delayBeforeWave: 1
-    gameBoundsScale: 1.5
-    camFOV: 6
+    gameBoundsScale: 1.2
+    camFOV: 15
     camAngle: 15
     enemies:
     - delayBeforeSpawn: 2
@@ -137,6 +112,7 @@ MonoBehaviour:
       position: -0.1
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 1
     - delayBeforeSpawn: 1.1
@@ -145,6 +121,7 @@ MonoBehaviour:
       position: -0.4
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 1
     - delayBeforeSpawn: 0.7
@@ -153,6 +130,7 @@ MonoBehaviour:
       position: 0.6
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 1
     - delayBeforeSpawn: 0.7
@@ -161,159 +139,115 @@ MonoBehaviour:
       position: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 1
     waitMode: 3
     delayAfterWave: 1
-  - name: yeeeeeeeeeeet 11111111
+  - name: wszyscy
     delayBeforeWave: 1
-    gameBoundsScale: 2
-    camFOV: 5
-    camAngle: 10
+    gameBoundsScale: 1.2
+    camFOV: 15
+    camAngle: 15
     enemies:
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
-      position: -1
+      position: 0.36
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: d33cdb72fee22ae45b7e9d9c6d5d931a, type: 3}
       spawnSide: 0
-      position: -1
+      position: -0.94
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
-      position: -1
+      position: 0.05
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
-      position: -1
+      position: -0.3
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
-      position: -1
+      position: 0.72
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
+      enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
-      position: -1
+      position: -0.12
       rotation: 0
       flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 0
-    - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
-      spawnSide: 0
-      position: -1
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 0
-    - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
-      spawnSide: 0
-      position: -1
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 0
-    waitMode: 2
-    delayAfterWave: 1
-  - name: yeeeeeeeeeeet 2222222
-    delayBeforeWave: 1
-    gameBoundsScale: 2
-    camFOV: 5
-    camAngle: 10
-    enemies:
-    - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 3180321262640741672, guid: 021d70e9764b7274d87fa3b8565d9a64, type: 3}
-      spawnSide: 0
-      position: 0
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 0
-    waitMode: 0
-    delayAfterWave: 10
-  - name: yeeeeeeeeeeet 333333
-    delayBeforeWave: 1
-    gameBoundsScale: 2
-    camFOV: 5
-    camAngle: 10
-    enemies:
-    - delayBeforeSpawn: 2
-      enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
-      spawnSide: 0
-      position: 0
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 0
-    - delayBeforeSpawn: 4.3
-      enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
-      spawnSide: 0
-      position: 0
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 0
-    - delayBeforeSpawn: 4.3
-      enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
-      spawnSide: 0
-      position: 0
-      rotation: 0
-      flipHorizontal: 0
-      screenTime: 0
-      addToMustKillList: 0
-    - delayBeforeSpawn: 4.3
-      enemyPrefab: {fileID: 4802444610737193482, guid: becb4f50bc2824c4190fd89a428f129e, type: 3}
-      spawnSide: 0
-      position: 0
-      rotation: 0
-      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
     delayAfterWave: 1
-  - name: the bosssso 11111111111
+  - name: oddech
     delayBeforeWave: 1
-    gameBoundsScale: 2
-    camFOV: 5
-    camAngle: 10
+    gameBoundsScale: 1.2
+    camFOV: 15
+    camAngle: 15
     enemies:
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 6849342441319260961, guid: 81590817c4307ba47b409b5a40b2eb64, type: 3}
+    - delayBeforeSpawn: 3
+      enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
       position: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
-    delayAfterWave: 2
+    delayAfterWave: 1
+  - name: mini bosso
+    delayBeforeWave: 1
+    gameBoundsScale: 1.2
+    camFOV: 15
+    camAngle: 15
+    enemies:
+    - delayBeforeSpawn: 3
+      enemyPrefab: {fileID: 2368761078460985058, guid: 7b4dba7efadbbaa4c99155733731efe4, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
   highScore: 0
   notes:
-  - slightly hardah
-  materialRewards: []
-  spaceshipRewards:
-  - {fileID: 11400000, guid: 84ef0a1cb62055a409710f4cea54b808, type: 2}
-  planetRewards:
-  - {fileID: 11400000, guid: cdfc046779c5eb9448032a7e5b617700, type: 2}
+  - still quite easy
+  - 7 waves
+  - '2 new enemies:'
+  - '- facing follower'
+  - '- mini bosso'
+  materialRewards:
+  - {fileID: 2100000, guid: 1700a5e1f75dae64d9e3951417803359, type: 2}
+  spaceshipRewards: []
+  planetRewards: []

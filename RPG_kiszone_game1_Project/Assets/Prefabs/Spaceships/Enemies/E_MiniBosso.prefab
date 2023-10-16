@@ -6674,7 +6674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: shootDelay
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: powerupChance
@@ -6717,6 +6717,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5689742700282723057, guid: 6b52458781914ba468c4f7404268992d, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].iterations
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[1].iterations
       value: 1
       objectReference: {fileID: 0}
@@ -6730,23 +6734,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[1].projectiles.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.size
-      value: 20
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].projectiles.Array.data[0].time
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[1].projectiles.Array.data[0].time
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[1].projectiles.Array.data[1].time
@@ -6757,8 +6765,12 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
-      propertyPath: attacks.Array.data[2].projectiles.Array.data[0].time
+      propertyPath: attacks.Array.data[1].projectiles.Array.data[3].time
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[2].projectiles.Array.data[0].time
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[1].time
@@ -6770,7 +6782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[3].time
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[4].time
@@ -6798,7 +6810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.data[0].time
-      value: 0.2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.data[1].time
@@ -6882,11 +6894,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.data[10].time
-      value: 0.8
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.data[11].time
-      value: 0.2
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.data[12].time
@@ -6921,12 +6933,24 @@ PrefabInstance:
       value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[3].projectiles.Array.data[20].time
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[0].rotation
-      value: 5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].projectiles.Array.data[1].rotation
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[2].rotation
-      value: -5
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].projectiles.Array.data[3].rotation
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[1].projectiles.Array.data[0].rotation
@@ -6938,7 +6962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[0].position.x
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[0].position.y
@@ -6947,7 +6971,11 @@ PrefabInstance:
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[0].projectile
       value: 
-      objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].projectiles.Array.data[1].position.x
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[1].position.y
       value: 5
@@ -6958,7 +6986,7 @@ PrefabInstance:
       objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[2].position.x
-      value: -10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[2].position.y
@@ -6966,6 +6994,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[0].projectiles.Array.data[2].projectile
+      value: 
+      objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].projectiles.Array.data[3].position.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].projectiles.Array.data[3].position.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[0].projectiles.Array.data[3].projectile
       value: 
       objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
@@ -6979,7 +7019,7 @@ PrefabInstance:
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[1].projectiles.Array.data[0].projectile
       value: 
-      objectReference: {fileID: 6283896247070897233, guid: f4b197cba308da947a0095828485f2cf, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[1].projectiles.Array.data[1].position.y
       value: 5
@@ -7001,13 +7041,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6283896247070897233, guid: f4b197cba308da947a0095828485f2cf, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[1].projectiles.Array.data[3].position.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[1].projectiles.Array.data[3].projectile
+      value: 
+      objectReference: {fileID: 6283896247070897233, guid: f4b197cba308da947a0095828485f2cf, type: 3}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[0].position.y
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[0].projectile
       value: 
-      objectReference: {fileID: 6283896247070897233, guid: f4b197cba308da947a0095828485f2cf, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[1].position.y
       value: 5
@@ -7031,7 +7079,7 @@ PrefabInstance:
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[3].projectile
       value: 
-      objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+      objectReference: {fileID: 6283896247070897233, guid: f4b197cba308da947a0095828485f2cf, type: 3}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[2].projectiles.Array.data[4].position.y
       value: 5
@@ -7087,7 +7135,7 @@ PrefabInstance:
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.data[0].projectile
       value: 
-      objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: attacks.Array.data[3].projectiles.Array.data[1].position.y
       value: 5
@@ -7328,6 +7376,14 @@ PrefabInstance:
       propertyPath: attacks.Array.data[3].projectiles.Array.data[19].projectile
       value: 
       objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[3].projectiles.Array.data[20].position.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6739364942743443448, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
+      propertyPath: attacks.Array.data[3].projectiles.Array.data[20].projectile
+      value: 
+      objectReference: {fileID: 6283896247070897233, guid: a22300ade08640049b72c7236145c0bd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
 --- !u!4 &2368761078371731973 stripped
@@ -7467,9 +7523,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  moveMode: 0
-  curvePlacement: 1
-  cyclic: 0
+  moveMode: 1
+  curvePlacement: 0
+  cyclic: 1
   pathTime: 5
   variableOffset:
     x:

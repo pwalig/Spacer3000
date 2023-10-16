@@ -23,9 +23,9 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
@@ -40,18 +40,18 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: -0.3
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 1
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0.3
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
@@ -66,9 +66,9 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
@@ -83,36 +83,36 @@ MonoBehaviour:
       enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
       position: -0.3
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: 0.3
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
       enemyPrefab: {fileID: 3398710158609041387, guid: 7f9f980dbd2854f49bb87e5e2d125cd6, type: 3}
       spawnSide: 0
       position: -0.2
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 2
       enemyPrefab: {fileID: 2368761078460985058, guid: 0e0e63e7e98cf7646ba2432cf921c104, type: 3}
       spawnSide: 0
       position: 0.4
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
@@ -127,9 +127,9 @@ MonoBehaviour:
       enemyPrefab: {fileID: 3180321262640741672, guid: 021d70e9764b7274d87fa3b8565d9a64, type: 3}
       spawnSide: 0
       position: 0
-      padding: 0
       rotation: 0
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
@@ -137,9 +137,12 @@ MonoBehaviour:
   highScore: 0
   notes:
   - easy level
-  - contains introduction
+  - 5 wave only
+  - '3 new enemies:'
+  - '- basic side follower'
+  - '- cloud enemy'
+  - '- massive man'
   materialRewards:
   - {fileID: 2100000, guid: 1bf88809e2f2c084c92083c1ec97c18f, type: 2}
   spaceshipRewards: []
-  planetRewards:
-  - {fileID: 11400000, guid: ec777c8f9bbc55243b8d46b7d2c29248, type: 2}
+  planetRewards: []

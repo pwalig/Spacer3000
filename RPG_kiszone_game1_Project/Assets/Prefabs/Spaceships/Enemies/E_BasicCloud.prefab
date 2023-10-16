@@ -2817,11 +2817,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirectionX: 0
   moveDirectionY: 0
+  levelOffset: {x: 0, y: 0}
   attack: 0
   shoot: 0
   availableAttacks: 1
   turnSpeed: 0
-  offset: {x: 0, y: 100, z: 0}
+  offset: {x: 0, y: -100, z: 0}
   distanceToKeep:
     value: 0
     speed: 0

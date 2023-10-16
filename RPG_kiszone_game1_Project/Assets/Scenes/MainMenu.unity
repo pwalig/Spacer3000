@@ -4506,7 +4506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startMaterials:
   - {fileID: 2100000, guid: 254038aaca9da434084f48a5681e7fd5, type: 2}
-  - {fileID: 2100000, guid: 1700a5e1f75dae64d9e3951417803359, type: 2}
   startSpaceships:
   - {fileID: 11400000, guid: f17aa43a92e658a44af40ebca90d07a1, type: 2}
   playerSpaceshipGenerator: {fileID: 1253839535}
@@ -4530,7 +4529,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   avalilablePlanetsInspector:
   - {fileID: 11400000, guid: c2932c5372ca2d749a85492df369a16c, type: 2}
-  - {fileID: 11400000, guid: cfef240dd57149f48b0959b39c32b4a0, type: 2}
 --- !u!114 &711048527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21974,7 +21972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769589174635, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000038146973
+      value: -0.0000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769621887938, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchorMax.x

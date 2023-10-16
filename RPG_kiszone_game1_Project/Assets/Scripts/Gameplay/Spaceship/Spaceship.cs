@@ -71,17 +71,20 @@ public class AttackPattern //class describing one attack
         {
             foreach (OneShoot shoot in projectiles)
             {
-                if (shoot.pattern != null)
+                if (shoot.projectile != null)
                 {
-                    host.gameObject.GetComponent<Spaceship>().StartCoroutine(shoot.ReadPattern(host));
-                }
-                else
-                {
-                    CameraShake.Shake(30f);
-                    GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + (host.transform.rotation * shoot.position), host.rotation);
-                    VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
-                    clonedProjectile.transform.Rotate(Mathf.Sign(host.localScale.x) * shoot.rotation * Vector3.forward);
-                    if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
+                    if (shoot.pattern != null)
+                    {
+                        host.gameObject.GetComponent<Spaceship>().StartCoroutine(shoot.ReadPattern(host));
+                    }
+                    else
+                    {
+                        CameraShake.Shake(30f);
+                        GameObject clonedProjectile = GameObject.Instantiate(shoot.projectile, host.position + (host.transform.rotation * shoot.position), host.rotation);
+                        VFXManager.CreateEffect(clonedProjectile.transform.position, 2, 0.5f);
+                        clonedProjectile.transform.Rotate(Mathf.Sign(host.localScale.x) * shoot.rotation * Vector3.forward);
+                        if (clonedProjectile.GetComponent<Projectile>() != null) clonedProjectile.tag = host.tag + "_Projectile";
+                    }
                 }
                 yield return new WaitForSeconds(shoot.TotalTime());
             }

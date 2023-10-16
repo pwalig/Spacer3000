@@ -20,7 +20,8 @@ public class SpaceshipCustomizationManager : MonoBehaviour
 
         if (GameData.availableSpaceships == null || GameData.availableSpaceships.Count == 0)
         {
-            for (int j = 0; j < 10; j++)
+            // OBSOLETE code for adding spaceship presets at the start - causes minor confusion
+            /*for (int j = 0; j < 10; j++)
             {
                 SpaceshipGeneratorPreset sgp = ScriptableObject.CreateInstance<SpaceshipGeneratorPreset>();
                 sgp.CopyPreset(startSpaceships[0]);
@@ -35,7 +36,7 @@ public class SpaceshipCustomizationManager : MonoBehaviour
                 }
                 startSpaceships.Add(sgp);
             }
-            startSpaceships.RemoveAt(0);
+            startSpaceships.RemoveAt(0);*/
             GameData.availableSpaceships = startSpaceships;
         }
             

@@ -2588,7 +2588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769589174635, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000076293945
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769621887938, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10160,8 +10160,8 @@ MonoBehaviour:
   allSpaceships:
   - {fileID: 11400000, guid: f17aa43a92e658a44af40ebca90d07a1, type: 2}
   - {fileID: 11400000, guid: 84ef0a1cb62055a409710f4cea54b808, type: 2}
-  - {fileID: 11400000, guid: 530548312f25d2644afd69522256a312, type: 2}
-  - {fileID: 11400000, guid: fdb13c29818f0d54b8c84704e13bc1cc, type: 2}
+  - {fileID: 11400000, guid: f06f55c318043964085ffc944358fca1, type: 2}
+  - {fileID: 11400000, guid: db4aabc60ef345d498cdd01022a05584, type: 2}
   allPlanets:
   - {fileID: 11400000, guid: c2932c5372ca2d749a85492df369a16c, type: 2}
   - {fileID: 11400000, guid: cfef240dd57149f48b0959b39c32b4a0, type: 2}

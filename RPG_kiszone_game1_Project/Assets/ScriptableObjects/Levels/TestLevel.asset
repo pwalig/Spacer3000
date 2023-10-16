@@ -13,6 +13,23 @@ MonoBehaviour:
   m_Name: TestLevel
   m_EditorClassIdentifier: 
   waves:
+  - name: yeeet
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 15
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 7b4dba7efadbbaa4c99155733731efe4, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 0
   - name: circle mine
     delayBeforeWave: 1
     gameBoundsScale: 2
@@ -30,14 +47,14 @@ MonoBehaviour:
       addToMustKillList: 0
     waitMode: 3
     delayAfterWave: 0
-  - name: 
+  - name: circle mine
     delayBeforeWave: 1
     gameBoundsScale: 2
     camFOV: 15
     camAngle: 0
     enemies:
     - delayBeforeSpawn: 1
-      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
+      enemyPrefab: {fileID: 2368761078460985058, guid: 586636ab7e8c9f746a94a6f28111ec42, type: 3}
       spawnSide: 0
       position: 0
       rotation: 0
@@ -45,32 +62,39 @@ MonoBehaviour:
       aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
-      spawnSide: 0
+    waitMode: 3
+    delayAfterWave: 0
+  - name: circle mine
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 15
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 5ae73db205d26984eab6ced69527131c, type: 3}
+      spawnSide: 2
       position: 0
-      rotation: 35
+      rotation: -90
       flipHorizontal: 0
       aiOffset: {x: 0, y: 0}
-      screenTime: 0
+      screenTime: 40
       addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
+    waitMode: 3
+    delayAfterWave: 0
+  - name: circle mine
+    delayBeforeWave: 1
+    gameBoundsScale: 2
+    camFOV: 15
+    camAngle: 0
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 4414401637121458167, guid: 13e5b0affac2013448b6305d3437ba53, type: 3}
       spawnSide: 0
       position: 0
-      rotation: 78
+      rotation: 0
       flipHorizontal: 0
       aiOffset: {x: 0, y: 0}
-      screenTime: 0
-      addToMustKillList: 0
-    - delayBeforeSpawn: 5
-      enemyPrefab: {fileID: 2368761078460985058, guid: 56dc953207e011c46a2da801bf80d337, type: 3}
-      spawnSide: 0
-      position: 0
-      rotation: 120
-      flipHorizontal: 0
-      aiOffset: {x: 0, y: 0}
-      screenTime: 0
+      screenTime: 40
       addToMustKillList: 0
     waitMode: 3
     delayAfterWave: 0
