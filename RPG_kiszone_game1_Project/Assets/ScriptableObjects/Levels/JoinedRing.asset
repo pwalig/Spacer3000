@@ -25,6 +25,7 @@ MonoBehaviour:
       position: -0.5
       rotation: 150
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 1
@@ -33,6 +34,7 @@ MonoBehaviour:
       position: 0
       rotation: 90
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 1
@@ -41,6 +43,7 @@ MonoBehaviour:
       position: -0.5
       rotation: 30
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 1
@@ -49,6 +52,7 @@ MonoBehaviour:
       position: 0.5
       rotation: -30
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 1
@@ -57,6 +61,7 @@ MonoBehaviour:
       position: 0
       rotation: -90
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     - delayBeforeSpawn: 1
@@ -65,6 +70,7 @@ MonoBehaviour:
       position: 0.5
       rotation: -150
       flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
       screenTime: 0
       addToMustKillList: 0
     waitMode: 3
@@ -75,7 +81,8 @@ MonoBehaviour:
   - '- fight with Conjoined Ring of Apocalypse'
   - 'Doesn''t contain:'
   - '- easy enemies'
+  - 'Disclamer:'
+  - the boss is extremely overpowered at the moment
   materialRewards: []
   spaceshipRewards: []
-  planetRewards:
-  - {fileID: 11400000, guid: 86792d6a12e415348aae527db17a7d21, type: 2}
+  planetRewards: []
