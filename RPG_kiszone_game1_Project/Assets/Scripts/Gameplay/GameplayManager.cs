@@ -81,7 +81,11 @@ public class GameplayManager : MonoBehaviour
     {
         SaveSystem.SaveGame();
         YouWonMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(FindObjectOfType<Button>().gameObject);
+        if (GameData.GetPlanet().unlockedLevels <= GameData.selectedLevelId+1)
+        {
+            GameObject.Find("NextMission").SetActive(false);
+        }
+            EventSystem.current.SetSelectedGameObject(FindObjectOfType<Button>().gameObject);
         EventSystem.current.SetSelectedGameObject(null);
     }
 

@@ -304,7 +304,6 @@ MonoBehaviour:
   highScore: 0
   notes:
   - there should be some story here
-  - but i dont know what happend yet
   materialRewards: []
   spaceshipRewards: []
   planetRewards: []

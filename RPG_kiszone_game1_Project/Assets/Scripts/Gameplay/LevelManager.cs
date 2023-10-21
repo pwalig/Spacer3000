@@ -31,6 +31,13 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(PlayLevel());
     }
 
+    //Function called through "next mission" button after mission was complete
+    //GameplayManager takes care not to show "next mission" button if this mission was the last one available
+    public void PlayNextMission()
+    {
+        GameData.selectedLevelId++;
+    }
+
     public static void RemoveBossHpBar(GameObject bar)
     {
         bossBars.Remove(bar);

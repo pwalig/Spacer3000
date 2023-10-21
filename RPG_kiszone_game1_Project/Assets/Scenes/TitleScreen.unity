@@ -2588,7 +2588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769589174635, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000015258789
+      value: -0.000019073486
       objectReference: {fileID: 0}
     - target: {fileID: 2989626769621887938, guid: 4959dc941361f084699622fbf8a31917, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10025,13 +10025,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game by:
-
-    pwalig
-
-    werton321
-
-    RaickMan'
+  m_text: "Game by:\nPawe\u0142 Walig\xF3ra\nwerton\nRaickMan"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
