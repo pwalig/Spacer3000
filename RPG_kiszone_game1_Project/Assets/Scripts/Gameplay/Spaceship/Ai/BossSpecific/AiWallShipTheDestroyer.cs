@@ -11,7 +11,7 @@ public class AiWallShipTheDestroyer : AiBehaviour
         attack = -1;
         shoot = true;
     }
-    void Update()
+    public override void Behave()
     {
         Vector3 pos = targetPosition * GameplayManager.gameAreaSize;
         Vector3 distance = Quaternion.Inverse(transform.rotation) * (pos - transform.position);

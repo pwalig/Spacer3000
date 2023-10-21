@@ -24,6 +24,11 @@ public class AiFollowCurve : AiBehaviour
         attack = -1;
     }
 
+    public void ResetPathPos()
+    {
+        pathPos = 0f;
+    }
+
     Vector2 GetTargetPosition()
     {
         Vector2 global = variableOffset.F() + new Vector2((xpath.Evaluate(pathPos) + levelOffset.x) * GameplayManager.gameAreaSize.x, (ypath.Evaluate(pathPos) + levelOffset.y) * GameplayManager.gameAreaSize.y);
@@ -60,7 +65,7 @@ public class AiFollowCurve : AiBehaviour
         pathPos += Time.deltaTime / pathTime / (GameplayManager.gameAreaSize.magnitude / 18.3575597507f);
     }
 
-    public void Update()
+    public override void Behave()
     {
         switch (moveMode)
         {

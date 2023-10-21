@@ -10,7 +10,7 @@ public class AiStationary : AiBehaviour
         attack = -1;
         shoot = true;
     }
-    void Update()
+    public override void Behave()
     {
         Vector3 pos = (targetPosition + levelOffset) * GameplayManager.gameAreaSize;
         Vector3 distance = Quaternion.Inverse(transform.rotation) * (pos - transform.position);

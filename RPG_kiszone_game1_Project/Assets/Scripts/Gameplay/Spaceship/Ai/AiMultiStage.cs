@@ -24,8 +24,11 @@ public class AiMultiStage : AiBehaviour
     }
 
 
-    void Update()
+    public override void Behave()
     {
+        // EVALUATE CURRENT BEHAVIOUR
+        stages[currentStage].behaviour.Behave();
+
         // SHOOTING
         shoot = false;
         if (ship.canShoot)

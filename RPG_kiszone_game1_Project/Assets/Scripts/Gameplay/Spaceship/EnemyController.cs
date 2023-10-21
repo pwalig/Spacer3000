@@ -39,6 +39,7 @@ public class EnemyController : SpaceshipController
     {
         if (!escape)
         {
+            behaviour.Behave();
             moveDirectionX = behaviour.moveDirectionX;
             moveDirectionY = behaviour.moveDirectionY;
             shoot = behaviour.shoot;

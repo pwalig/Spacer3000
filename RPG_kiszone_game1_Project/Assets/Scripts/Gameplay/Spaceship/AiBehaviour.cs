@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiBehaviour : MonoBehaviour
+public abstract class AiBehaviour : MonoBehaviour
 {
     [System.Serializable]
     public class FF
@@ -44,4 +44,9 @@ public class AiBehaviour : MonoBehaviour
     [HideInInspector] public int attack = 0;
     [HideInInspector] public bool shoot = false;
     [HideInInspector] public int availableAttacks = 1;
+
+    /// <summary>
+    /// AiBehaviour's equivalent of Update function, but not called automatically.
+    /// </summary>
+    public abstract void Behave();
 }

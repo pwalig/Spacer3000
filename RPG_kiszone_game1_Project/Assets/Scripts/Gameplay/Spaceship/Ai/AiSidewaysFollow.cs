@@ -11,7 +11,7 @@ public class AiSidewaysFollow : AiBehaviour
         shoot = true;
         attack = -1;
     }
-    void Update()
+    public override void Behave()
     {
         float distance = (Quaternion.Inverse(transform.rotation) * (GameplayManager.GetPlayerPosition(transform.position) - transform.position)).x;
         moveDirectionX = Mathf.Clamp(distance, -1f, 1f);

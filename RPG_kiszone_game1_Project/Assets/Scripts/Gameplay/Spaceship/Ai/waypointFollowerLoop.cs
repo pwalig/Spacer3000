@@ -15,7 +15,7 @@ public class waypointFollowerLoop : AiBehaviour
         attack = -1;
     }
 
-    void Update()
+    public override void Behave()
     {
         if(Vector3.Distance(transform.position, waypoints.GetComponent<waypoints>().wp[counter].transform.position) < 0.2f)
         {

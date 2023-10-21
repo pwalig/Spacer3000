@@ -8,7 +8,7 @@ public class AiAbsoluteFollow : AiBehaviour
     public Vector3 offset;
     public FF distanceToKeep;
     public FF shootingDistance;
-    void Update()
+    public override void  Behave()
     {
         Vector3 distance = Quaternion.Inverse(transform.rotation) * (GameplayManager.GetPlayerPosition() + (transform.rotation * offset) - transform.position);
         moveDirectionX = distance.normalized.x;
