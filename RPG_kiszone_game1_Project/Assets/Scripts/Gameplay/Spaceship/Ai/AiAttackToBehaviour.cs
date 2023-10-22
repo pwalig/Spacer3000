@@ -16,7 +16,7 @@ public class AiAttackToBehaviour : AiBehaviour
 
     void Start()
     {
-        attack = Random.Range(0, availableAttacks);
+        attack = Random.Range(0, availableAttacksCount);
         shoot = false;
     }
 
@@ -35,7 +35,7 @@ public class AiAttackToBehaviour : AiBehaviour
         // shootin'
         if (ship.canShoot && !coroutineRunnin && !shoot)
         {
-            attack = Random.Range(0, availableAttacks);
+            attack = Random.Range(0, availableAttacksCount);
             behaviours[attack].levelOffset = levelOffset;
             if (behaviours[attack] is AiFollowCurve) (behaviours[attack] as AiFollowCurve).ResetPathPos();
             coroutineRunnin = true;

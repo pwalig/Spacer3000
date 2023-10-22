@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Interface for all Ai behaviours
+/// </summary>
 public abstract class AiBehaviour : MonoBehaviour
 {
     [System.Serializable]
@@ -41,9 +44,9 @@ public abstract class AiBehaviour : MonoBehaviour
     [HideInInspector] public float moveDirectionX = 0f;
     [HideInInspector] public float moveDirectionY = 0f;
     [HideInInspector] public Vector2 levelOffset = Vector2.zero;
-    [HideInInspector] public int attack = 0;
+    [HideInInspector] public int attack = -1;
     [HideInInspector] public bool shoot = false;
-    [HideInInspector] public int availableAttacks = 1;
+    [HideInInspector] public int availableAttacksCount = 1;
 
     /// <summary>
     /// AiBehaviour's equivalent of Update function, but not called automatically.

@@ -2863,7 +2863,7 @@ MonoBehaviour:
   levelOffset: {x: 0, y: 0}
   attack: 0
   shoot: 0
-  availableAttacks: 1
+  availableAttacksCount: 1
   goalHeight:
     value: 0.8
     speed: 0
@@ -2885,14 +2885,18 @@ MonoBehaviour:
   levelOffset: {x: 0, y: 0}
   attack: 0
   shoot: 0
-  availableAttacks: 1
+  availableAttacksCount: 1
   stages:
   - behaviour: {fileID: -273398856968815495}
-    allowedAttacks: 00000000
+    allowedAttackNames:
+    - nada
+    allowedAttackIds: 
     hpThreshold: 0.5
     sendWaveSignal: 0
   - behaviour: {fileID: -5166989887454585371}
-    allowedAttacks: 01000000
+    allowedAttackNames:
+    - boom
+    allowedAttackIds: 
     hpThreshold: 0
     sendWaveSignal: 0
 --- !u!114 &-273398856968815495
@@ -2912,7 +2916,7 @@ MonoBehaviour:
   levelOffset: {x: 0, y: 0}
   attack: 0
   shoot: 0
-  availableAttacks: 1
+  availableAttacksCount: 1
   turnSpeed: 0
   offset: {x: 0, y: 100, z: 0}
   distanceToKeep:

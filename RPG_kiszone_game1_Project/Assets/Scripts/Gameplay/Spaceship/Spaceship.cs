@@ -118,6 +118,24 @@ public class Spaceship : MonoBehaviour
         shootDelay *= GameData.GetDifficultyMulitplier(0.2f, !CompareTag("Player"));
     }
 
+    public int AttackNameToId(string aName)
+    {
+        int id = 0;
+        while (attacks[id].name != aName && id < attacks.Count)
+            id++;
+        if (id == attacks.Count)
+        {
+            Debug.LogError("Attack " + aName + " not fund! Returning random one");
+            return -1;
+        }
+        else return id;
+    }
+
+    public string AttackIdToName(int id)
+    {
+        return attacks[id].name;
+    }
+
     public virtual IEnumerator Shoot(int attack_id)
     {
         // in child class override this member and implement shooting logic and return base.Shoot(); at the end

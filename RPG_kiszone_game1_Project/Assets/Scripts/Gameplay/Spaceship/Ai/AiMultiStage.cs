@@ -8,7 +8,9 @@ public class AiMultiStage : AiBehaviour
     class Stage
     {
         public AiBehaviour behaviour;
-        public List<int> allowedAttacks;
+        [Tooltip("Names of the attacks allowed in this stage")]
+        public List<string> allowedAttackNames;
+        [HideInInspector] public List<int> allowedAttackIds;
         [Tooltip("value from 0 to 1 represents % of health that boss has to drop below in order to move to next stage")]
         public float hpThreshold;
         [Tooltip("signal is sent after threshold is surpassed")]
@@ -16,39 +18,70 @@ public class AiMultiStage : AiBehaviour
     }
 
     [SerializeField] List<Stage> stages;
-    int currentStage = 0;
+    int currentStageId = 0;
+    Stage cStage;
     Spaceship ship;
     private void Awake()
     {
         ship = GetComponent<Spaceship>();
+        cStage = stages[currentStageId];
     }
 
+    /// <summary>
+    /// Shorthand for stages[currentStageId]
+    /// </summary>
+    /// <returns>stages[currentStageId]</returns>
+    Stage CStage()
+    {
+        return stages[currentStageId];
+    }
+
+    void GenerateAllowedAttackIds(Stage stage)
+    {
+        stage.allowedAttackIds.Clear();
+        foreach (string aa in stage.allowedAttackNames)
+        {
+            stage.allowedAttackIds.Add(ship.AttackNameToId(aa));
+        }
+    }
+
+
+    private void Start()
+    {
+        foreach(Stage s in stages)
+            if (s.allowedAttackNames.Count > 0)
+                GenerateAllowedAttackIds(s);
+
+        cStage.behaviour.levelOffset = levelOffset;
+        cStage.behaviour.availableAttacksCount = cStage.allowedAttackNames.Count;
+    }
 
     public override void Behave()
     {
         // EVALUATE CURRENT BEHAVIOUR
-        stages[currentStage].behaviour.Behave();
+        cStage.behaviour.Behave();
 
         // SHOOTING
         shoot = false;
         if (ship.canShoot)
         {
-            if (stages[currentStage].behaviour.attack < 0) attack = stages[currentStage].allowedAttacks[Random.Range(0, stages[currentStage].allowedAttacks.Count)]; // if current stage behaviour choses random attack pick a random attack
-            else attack = stages[currentStage].allowedAttacks[stages[currentStage].behaviour.attack]; // map attacks from stage behaviour's choice to list of available attacks in this stage
-            shoot = stages[currentStage].behaviour.shoot; //copy stage's behaviour's shooting choice
+            if (cStage.behaviour.attack < 0) attack = cStage.allowedAttackIds[Random.Range(0, cStage.allowedAttackNames.Count)]; // if current stage behaviour choses random attack pick a random attack
+            else attack = cStage.allowedAttackIds[cStage.behaviour.attack]; // map attacks from stage behaviour's choice to list of available attacks in this stage
+            shoot = cStage.behaviour.shoot; //copy stage's behaviour's shooting choice
         }
 
         // MOVEMENT
-        moveDirectionX = stages[currentStage].behaviour.moveDirectionX;
-        moveDirectionY = stages[currentStage].behaviour.moveDirectionY;
+        moveDirectionX = cStage.behaviour.moveDirectionX;
+        moveDirectionY = cStage.behaviour.moveDirectionY;
 
         // STAGE MORPHING
-        if (ship.hp / ship.maxHp < stages[currentStage].hpThreshold)
+        if (ship.hp / ship.maxHp < cStage.hpThreshold)
         {
-            if (stages[currentStage].sendWaveSignal) LevelManager.SendSignal();
-            currentStage = Mathf.Clamp(currentStage + 1, 0, stages.Count);
-            stages[currentStage].behaviour.levelOffset = levelOffset; //inform new behaviour of level offset
-            stages[currentStage].behaviour.availableAttacks = stages[currentStage].allowedAttacks.Count; //inform new behaviour of the ammount of attacks available
+            if (cStage.sendWaveSignal) LevelManager.SendSignal();
+            currentStageId = Mathf.Clamp(currentStageId + 1, 0, stages.Count);
+            cStage = stages[currentStageId];
+            cStage.behaviour.levelOffset = levelOffset; //inform new behaviour of level offset
+            cStage.behaviour.availableAttacksCount = cStage.allowedAttackNames.Count; //inform new behaviour of the ammount of attacks available
         }
     }
 }

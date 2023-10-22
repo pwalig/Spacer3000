@@ -26,13 +26,22 @@ public class EnemyController : SpaceshipController
         behaviour.levelOffset = offset;
     }
 
+    /// <summary>
+    /// Use to access the correct behaviour if enemy spaceship has many of them.
+    /// </summary>
+    /// <returns>Returns the behaviour that currently influences the controller.</returns>
+    public AiBehaviour GetBehaviour()
+    {
+        return behaviour;
+    }
+
     private void Awake()
     {
         if (behaviour == null)
         {
             if (!TryGetComponent(out behaviour)) behaviour = gameObject.AddComponent<AiBehaviour>();
         }
-        behaviour.availableAttacks = GetComponent<Spaceship>().attacks.Count;
+        behaviour.availableAttacksCount = GetComponent<Spaceship>().attacks.Count;
     }
 
     void Update()

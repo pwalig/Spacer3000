@@ -15,6 +15,7 @@ public class AiConjoinedRing : AiBehaviour
     private void Start()
     {
         startAngle = transform.rotation.eulerAngles.z;
+        attack = -1;
     }
     public override void Behave()
     {
