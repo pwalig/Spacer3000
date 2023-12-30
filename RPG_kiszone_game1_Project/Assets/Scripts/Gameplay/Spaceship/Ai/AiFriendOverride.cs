@@ -11,7 +11,6 @@ public class AiFriendOverride : AiBehaviour
 
         [System.Serializable] class Mapping
         {
-            public string name;
             public string hostFromName;
             public string friendToName;
             [HideInInspector] public int hostFromId;
@@ -22,13 +21,17 @@ public class AiFriendOverride : AiBehaviour
         public enum State { NotFound, Found, Destroyed}
         [HideInInspector] public State state = State.NotFound;
 
-        public void GenerateMappingIds()
+        public void GenerateMappingIds(Spaceship hostSpaceship)
         {
             Spaceship s = behaviour.gameObject.GetComponent<Spaceship>();
             for(int i = 0; i<attackMappings.Count; i++)
             {
-                attackMappings[i].hostFromId = s.AttackNameToId(attackMappings[i].hostFromName);
+                attackMappings[i].hostFromId = hostSpaceship.AttackNameToId(attackMappings[i].hostFromName);
                 attackMappings[i].friendToId = s.AttackNameToId(attackMappings[i].friendToName);
+#if UNITY_EDITOR
+                Debug.Log("host: " + attackMappings[i].hostFromName + " to " + attackMappings[i].hostFromId);
+                Debug.Log("friend: " + attackMappings[i].friendToName + " to " + attackMappings[i].friendToId);
+#endif
             }
         }
 
@@ -36,7 +39,6 @@ public class AiFriendOverride : AiBehaviour
         /// sets attack of the friend's behaviour according to the attackMap
         /// </summary>
         /// <param name="hostAttackId">map argument</param>
-        /// <param name="useMap">weather to use a map</param>
         public void SetAttack(int hostAttackId=0)
         {
             List<int> availableAtacks = new();
@@ -45,7 +47,8 @@ public class AiFriendOverride : AiBehaviour
                 if (m.hostFromId == hostAttackId)
                     availableAtacks.Add(m.friendToId);
             }
-            behaviour.attack = availableAtacks[Random.Range(0, availableAtacks.Count)];
+            if (availableAtacks.Count > 0) behaviour.attack = availableAtacks[Random.Range(0, availableAtacks.Count)];
+            else behaviour.attack = -1; // if no mappings available choose random attack
         }
     }
 
@@ -80,7 +83,7 @@ public class AiFriendOverride : AiBehaviour
 #if UNITY_EDITOR
                     Debug.Log("" + name + " found!");
 #endif
-                    friend.GenerateMappingIds();
+                    friend.GenerateMappingIds(GetComponent<Spaceship>());
                 }
             }
             if (friend.state == FriendInfo.State.Found)

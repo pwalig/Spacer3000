@@ -42479,31 +42479,38 @@ MonoBehaviour:
   - name: Wall_The_Right_One(Clone)
     behaviour: {fileID: 0}
     attackMappings:
-    - name: nothing to checker
-      hostFrom: 4
-      friendTo: 3
-    - name: walls to following
-      hostFrom: 3
-      friendTo: 1
-    - name: alternating to alternating
-      hostFrom: 2
-      friendTo: 2
+    - hostFromName: nothing
+      friendToName: checker
+      hostFromId: 0
+      friendToId: 0
+    - hostFromName: checker
+      friendToName: followingMissles
+      hostFromId: 0
+      friendToId: 0
+    - hostFromName: 5 walls
+      friendToName: alternating
+      hostFromId: 0
+      friendToId: 0
     state: 0
   - name: Wall_The_Left_One(Clone)
     behaviour: {fileID: 0}
     attackMappings:
-    - name: form
-      hostFrom: 4
-      friendTo: 0
-    - name: form
-      hostFrom: 3
-      friendTo: 0
-    - name: form
-      hostFrom: 2
-      friendTo: 0
-    - name: form
-      hostFrom: 1
-      friendTo: 0
+    - hostFromName: nothing
+      friendToName: checker
+      hostFromId: 0
+      friendToId: 0
+    - hostFromName: 5 walls
+      friendToName: nada
+      hostFromId: 0
+      friendToId: 0
+    - hostFromName: checker
+      friendToName: nada
+      hostFromId: 0
+      friendToId: 0
+    - hostFromName: followingMissles
+      friendToName: 3 walls
+      hostFromId: 0
+      friendToId: 0
     state: 0
 --- !u!114 &-6703034384336540982
 MonoBehaviour:

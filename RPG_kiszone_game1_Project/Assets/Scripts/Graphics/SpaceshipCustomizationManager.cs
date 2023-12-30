@@ -126,9 +126,9 @@ public class SpaceshipCustomizationManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.E)) platform.Rotate(spaceshipRotation.Update(0f) * Time.deltaTime * Vector3.up);
-        else if (Input.GetKey(KeyCode.Q)) platform.Rotate(spaceshipRotation.Update(50f) * Time.deltaTime * Vector3.up);
-        else if (Input.GetKey(KeyCode.E)) platform.Rotate(spaceshipRotation.Update(-50f) * Time.deltaTime * Vector3.up);
+        if ((Input.GetKey(KeyCode.Q) && Input.GetKey(KeyCode.E)) || (Input.GetKey(KeyCode.JoystickButton4) && Input.GetKey(KeyCode.JoystickButton5))) platform.Rotate(spaceshipRotation.Update(0f) * Time.deltaTime * Vector3.up);
+        else if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.JoystickButton4)) platform.Rotate(spaceshipRotation.Update(50f) * Time.deltaTime * Vector3.up);
+        else if (Input.GetKey(KeyCode.E) || Input.GetKey(KeyCode.JoystickButton5)) platform.Rotate(spaceshipRotation.Update(-50f) * Time.deltaTime * Vector3.up);
         else platform.Rotate(spaceshipRotation.Update(0f) * Time.deltaTime * Vector3.up);
     }
 }

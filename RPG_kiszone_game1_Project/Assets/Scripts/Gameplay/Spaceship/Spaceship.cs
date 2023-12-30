@@ -121,7 +121,7 @@ public class Spaceship : MonoBehaviour
     public int AttackNameToId(string aName)
     {
         int id = 0;
-        while (attacks[id].name != aName && id < attacks.Count)
+        while (id < attacks.Count && attacks[id].name != aName)
             id++;
         if (id == attacks.Count)
         {
