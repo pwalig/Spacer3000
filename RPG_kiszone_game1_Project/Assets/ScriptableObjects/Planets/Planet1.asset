@@ -22,6 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b234bebcaed9ba74d997db9444269a11, type: 2}
   - {fileID: 11400000, guid: 650b3e033dcf30b4b813d040cfcd22d8, type: 2}
   - {fileID: 11400000, guid: 47ae4991ef14bef43aede33d5862b037, type: 2}
+  - {fileID: 11400000, guid: 0976186e593f39b40ba0ed7472c26f65, type: 2}
   - {fileID: 11400000, guid: 6286294bbd0e10141917ae655cc3996e, type: 2}
   - {fileID: 11400000, guid: 841f4c545aa9e584ea48a0620841ea74, type: 2}
   unlockedLevels: 6

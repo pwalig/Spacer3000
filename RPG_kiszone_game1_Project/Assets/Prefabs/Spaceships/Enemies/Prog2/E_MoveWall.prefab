@@ -26,14 +26,14 @@ PrefabInstance:
     - target: {fileID: 6739364942654206741, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: preset
       value: 
-      objectReference: {fileID: 11400000, guid: 5951827346526294ab9aeccd18520c43, type: 2}
+      objectReference: {fileID: 11400000, guid: 530548312f25d2644afd69522256a312, type: 2}
     - target: {fileID: 6739364942654206741, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443443, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Name
-      value: E_KopjujTego
+      value: E_CopyThisOne
       objectReference: {fileID: 0}
     - target: {fileID: 6739364942743443444, guid: d46d57a13ca4a6b4196f665d62a8c66b, type: 3}
       propertyPath: m_Size.x
@@ -156,10 +156,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveDirectionX: 0
   moveDirectionY: 0
-  levelOffset: {x: 0, y: 0}
   attack: 0
   shoot: 0
-  availableAttacksCount: 1
+  availableAttacks: 1
   turnSpeed: 0
   offset: {x: 0, y: 150, z: 0}
   distanceToKeep:
