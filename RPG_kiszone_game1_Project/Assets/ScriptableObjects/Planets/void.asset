@@ -17,5 +17,5 @@ MonoBehaviour:
   notes:
   - ...
   levels:
-  - {fileID: 11400000, guid: c5dfaafb53c5e274fbc9211c30006782, type: 2}
+  - {fileID: 0}
   unlockedLevels: 1

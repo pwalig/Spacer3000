@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af4bd43844114c438bbf4c69edc0970, type: 3}
+  m_Name: VoidLevel#1
+  m_EditorClassIdentifier: 
+  waves:
+  - name: introduction
+    delayBeforeWave: 0
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: fd97b0dcaa801134792e206facc10caf, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 2ca55ed5f36f698469e0931b4bdc0197, type: 3}
+      spawnSide: 1
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 2ca55ed5f36f698469e0931b4bdc0197, type: 3}
+      spawnSide: 2
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0.5, y: 0}
+      screenTime: 10
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  - name: introduction
+    delayBeforeWave: 0
+    gameBoundsScale: 1
+    camFOV: 15
+    camAngle: 10
+    enemies:
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: fd97b0dcaa801134792e206facc10caf, type: 3}
+      spawnSide: 0
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: 0, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    - delayBeforeSpawn: 1
+      enemyPrefab: {fileID: 2368761078460985058, guid: 83a851e9ca99035408d3042f5e7f7f68, type: 3}
+      spawnSide: 1
+      position: 0
+      rotation: 0
+      flipHorizontal: 0
+      aiOffset: {x: -1, y: 0}
+      screenTime: 0
+      addToMustKillList: 0
+    waitMode: 3
+    delayAfterWave: 1
+  highScore: 0
+  notes:
+  - easy level
+  - 5 wave only
+  - '3 new enemies:'
+  - '- basic side follower'
+  - '- cloud enemy'
+  - '- massive man'
+  materialRewards:
+  - {fileID: 2100000, guid: 1bf88809e2f2c084c92083c1ec97c18f, type: 2}
+  spaceshipRewards: []
+  planetRewards: []
