@@ -1,2 +1,2 @@
-# RPG_kiszone_ogorki_gra1
-first game of kiszone ogórki team
+# Spacer 3000
+game made as RPG (Ruch Projektantów Gier) students organisation project
